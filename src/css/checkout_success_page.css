@@ -1,0 +1,26 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    display: grid;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    grid-gap: 0.5vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50vh auto;
+    grid-template-areas: 
+    "checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess";
+
+}
+
+.checkoutSuccess     { grid-area: checkoutSuccess}
+
+
+.checkoutSuccess {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

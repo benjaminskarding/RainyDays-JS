@@ -2,6 +2,164 @@
 /* This could be colors, fonts, or padding sizes! */
 
 :root {
-  --color-primary: #7be447;
-  --color-secondary: #1f1f1f;
+  --color-primary: #0A3641; 
+  --color-secondary: #74B8CF;
+  --color-tertiary: #B8CBD8;
+
+  --font-primary: 'Monda'; 
+  --font-secondary: 'Armata';
+  --font-size: 16px;
+}
+
+@font-face {
+  font-family: 'Monda';
+  src: url('../Monda-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Monda';
+  src: url('../Monda-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Armata';
+  src: url('../Armata.ttf') format('truetype');
+  font-weight: normal;
+}
+
+body {
+  font-family: var(--font-secondary);
+}
+
+
+p {
+  font-family: var(--font-secondary);
+  font-size: 1rem;  /* 16px */
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.p2 {
+  font-family: var(--font-secondary);
+  font-size: 1.125rem;  /* 18px / 16 */
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+
+.p3 {
+  font-family: var(--font-secondary);
+  font-size: 1.375rem;  /* 22px / 16 */
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.p4 {
+  font-family: var(--font-secondary);
+  font-size: 1.5625rem;  /* 25px / 16 */
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.main-title {                              /*CLEAN THIS UP, DRY PRINCIPLE*/
+  font-family: var(--font-primary);
+  font-weight: normal;
+  color: #0A3641;
+  font-size: 4rem;  /* 64px / 16 */
+  text-align: center;
+  padding-top: 7.1875rem; 
+  padding-bottom: 1.875rem;  
+}
+
+
+h1 {
+  font-family: var(--font-primary);
+  font-size: 4rem;  /* 64px / 16 */
+  font-weight: normal;
+  color:#0A3641;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: 3rem;  /* 48px / 16 */
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h3, .product-frame {
+  font-family: var(--font-primary);
+  font-size: 2.25rem;  /* 36px / 16 */
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-family: var(--font-primary);
+  font-size: 1.5625rem;  /* 25px / 16 */
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color:#0A3641;
+}
+
+h5 {
+  font-family: var(--font-primary);
+  font-size: 1.375rem;  /* 22px / 16 */
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color:#0A3641;
+}
+
+
+h6 {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;  /* 18px / 16 */
+  font-weight: normal;
+  color: #0A3641;
+  margin: 0;
+  padding: 0;
+}
+
+
+.shop-button,
+.womens-button{
+  font-family: var(--font-primary);
+  font-size: 1.125rem;  /* 18px / 16 */
+  font-weight: bold;
+}
+
+.select-size-button {
+  font-family: var(--font-primary);
+  font-size: 1rem;  /* 16px / 16 */
+  font-weight: bold;
+}
+
+
+
+.low-opacity {
+  opacity: 50%;
+  color: black;
+}
+
+
+.white-text {
+  color: white;
+}
+
+
+.align-text-center {
+  text-align: center;
 }

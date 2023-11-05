@@ -1,0 +1,52 @@
+/* MOBILE FOOTER */
+
+.mobileFooterContainer{
+	background-color: #0A3641;
+  height: 390PX;
+  width: 100%;
+}
+
+.mobileFooterMenuItems {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 3vw 2rem 3vw;
+}
+
+.mobileCompanyLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.getApp_and_socialMediaIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 3vw 1rem 3vw;
+}
+
+.copyrightText {
+  display: flex;
+  justify-content: center;
+}
+
+/* MISC */
+
+.separatorLineWhite{
+  border-bottom: 1px solid white; 
+  margin: 0 3vw 0 3vw;
+  padding-top: 30px;
+}
+
+.separatorLineWhite2{
+  border-bottom: 1px solid white; 
+  margin: 0 3vw 0 3vw;
+}
+
+a {
+  display: block;  
+  margin: 0;      
+  padding: 0;      
+  text-decoration:color(from color srgb r g b); /
+  line-height: 0;
+}

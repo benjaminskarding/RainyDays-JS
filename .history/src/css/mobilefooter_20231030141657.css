@@ -1,0 +1,23 @@
+/* footer */
+
+
+.mobileFooterContainer{
+	background-color: #0A3641;
+  height: 288PX;
+  width: 100%;
+}
+
+.shopAboutContainer {
+  display: flex;
+}
+
+
+/*misc*/
+
+.separatorLineWhite{
+  border-bottom: 1px solid white; 
+  margin: 0 3vw 0 3vw;
+  padding-top: 30px;
+}
+
+/* footer end */

@@ -1,0 +1,42 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    background-color: red;
+    display: grid;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "customer-service contact-form store-info"
+
+}
+
+.customer-service     { grid-area: customer-service }
+.contact-form    { grid-area: contact-form }
+.store-info    { grid-area: store-info }
+
+
+.customer-service {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+
+
+.contact-form {
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+.store-info {
+    background-color: blue;
+}

@@ -1,0 +1,262 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    display: grid;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+        "title title title"
+        "customer-service contact-form store-info"
+
+}
+
+.title { grid-area: title }
+.customer-service     { grid-area: customer-service }
+.contact-form    { grid-area: contact-form }
+.store-info    { grid-area: store-info }
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* customer service section */
+
+.customer-service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.faqRetShip {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80px;
+    margin-top: 1rem;
+}
+
+/* contact form section */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.contact-form .input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-form .checkbox-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contact-form label {
+    margin: 1.5rem 0;
+}
+
+.contact-form label[for="email"],
+.contact-form label[for="name"] {
+    margin-bottom: 0.1rem; 
+}
+
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid black;
+    resize: none;
+}
+.contact-form input, 
+.contact-form textarea {
+    font-family: 'Monda';
+    font-size: 1rem; 
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+    border: none;
+    border-bottom: solid 1px;
+    padding: 0.5rem 0;
+}
+
+.contact-form .checkbox-group input {
+    margin-right: 0.5rem;
+}
+
+.contact-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0A3641;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Monda";
+    font-size: 1.125rem;
+    width: 100%;
+    height: 40px;
+}
+
+/* our stores section */
+
+.store-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+
+/*Main -> 1160px grid breakpoint*/
+
+@media (max-width: 1160px) {
+    .main-grid { 
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 70vh;
+      grid-template-areas: 
+          "title title"
+          "contact-form contact-form"
+          "customer-service store-info";
+      grid-gap: 2rem; 
+    }
+
+    .customer-service, .store-info {
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+}
+
+
+/* Main -> Big Mobile Grid */
+@media (max-width: 760px) {
+    .main-grid { 
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 60vh;
+      grid-template-areas: 
+          "title title"
+          "contact-form contact-form"
+          "customer-service store-info";
+      grid-gap: 2rem; 
+    }
+
+    .customer-service, .store-info {
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+}
+
+
+
+/*Main -> Mobile grid*/
+
+@media (max-width: 643px) {
+    .main-grid { 
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 60vh 60vh;
+      grid-template-areas: 
+          "title"
+          "contact-form"
+          "customer-service" 
+          "store-info";
+      grid-gap: 2vw; 
+    }
+
+    .customer-service, .store-info {
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+   
+}
+
+
+@media (max-width: 538px) {
+    .main-grid { 
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 90vh 90vh;
+      grid-template-areas: 
+          "title"
+          "contact-form"
+          "customer-service" 
+          "store-info";
+      grid-gap: 2vw; 
+    }
+
+    .customer-service, .store-info {
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+
+
+    /* Hamburger overlay structure */
+    .hamburger-overlay {
+        display: flex;
+        flex-direction: column;   /* Stack children vertically */
+        justify-content: flex-start; /* Align children to the top */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 1000;
+        visibility: hidden; 
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+    
+
+    .overlayLogoContainer {     
+        margin-bottom: 1rem;     
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .overlayLogo {
+        width: 55%;
+        margin: -50px auto;
+    }
+}
+
+
+@media (max-width: 300px) {
+    .main-grid { 
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto 90vh;
+      grid-template-areas: 
+          "title"
+          "contact-form"
+          "customer-service" 
+          "store-info";
+      grid-gap: 2vw; 
+    }
+
+    .customer-service, .store-info {
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+}

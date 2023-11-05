@@ -1,0 +1,55 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    display: grid;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    grid-gap: 0.5vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 60vh;
+    grid-template-areas: 
+    "checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess";
+
+}
+
+.checkoutSuccess     { grid-area: checkoutSuccess}
+
+
+.checkoutSuccess {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.continueShoppingBtn {
+    background-color: #0A3641;
+    color: white;
+    height: 40px;
+    width: 400px;
+    border: none;
+    cursor: pointer;    
+    font-family: "Monda";
+    font-size: 1.125rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 865px) {
+    .checkoutSuccess {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 70vh;
+        width: 100%;
+        text-align: center;
+    }
+}

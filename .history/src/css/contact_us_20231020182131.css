@@ -1,0 +1,104 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    display: grid;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3vw;
+    grid-template-rows: 10vh 60vh;
+    grid-template-areas: 
+        "title title title"
+        "customer-service contact-form store-info"
+
+}
+
+.title { grid-area: title }
+.customer-service     { grid-area: customer-service }
+.contact-form    { grid-area: contact-form }
+.store-info    { grid-area: store-info }
+
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+}
+
+.customer-service {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.contact-form {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+
+}
+
+.contact-form .input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.contact-form .checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.contact-form .checkbox-group input {
+    margin-right: 0.5rem;
+}
+
+
+.contact-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0A3641;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Monda";
+    font-size: 1.125rem;
+    width: 400px;
+    height: 40px;
+}
+
+.store-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+

@@ -1,0 +1,231 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+
+.main-grid { 
+    display: grid;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    grid-gap: 0.5vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 20vh 60vh 60vh 60vh 60vh;
+    grid-template-areas: 
+    "filtersContainer filtersContainer filtersContainer filtersContainer filtersContainer filtersContainer"
+    "content1 content2 content3 content4 content5 content6"
+    "content7 content8 content9 imagePerson imagePerson imagePerson"
+    "imageClouds imageClouds imageClouds content10 content11 content12"
+    "content13 content14 content15 content16 content17 content18";
+  }
+
+  #filtersContainer {grid-area: filtersContainer}
+  #imagePerson {grid-area: imagePerson}
+  #imageClouds {grid-area: imageClouds}
+  #content1 { grid-area: content1; }
+  #content2 { grid-area: content2; }
+  #content3 { grid-area: content3; }
+  #content4 { grid-area: content4; }
+  #content5 { grid-area: content5; }
+  #content6 { grid-area: content6; }
+  #content7 { grid-area: content7; }
+  #content8 { grid-area: content8; }
+  #content9 { grid-area: content9; }
+  #content10 { grid-area: content10; }
+  #content11 { grid-area: content11; }
+  #content12 { grid-area: content12; }
+  #content13 { grid-area: content13; }
+  #content14 { grid-area: content14; }
+  #content15 { grid-area: content15; }
+  #content16 { grid-area: content16; }
+  #content17 { grid-area: content17; }
+  #content18 { grid-area: content18; }
+
+  
+
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filter-section p {
+  font-family: "Monda";
+  font-size: 1rem;
+}
+
+.filterBy {
+  margin-bottom: 1rem; 
+}
+
+
+
+
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 0;
+}
+
+.icon-container img {
+  margin: 0 auto;
+}
+
+
+
+  
+.content-small-shared-attributes {    /* check if moveable to common, also, rename */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  }
+  
+.content-big-shared-attributes { /* check if moveable to commona, lso, rename */
+  background-color: #0A3641;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.content-big-shared-attributes-white { /* check if moveable to common, also, rename*/
+  background-color: white;
+  display: flex;
+  border: 0.11vw dashed #0A3641; 
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+
+/*product filters*/
+
+.product-filters {
+  display: flex;
+  justify-content: space-between;
+  height: 5%;
+  width: 100%;
+  margin-top: -10px;
+}
+
+
+.filter-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.filter-section li {
+  margin-bottom: 18.5px;
+}
+
+
+.filter-section li a {
+  transition: transform 0.3s, font-weight 0.3s;
+
+}
+
+.filter-section li a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/*large images*/
+
+.large-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.large-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*small product frames*/
+
+.image-frame {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 75%;
+  width: 100%;
+  background: linear-gradient(180deg, #B8CBD8 0%, transparent 200%);
+  margin-bottom: 1vh;
+}
+
+.image-frame img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
+  padding: 2vw;  
+
+}
+
+
+.text-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 25%;
+}
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  

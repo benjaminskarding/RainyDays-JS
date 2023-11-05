@@ -1,0 +1,14 @@
+/* footer */
+
+
+.footer{
+	background-color: #0A3641;
+  height: 288PX;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+
+/* footer end */

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's</title>
+  <link rel="stylesheet" href="src/css/checkout_page.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png" />
+</head>
+
+
+<body>
+  <header class="header-collection">
+    <div class="promo-banner hide-on-mobile-res" id="promo-banner">
+      <a href="list_of_products_men.html" class="nav-link">End of Season Sale | Up to 40% off select items</a>
+    </div>
+    <nav class="header-main-nav">
+      <div class="header-nav-left">
+        <a href="#menuOverlay">
+          <img src="assets/project_images/Icons/hamburger.svg" class="icon">
+          <span class="hide-on-865px">MENU</span>
+        </a> 
+      </div>
+      <div class="header-logo">
+        <a href="home_page.html" class="nav-link">
+          <img src="assets/project_images/Logo/RainyDays_Logo_original_color.svg" id="header-logo-img">
+        </a> 
+      </div>
+      <div class="header-nav-right">
+        <a href="about_page.html" class="nav-link hide-on-small-res">ABOUT US</a>
+        <a href="contact_us.html" class="nav-link hide-on-small-res">CONTACT</a>
+        <a href="#" class="nav-link search-link hide-on-865px">
+          <img src="assets/project_images/Icons/search-line.svg" class="icon">
+          <input type="text" class="header-search-input" placeholder="SEARCH">
+        </a>
+        <a href="#shoppingCartOverlay">
+          <span class="cart-counter" id="cartCounter">0</span>
+          <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="icon">
+        </a>
+      </div>
+
+      <!--hamburger menu overlay start-->
+      <div class="hamburger-overlay" id="menuOverlay">
+        <div class="hamburger-header">
+            <a href="#closeOverlay" class="hamburger-close-btn">&times;</a>
+            <a id="closeOverlay"></a>
+
+            <div class="cart-counter-container">
+              <span class="cart-counter">0</span>
+              <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon">
+            </div>
+        </div>
+        
+        <div class=overlayTitle>
+          <h3>MENU</h3>
+        </div>
+        <div class="search-container">
+          <input type="text" placeholder="SEARCH">
+        </div>
+
+        <div class="overlayOptionsContainer">
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_men.html">
+              <h5 class="menu-item">MENS</h5>
+            </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_women.html">
+              <h5 class="menu-item">WOMENS</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_men.html">
+              <h5 class="menu-item">PHASE OUT 40%</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="about_page.html">
+              <h5 class="menu-item">ABOUT</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="contact_us.html">
+              <h5 class="menu-item">CONTACT</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="contact_us.html">
+              <h5 class="menu-item">SUPPORT</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+        </div>
+
+        <div class="overlayLogoContainer">
+            <img src="/assets/project_images/Logo/RainyDays_Logo_original_color.svg" class="overlayLogo">
+        </div>
+      </div>
+      <!--hamburger menu overlay end-->
+
+      <!--shopping cart overlay start-->
+      <div class="cart-overlay" id="shoppingCartOverlay">
+        <a href="#closeOverlay" class="cart-close-btn">&times;</a>
+        <div class="cart-overlay-content">
+          <div class="overlayTitle">
+            <h3>SHOPPING CART</h3>
+          </div>
+          <div class="separatorLine" aria-hidden="true"></div>
+
+          <!--empty cart block start-->
+          <div id="emptyCartblock">
+            <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
+            <div class="separatorLine" aria-hidden="true"></div>
+          </div>
+          <!--empty cart block end-->
+
+          <!--items added to cart block start-->
+          <div id="itemsAddedtoCartBlock">
+            <div class="cart-items">
+              <div class="cart-item">
+                <h4>IKAROS Cycling Jacket</h4>
+                <div class="attribute">
+                  <span class="label">Size:</span>
+                  <span class="value" id="itemSize">XS</span>
+                </div>
+                <div class="attribute">
+                  <span class="label">Color:</span>
+                  <span class="value" id="itemColor">Red</span>
+                </div>
+                <div class="attribute">
+                  <span class="label">Price:</span>
+                  <span class="currency-symbol" id="itemCurrencySymbol">£</span>
+                  <span class="value" id="itemPrice">249</span>
+                </div>
+                <div class="attribute">
+                  <span class="label">Quantity:</span>
+                  <span class="value" id="itemQuantity">1</span>
+                </div>
+              </div>
+            </div>
+            <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_men.html" class="continue-shopping">
+              <h5>CONTINUE SHOPPING</h5>
+            </a>
+            <div class="cart-total-cont">
+                <div class="cart-total">
+                <span class="label">TOTAL</span>
+                    <div>
+                        <span class="currency-symbol" id="itemCurrencySymbol">£</span>
+                        <span class="value" id="cartTotalValue">0</span>
+                    </div>
+                </div>
+                <div class="checkoutButtonContainer">
+                <a href="checkout_page.html">
+                    <button type="submit" class="checkoutButton">CHECKOUT</button>
+                </a>
+                </div>
+            </div>
+          </div>
+          <!--items added to cart block end-->
+
+          <!--static cart block start-->
+          <div class="completeYourKit">
+            <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
+          </div>
+
+          <div class="overlayProductsGrid">
+
+            <div id="overlaycontent1" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div>
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                </div>
+                <div>
+                  <p class="p2">£ 29</p>
+                </div>
+                <div class="addToCartContainer">
+                  <button type="addToCart" class="add-to-cart-button" id="addToCartBtn">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="overlaycontent2" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div>
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                </div>
+                <div>
+                  <p class="p2">£ 29</p>
+                </div>
+                <div class="addToCartContainer">
+                  <button type="addToCart" class="add-to-cart-button" id="addToCartBtn">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="overlaycontent3" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div>
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                </div>
+                <div>
+                  <p class="p2">£ 29</p>
+                </div>
+                <div class="addToCartContainer">
+                  <button type="addToCart" class="add-to-cart-button" id="addToCartBtn">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="overlaycontent4" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div>
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                </div>
+                <div>
+                  <p class="p2">£ 29</p>
+                </div>
+                <div class="addToCartContainer">
+                  <button type="addToCart" class="add-to-cart-button" id="addToCartBtn">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="overlaycontent5" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div>
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                </div>
+                <div>
+                  <p class="p2">£ 29</p>
+                </div>
+                <div class="addToCartContainer">
+                  <button type="addToCart" class="add-to-cart-button" id="addToCartBtn">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="overlaycontent6" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div>
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                </div>
+                <div>
+                  <p class="p2">£ 29</p>
+                </div>
+                <div class="addToCartContainer">
+                  <button type="addToCart" class="add-to-cart-button" id="addToCartBtn">ADD TO CART</button>
+                </div>
+              </div>
+            </div>
+            <!--static cart block end-->
+          </div>
+        </div>
+      </div>
+      <!--shopping cart overlay end-->
+  </header>
+
+<!--MAIN-->
+
+  <div class="main-grid">
+    <div class="orderSummary">
+        <div class="SectionHeader" id="productsHeader">
+            <h6>ORDER SUMMARY</h6>
+            <h6 class="hide-on-865px">QUANTITY</h6>
+            <h6 class="hide-on-865px">PRICE</h6>
+            <h6 class="hide-on-865px">DISCOUNT</h6>
+            <h6 class="hide-on-865px">TOTAL</h6>
+        </div>
+        <div id="productsContainer">
+            <div class="row">
+                <div class="order-summary-row-col-1" id="nameSizeColor-Column">
+                    <div class="p3">Product Name</div>
+                    <div class="attr-row p2" id="selected-size">
+                        <div class="attr-key">Size:&nbsp;</div>
+                        <div class="attr-value">xs</div>
+                    </div>
+                    <div class="attr-row p2" id="selected-color">
+                        <div class="attr-key">Color:&nbsp;</div>
+                        <div class="attr-value">Gray</div>
+                    </div>
+                </div>
+                <div class="order-summary-row-col-2 p2" id="selected-quantity">
+                    <div class="low-res-attrKey-container"> <!--Only comes into play at 865px and downward-->
+                      <div class="attr-key hide-on-high-res">Quantity:&nbsp;</div> <!--Hidden before 865px as there's a Quantity label already in the section header for higher resolutions-->
+                      <div class="attr-value">1</div>
+                    </div>
+                </div>
+                <div class="order-summary-row-col-3 p2" id="price-Column">
+                  <div class="low-res-attrKey-container">
+                    <div class="attr-key hide-on-high-res" id="low-res-price-styling">Price:&nbsp;</div>
+                    <div>£ 249</div>
+                  </div>
+                </div>
+                <div class="order-summary-row-col-4 p2" id="discount-Column">
+                  <div class="low-res-attrKey-container">
+                    <div class="attr-key hide-on-high-res">Discount:&nbsp;</div>
+                    <div class="attr-value">0%</div> 
+                  </div>
+                   <!--Low resolution unique inline itemsum container-->
+                  <div class="low-res-itemsum">
+                    <div class="attr-key hide-on-high-res">Total:&nbsp;</div>
+                    <div class="attr-value hide-on-high-res" id="itemSum-lowRes">£ 249</div>
+                  </div>
+                </div>
+                <!--ITEM CALCULTED SUM HIGH RESOLUTION COLUMN-->
+                <div class="order-summary-row-col-5 p2" id="itemSum-Column">
+                    <div class="attr-value hide-on-865px" id="itemSum-highRes">£ 249</div>
+                </div>
+            </div>
+            <!--THE GENERAL IDEA IS THAT ADDITIONAL ITEMS GET ADDED HERE WITH JS, WILL HAVE TO SEE IF IT WORKS-->
+
+            <!--ORDER SUMMARY TOTAL COLUMN-->
+            <div class="orderSummaryTotalSum" id="orderSummaryTotalSum">
+              <div class="attr-key p2">Items Total:&nbsp;</div>
+              <div class="attr-value p2">£ 3553</div>
+          </div>
+        </div>
+    </div>
+    <div class="billingAddress">
+         <div class="SectionHeader" id="billingHeader">
+            <h6>BILLING ADDRESS</h6>
+         </div>
+         <form action="#" method="post">
+          <div class="form-container">
+            <div class="inputField-container"> 
+              <label class="" for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" class="firstnameStyling">
+            </div>
+            <div class="inputField-container">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" class="lastnameStyling" required>
+            </div>
+            <div class="inputField-container">
+              <label for="email">Email *</label>
+              <input type="text" id="email" name="email" class="emailStyling" required>
+            </div>
+            <div class="inputField-container">
+              <label for="country">Country *</label>
+              <div class="row countryOption">
+                <select id="country" name="country">
+                  <option value="option1">United States</option>
+                  <option value="option2">Denmark</option>
+                  <option value="option3">Yeeeeeah, im not going to name all of them, leave that for js bye</option>
+                </select>
+              </div>
+            </div>
+            <div class="inputField-container">
+              <label for="add_new_address_address">Address *</label>
+              <input type="text" id="add_new_address_address" name="add_new_address_address" class="emailStyling" required>
+            </div>
+            <div class="inputField-container">
+              <label for="add_new_address_city">City *</label>
+              <input type="text" id="add_new_address_city" name="add_new_address_city" class="emailStyling" required>
+            </div>
+            <div class="inputField-container">
+              <label for="add_new_address_postcode">Postcode *</label>
+              <input type="text" id="add_new_address_postcode" name="add_new_address_postcode" class="emailStyling" required>
+            </div>
+            <div class="inputField-container">
+              <label for="add_new_address_phone">Phone Number *</label>
+              <input type="text" id="add_new_address_phone" name="add_new_address_phone" class="emailStyling" required>
+            </div>
+          </div>
+      </form>
+    </div>
+
+    <div class="deliveryAddress">
+      <div class="SectionHeader" id="deliveryHeader">
+          <h6>DELIVERY ADDRESS</h6>
+      </div>
+          <div class="inputField-container" id="sameAsbillingContainer">
+              <label>
+                  <input type="radio" name="address" class="hidden-original-radio" checked>
+                  <span class="custom-radio"></span>
+                  Same as billing address
+              </label>
+          </div>
+          <div class="inputField-container" id="addnewAddressContainer">
+              <label>
+                  <input type="radio" name="address" class="hidden-original-radio" id="addNewAddressRadio">
+                  <span class="custom-radio"></span>
+                  Add a new address
+              </label>
+          </div>
+          <!--Add new address form hidden initially-->
+          <form action="#" method="post" id="addnewAddressForm">
+            <div class="form-container">
+                <div class="inputField-container"> 
+                    <label for="add_new_address_firstName">First Name *</label>
+                    <input type="text" id="add_new_address_firstName" name="add_new_address_firstName" class="firstnameStyling" required>
+                </div>
+                <div class="inputField-container">
+                    <label for="add_new_address_lastName">Last Name *</label>
+                    <input type="text" id="add_new_address_lastName" name="add_new_address_lastName" class="lastnameStyling" required>
+                </div>
+                <div class="inputField-container">
+                    <label for="add_new_address_email">Email *</label>
+                    <input type="text" id="add_new_address_email" name="add_new_address_email" class="emailStyling" required>
+                </div>
+                <div class="inputField-container">
+                    <label for="add_new_address_country">Country *</label>
+                    <div class="row countryOption">
+                        <select id="add_new_address_country" name="add_new_address_country">
+                            <option value="option1">United States</option>
+                            <option value="option2">Denmark</option>
+                            <option value="option3">Yeeeeeah, im not going to name all of them, leave that for js bye</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputField-container">
+                  <label for="add_new_address_address">Address *</label>
+                  <input type="text" id="add_new_address_address" name="add_new_address_address" class="emailStyling" required>
+                </div>
+                <div class="inputField-container">
+                  <label for="add_new_address_city">City *</label>
+                  <input type="text" id="add_new_address_city" name="add_new_address_city" class="emailStyling" required>
+                </div>
+                <div class="inputField-container">
+                  <label for="add_new_address_postcode">Postcode *</label>
+                  <input type="text" id="add_new_address_postcode" name="add_new_address_postcode" class="emailStyling" required>
+                </div>
+                <div class="inputField-container">
+                  <label for="add_new_address_phone">Phone Number *</label>
+                  <input type="text" id="add_new_address_phone" name="add_new_address_phone" class="emailStyling" required>
+                </div>
+            </div>
+          </form>
+    </div>
+
+    <div class="shippingMethod">
+      <div class="SectionHeader" id="shippingMethodHeader">
+          <h6>SHIPPING METHOD</h6>
+      </div>
+      <div class="shippingOptionsContainer">
+        <div class="row shippingOption" id="standardShippingOptionStyling">
+          <div class="p">Standard Shipping</div>
+          <select id="standardShippingSelect1" name="standardShipping1">
+            <option value="postNord">PostNord</option>
+            <option value="posten">Posten</option>
+          </select>
+        </div>
+        <div class="row shippingOption" id="expressShippingOptionStyling">
+          <div class="p">Express Shipping</div>
+          <select id="expressShippingSelect2" name="expressShipping2">
+            <option value="dhlExpress">DHL Express</option>
+            <option value="postNordExpress">PostNord Express</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div class="payment">
+        <div class="SectionHeader" id="paymentHeader">
+            <h6>PAYMENT</h6>
+        </div>
+        <div class="payment-methods">
+          <img src="assets/project_images/Icons/visa.svg" id="visa">
+          <img src="assets/project_images/Icons/Vipps logo.svg" id="vipps">
+          <img src="assets/project_images/Icons/Klarna.svg" id="klarna">
+          <img src="assets/project_images/Icons/paypal.svg" id="paypal">
+        </div>
+        <form action="#" method="post">
+            <div class="form-container">
+              <div class="inputField-container">
+                <label for="cardNumber">Card Number *</label>
+                <input type="text" id="cardNumber" name="cardNumber" class="cardNumberStyling">
+              </div>
+              <div class="inputField-container">
+                <label for="">Expiry Date *</label>
+                <input type="text" id="cardExpiryMonth" name="cardExpiryMonth" class="cardExpiryStyling" placeholder="Month" pattern="(0[1-9]|1[0-2])" title="Please enter a valid month (MM)" required>
+                <input type="text" id="cardExpiryYear" name="cardExpiryYear" class="cardExpiryStyling" placeholder="Year" pattern="\d{4}" title="Please enter a valid year (YYYY)" required>
+              </div>
+              <div class="inputField-container">
+                <label for="cardSecCode">Security Code *</label>
+                <input type="text" id="cardSecCode" name="cardSecCode" class="cardSecCodeStyling" pattern="\d{3}" title="Please enter a valid security code (3 digits)" required>
+                <a class="underlined-text" href="#">What is this?</a>
+              </div>
+            </div>
+            <div class="termsAgreeText">
+              By clicking on 'Pay and Place Order', you agree (i) to make your purchase from RainyDays as the merchant of record for this transaction, subject to RainyDays' Terms of Sale; (ii) that your information will be handled by RainyDays in accordance with the RainyDays Privacy Policy; and (iii) that RainyDays will share your information (excluding the payment details) with RainyDays.
+            </div>
+            <button type=submit class="place-order-btn">
+                <h6>PLACE ORDER</h6>
+            </button>
+        </form>
+    </div>
+
+    <div class="billingSummary">
+        <div class="SectionHeader" id="billingSummaryHeader">
+            <h6>BILLING SUMMARY</h6>
+        </div>
+          <form>
+            <div class="form-container">
+              <div class="voucher-container">
+                <input type="text" id="voucherCode" name="voucher" class="voucherStyling align-text-center" placeholder="Voucher Code / Gift Card">
+                <button type="submit" class="applyVoucherBtn">
+                  <h6>APPLY</h6>
+                </button>
+              </div>
+            </div>
+          </form>
+        <div class="order-calculation-container">
+              <div class="calculation-row">
+                <span class="calc-label">Items Total</span>
+                <span class="calc-value">£ <span id="itemsTotal">0</span></span>
+              </div>
+              <div class="calculation-row">
+                <span class="calc-label">Shipping Cost</span>
+                <span class="calc-value" id="shippingCost">£ 15</span>
+              </div>
+            <div class="calculation-row">
+              <span class="calc-label p3">ORDER TOTAL</span>
+              <span class="calc-value p3">£ <span id="orderTotal">0</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--FOOTER-->
+
+<footer id=desktop-footer class="footer">
+  <div class="footer-container">
+        <!--footer left side-->
+        <a href="home_page.html" class="footer-left-container">
+          <img src="assets/project_images/Logo/white_logo.svg" class="footer-logo">
+        </a>
+      <!--footer center-->
+      <div class="footer-center-container">
+        <div class="footer-column-1">
+          <h3 class="footer-titles">RAINYDAYS AS</h3>
+          <ul>
+            <li class="footer-bodytext">Remuladesletta 789</li>
+            <li class="footer-bodytext">4029 Copenhagen</li>
+            <li class="footer-bodytext">Denmark</li>
+          </ul>
+        </div>
+        <div class="footer-column-2">
+          <h3 class="footer-titles">Info</h3>
+          <ul>
+            <li><a class="footer-bodytext" href="about_page.html">About Us</a></li>
+            <li><a class="footer-bodytext" href="contact_us.html">Contact</a></li>
+            <li><a class="footer-bodytext" href="contact_us.html">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-column-3">
+          <h3 class="footer-titles">Help</h3>
+          <ul>
+            <li><a class="footer-bodytext" href="#">My Account</a></li>
+            <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
+            <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column-4">
+          <h3 class="footer-titles">Follow Us</h3>
+          <ul>
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" ></a></li>
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" ></a></li>
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" ></a></li>
+          </ul>
+        </div>
+      </div>
+      <!--footer right side-->
+      <div class="footer-right-container">
+        <div class="footer-column-5">
+          <h3 class="footer-titles">Currency</h3>
+          <div class="currency-box">
+            <div class="currency-text">EUR</div> 
+            <div class="icon-container">
+              <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+            </div>
+            <div class="currency-dropdown-content">
+              <a href="#">USD</a>
+              <a href="#">DKK</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</footer>
+
+<footer id="mobile-footer" class="mobile-footer">
+    <div class="mobileFooterContainer">
+        <div class="separatorLineWhite" aria-hidden="true"></div>
+        <div class="mobileFooterMenuItems">
+            <a href="#">
+                <h6 class="white-text">SHOP</h6>
+            </a>
+            <a href="#">
+                <h6 class="white-text">ABOUT</h6>
+            </a>
+        </div>
+        <div class="mobileCompanyLogo">
+            <img src="assets/project_images/Logo/white_logo.svg">
+        </div>
+        <div class="mobileFooterMenuItems">
+            <a href="#">
+                <h6 class="white-text">CONTACT</h6>
+             </a>
+             <a href="#">
+                <h6 class="white-text">SUPPORT</h6>
+            </a>
+        </div>
+        <div class="separatorLineWhite2" aria-hidden="true"></div>
+        <div class="getApp_and_socialMediaIcons">
+            <img src="assets/project_images/Icons/googlePlay.svg" class="appIcons">
+            <img src="assets/project_images/Icons/fbIcon.svg" class="socialmediaIcons">
+            <img src="assets/project_images/Icons/youtubeIcon.svg" class="socialmediaIcons">
+            <img src="assets/project_images/Icons/instagramIcon.svg" class="socialmediaIcons">
+            <img src="assets/project_images/Icons/appStore.svg" class="appIcons">
+        </div>
+        <div class="copyrightText">
+            <h6 class="white-text">© 2023 RAINYDAYS</h6>
+        </div>
+    </div>
+
+  </footer>
+
+</body>
+
+
+
+</html>

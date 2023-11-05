@@ -1,0 +1,24 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    background-color: red;
+    display: grid;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "menu header header"
+        "customer-service contact-form store-info"
+        "footer footer footer";
+
+}
+
+.checkoutSuccess     { grid-area: checkoutSuccess}

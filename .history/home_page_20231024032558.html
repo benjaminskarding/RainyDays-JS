@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="home_page" content="width=device-width, initial-scale=1.0">
+  <title>Rainydays</title>
+  <link rel="stylesheet" href="src/css/home_page.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png" />
+</head>
+
+
+<body>
+  <a id="closeOverlay"></a>
+
+  <header class="header-collection">
+    <div class="promo-banner" id="promo-banner">
+      <a href="list_of_products.html" class="nav-link">End of Season Sale | Up to 40% off select items</a>
+    </div>
+    <nav class="header-main-nav">
+      <div class="header-nav-left">
+        <a href="#menuOverlay" class="nav-link">
+          <img src="assets/project_images/Icons/hamburger.svg" alt="Menu Icon" class="icon">
+          MENU
+        </a> 
+      </div>
+      <div class="header-logo">
+        <a href="home_page.html" class="nav-link">
+          <img src="assets/project_images/Logo/RainyDays_Logo_original_color.svg" alt="Company Logo" id="header-logo-img">
+        </a> 
+      </div>
+      <div class="header-nav-right">
+        <a href="about_page.html" class="nav-link">ABOUT US</a>
+        <a href="contact_us.html" class="nav-link">CONTACT</a>
+        <a href="#" class="nav-link search-link">
+          <img src="assets/project_images/Icons/search-line.svg" alt="Search Icon" class="icon">
+          SEARCH
+        </a>
+        <a href="#shoppingCartOverlay" class="nav-link">
+          <img src="assets/project_images/Icons/shopping-bag-fill.svg" alt="Shopping Bag Icon" class="icon">
+        </a>
+      </div>
+
+
+
+
+      <div class="hamburger-overlay" id="menuOverlay">
+        <a href="#closeOverlay" class="hamburger-close-btn">&times;</a>
+        <div class="hamburger-overlay-content"></div>
+        <div class="cart-container">
+          <span class="cart-counter"></span>
+          <span class="cart-icon"></span>
+        </div>
+        <div class=overlayTitle>
+        <h3>MENU</h3>
+        </div>
+        <div class="search-container">
+          <input type="text" placeholder="SEARCH">
+        </div>
+        <div class="overlayOptionsContainer">
+          <div class="separatorLine"></div>
+          <a href="list_of_products.html">
+          <h5 class="menu-item">MENS</h5>
+          </a>
+          <div class="separatorLine"></div>
+          <a href="list_of_products.html">
+          <h5 class="menu-item">WOMENS</h5>
+          </a>
+          <div class="separatorLine"></div>
+          <a href="list_of_products.html">
+          <h5 class="menu-item">PHASE OUT 40%</h5>
+          </a>
+          <div class="separatorLine"></div>
+          <a href="about_page.html">
+          <h5 class="menu-item">ABOUT</h5>
+          </a>
+          <div class="separatorLine"></div>
+          <a href="contact_us.html">
+          <h5 class="menu-item">CONTACT</h5>
+          </a>
+          <div class="separatorLine"></div>
+          <a href="contact_us.html">
+          <h5 class="menu-item">SUPPORT</h5>
+          </a>
+          <div class="separatorLine"></div>
+          <div class="overlayLogoContainer">
+            <img src="/assets/project_images/Logo/RainyDays_Logo_original_color.svg" class="overlayLogo">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="cart-overlay" id="shoppingCartOverlay">
+        <a href="#closeOverlay" class="cart-close-btn">&times;</a>
+        <div class="cart-overlay-content">
+          <div class="overlayTitle">
+          <h3>SHOPPING CART</h3>
+          </div>
+          <div class="separatorLine"></div>
+          <!--items added to cart block-->
+          <div class="cart-items">
+            <div class="cart-item">
+              <h4>IKAROS Cycling Jacket</h4>
+              <p>Size: XS</p>
+              <p>Color: Red</p>
+              <p>Price: £ 249</p>
+              <p>Quantity: 1</p>
+            </div>
+          </div>
+          <div class="separatorLine"></div>
+          <a href="list_of_products.html" class="continue-shopping">
+            <h5>CONTINUE SHOPPING</h5>
+          </a>
+          <div class="cart-total">
+            <h5>TOTAL</h5>
+            <h5>£ 0</h5>
+          </div>
+          <div class="checkoutButtonContainer">
+          <button type="submit" class="checkoutButton">CHECKOUT</button>
+          </div>
+          <!--items added to cart block end-->
+          <div class="completeYourKit">
+            <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
+          </div>
+
+          <div class="overlayProductsGrid">
+
+            <div id="overlaycontent1" class="overlayProductsContainer">
+            <div>
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal.png" alt="Bengal Hat">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div class="product-title-container">
+                  <h3>BENGAL HAT</h3>
+                </div>
+                <div class="product-description-container">
+                  <p class="p2">Fishing hat for comfortable and protective shade</p>
+                </div>
+                <div class="product-price-container">
+                  <p class="p3">ADD TO CART</p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="overlaycontent2" class="overlayProductsContainer"> 
+
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal.png" alt="Bengal Hat">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div class="product-title-container">
+                  <h3>BENGAL HAT</h3>
+                </div>
+                <div class="product-description-container">
+                  <p class="p2">Fishing hat for comfortable and protective shade</p>
+                </div>
+                <div class="product-price-container">
+                  <p class="p3">ADD TO CART</p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="overlaycontent3" class="overlayProductsContainer">
+
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal.png" alt="Bengal Hat">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div class="product-title-container">
+                  <h3>BENGAL HAT</h3>
+                </div>
+                <div class="product-description-container">
+                  <p class="p2">Fishing hat for comfortable and protective shade</p>
+                </div>
+                <div class="product-price-container">
+                  <p class="p3">ADD TO CART</p>
+                </div>
+            </div>
+
+            <div id="overlaycontent4" class="overlayProductsContainer">
+
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal.png" alt="Bengal Hat">
+              </div>
+              <div class="overlay-products-text-frame">
+                <div class="product-title-container">
+                  <h3>BENGAL HAT</h3>
+                </div>
+                <div class="product-description-container">
+                  <p class="p2">Fishing hat for comfortable and protective shade</p>
+                </div>
+                <div class="product-price-container">
+                  <p class="p3">ADD TO CART</p>
+                </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="background-image-container">
+    <div id="hero-text">
+      <div>WINTER</div>
+      <div>COLLECTION</div>
+      <div>2023</div>
+    </div>
+
+    <div class="shop-button-container">
+        <a href="list_of_products.html">
+          <button class="shop-button" id="shop-womens">SHOP WOMENS</button>
+        </a>
+        <a href="list_of_products.html">
+          <button class="shop-button" id="shop-mens">SHOP MENS</button>
+        </a>
+    </div>
+  </div>
+
+
+
+  <div class="main-grid">
+
+    <div id="content1" class="content-small-shared-attributes">
+
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/ikaros.png">
+      </div>
+
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>IKAROS</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 249</p>
+        </div>
+      </div> 
+    </div>
+
+    <div id="content2" class="content-small-shared-attributes">
+      
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/maverick.png">
+      </div>
+
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>MAVERICK</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Bomber jacket for casual style and easy layering</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 449</p>
+        </div>
+      </div> 
+    </div>
+
+
+    <div id="content3" class="content-small-shared-attributes">
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/hektor.png">
+      </div>
+
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>HEKTOR</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Versatile fleece for winter activities</p>
+        </div>
+        <div class="product-price-container">
+         <p class="p3">£ 149</p>
+        </div>
+      </div> 
+    </div>
+
+    <div id="content4" class="content-small-shared-attributes">
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/hemingway.png">
+      </div>
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>HEMINGWAY</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Heavy duty expedition jacket for reliable cold protection</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 879</p>
+        </div>
+      </div> 
+    </div>
+
+    <div id="content5" class="large-image-container">
+        <img src="assets/project_images/General_images/Landing Page/urban.jpg" class="urban-image">
+    </div>
+    
+    <div id="content6" class="content-big-shared-attributes">
+      <div class="outlet">
+        <div class="outlet-title-container">
+          <h1 class="white-text">PHASE OUT DEALS</h1>
+        </div>
+        <div class="outlet-bodytext-container">
+          <p class="p2 white-text">Your ultimate source for high-performance jackets: 
+            Get last season's top picks at discounts of up to 40%.</p>
+        </div>
+        <div class="outlet-40-button-container">
+          <a href="list_of_products.html">
+            <button class="phase-out-button" id="shop-40">SHOP UP TO 40 % NOW</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="content7" class="content-big-shared-attributes">
+      <div class="newsletter-upper-block">
+        <h1 class="newsletter-title">SUBSCRIBE TO OUR NEWSLETTER</h1>
+      </div>
+      
+      <div class="newsletter-lower-block">
+        <div class="terms-agree-container">
+          <input type="checkbox" id="termsCheckbox" name="terms" class="terms-checkbox">
+          <label for="termsCheckbox" class="p2 white-text">I agree to the terms and conditions, privacy policy and cookie policy.</label>
+        </div>
+          <input type="email" class="email-input" placeholder="ENTER YOUR EMAIL">
+          <button class="sign-up-newsletter-button" id="sign-up-news">SIGN UP NOW</button>
+      </div>
+
+    </div>
+
+
+    <div id="content8" class="content-big-shared-attributes-white">
+      <div class="community-feedback-upper-block">
+        <h1 class="comm-feedback-title">COMMUNITY FEEDBACK</h1>
+      </div>
+        <div class="community-feedback-lower-block">
+          <div class="comm-feedback-col-1">
+            <h4 class="review-product-1">IKAROS</h4>
+            <p class="p3 low-opacity">"Tour de Enhance"</p>
+            <p class="p2 low-opacity">This jacket is so good,<br> 
+              it's like the performance-enhancing<br> 
+              drugs of cycling wear<br>
+              —only it's 100% legal.
+              </p>
+          </div>
+          <div class="comm-feedback-col-2">
+            <h4 class="review-product-2">HEMINGWAY</h4>
+            <p class="p3 low-opacity">"A Farewell To Cold"</p>
+            <p class="p2 low-opacity">Went to the Arctic. <br>
+              The cold cuts through lies.<br> 
+              Jacket held. <br>
+              Thus, I've returned</p>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="content9" class="content-small-shared-attributes">
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+      </div>
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>IKAROS</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 249</p>
+        </div>
+      </div> 
+    </div>
+
+    <div id="content10" class="content-small-shared-attributes">
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/maverick.png" alt="prod-image-1">
+      </div>
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>MAVERICK</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Bomber jacket for casual style and easy layering</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 449</p>
+        </div>
+      </div> 
+    </div>
+
+    <div id="content11" class="content-small-shared-attributes">
+      <div class="image-frame">
+        <img src="assets/project_images/Product_images/hektor.png" alt="prod-image-1">
+      </div>
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>HEKTOR</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Versatile fleece for winter activities</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 149</p>
+        </div>
+      </div> 
+    </div>
+
+    <div id="content12" class="content-small-shared-attributes">
+      <div class="image-frame">
+        <a href="#">
+          <img src="assets/project_images/Product_images/hemingway.png" alt="prod-image-1">
+        </a>
+      </div>
+      <div class="text-frame">
+        <div class="product-title-container">
+          <h3>HEMINGWAY</h3>
+        </div>
+        <div class="product-description-container">
+          <p class="p2">Heavy duty expedition jacket for reliable cold protection</p>
+        </div>
+        <div class="product-price-container">
+          <p class="p3">£ 879</p>
+        </div>
+      </div> 
+    </div>
+  
+  </div>
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      
+        <div class="footer-left-container">
+          <a href="home_page.html">
+            <img src="assets/project_images/Logo/white_logo.svg" class="footer-logo">
+          </a>
+        </div>
+        
+        <div class="footer-center-container">
+
+          <div class="footer-column-1">
+            <h3 class="footer-titles">RAINYDAYS AS</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#">Remuladesletta 789</a></li>
+              <li><a class="footer-bodytext" href="#">4029 Copenhagen</a></li>
+              <li><a class="footer-bodytext" href="#">Denmark</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-2">
+            <h3 class="footer-titles">Info</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="about_page.html">About Us</a></li>
+              <li><a class="footer-bodytext" href="contact_us.html">Contact</a></li>
+              <li><a class="footer-bodytext" href="contact_us.html">Returns</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-3">
+            <h3 class="footer-titles">Help</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#">My Account</a></li>
+              <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
+              <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-4">
+            <h3 class="footer-titles">Follow Us</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" ></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" ></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" ></a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="footer-right-container">
+          <div class="footer-column-5">
+            <h3 class="footer-titles">Currency</h3>
+            <div class="currency-box">
+              <div class="currency-text">EUR</div> 
+              <div class="icon-container">
+                <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+              </div>
+              <div class="currency-dropdown-content">
+                <a href="#">USD</a>
+                <a href="#">DKK</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+ </footer>
+
+
+
+
+
+  
+</body>
+
+
+
+</html>

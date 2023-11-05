@@ -1,0 +1,102 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    display: grid;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    grid-gap: 5vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20rem 50rem 50rem 50rem;
+    grid-template-areas: 
+    "ourStory ourStory ourStory ourStory ourStory ourStory"
+    "susDev susDev susDev susDev susDev susDev"
+    "commitmentPicture commitmentPicture commitmentPicture ourCommitment ourCommitment ourCommitment"
+    "careers careers careers careersPicture careersPicture careersPicture";
+
+} 
+
+.ourStory     { grid-area: ourStory}
+.susDev     { grid-area: susDev}
+.ourCommitment     { grid-area: ourCommitment}
+.commitmentPicture     { grid-area: commitmentPicture}
+.careers     { grid-area: careers}
+.careersPicture     { grid-area: careersPicture}
+
+
+.ourStory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3vw 0 3vw;
+}
+
+.ourStory .paragraph-container{
+    margin-bottom: -20vh;
+    padding: 0 5rem 0 5rem; 
+}
+
+.susDev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.susDevText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.susDevPicture {
+    width: 100%;
+}
+
+.ourCommitment,
+.commitmentPicture,
+.careers,
+.careersPicture {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+  
+h2,
+.ourCommitment h2,
+.careers h2 {
+    color: var(--color-primary) ;
+}
+
+.paragraph-container,
+.ourCommitment .paragraph-container,
+.careers .paragraph-container {
+max-width: 100%;
+text-align: center;
+padding: 0 5rem 0 5rem; 
+margin-top: 2rem;
+
+}
+
+
+.paragraph-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20rem 0 20rem;
+    margin-top: 2rem;
+}
+
+
+  .image-cont img {
+    max-width: 100%;
+    height: auto;
+  }

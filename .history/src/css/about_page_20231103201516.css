@@ -1,0 +1,64 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    display: grid;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+} 
+
+
+
+
+.ourStory {
+    text-align: center;
+}
+
+.susDev,
+.ourCommitment,
+.careers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-block {
+    flex: 1;
+    padding-right: 2rem;
+    text-align: left;
+}
+
+.image-cont {
+    flex: 1;
+}
+
+.image-cont img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.paragraph-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+
+
+
+.susDev h2,
+.ourCommitment h2,
+.careers h2 {
+    color: var(--color-primary) ;
+}

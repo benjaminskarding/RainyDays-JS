@@ -1,0 +1,25 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.main-grid { 
+    background-color: red;
+    display: grid;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 0.5vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess"
+    "checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess"
+    "checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess checkoutSuccess"
+    ;
+
+}
+
+.checkoutSuccess     { grid-area: checkoutSuccess}

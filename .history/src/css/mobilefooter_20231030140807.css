@@ -1,0 +1,148 @@
+/* footer */
+
+
+.footer{
+	background-color: #0A3641;
+  height: 288PX;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  height: 288px;
+  width: 100%;
+}
+
+
+.footer-left-container {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  margin-left: 0;
+}
+
+.footer-logo {
+  height: 150px;
+}
+
+.footer-center-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 100px;
+  height: 150px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+.footer-right-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 1;
+  height: 150px;
+}
+
+
+.footer-column-4 ul {
+  display: flex;
+  justify-content: space-between; 
+  gap: 10px;
+}
+
+.footer-titles {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  font-family: "Monda";
+  font-weight: bold;
+  margin-bottom: 2rem;
+
+}
+
+.footer-bodytext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Armata";
+  color: white;
+  white-space: nowrap;
+
+}
+
+.footer-bodytext a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.currency-box {
+  position: relative;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;  
+  width: 150px;  
+  height: 30px; 
+  margin-top: 10px;
+}
+
+.currency-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+  font-family: "Armata";
+  font-size: 1rem;
+  line-height: 1.5rem; 
+}
+
+
+.currency-arrow {
+  position: absolute;
+  right: 0px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 36px;
+  height: 36px;
+}
+
+.currency-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0A3641;
+  border: solid white 1px;
+  min-width: 150px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.currency-dropdown-content a {
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.currency-box:hover .currency-dropdown-content {
+  display: block;
+}
+
+/* footer end */

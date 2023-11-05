@@ -1,0 +1,46 @@
+/* footer */
+
+
+.mobileFooterContainer{
+	background-color: #0A3641;
+  height: 375PX;
+  width: 100%;
+}
+
+.mobileFooterMenuItems {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 3vw 1rem 3vw;
+}
+
+.mobileCompanyLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.getApp_and_socialMediaIcons {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 3vw 1rem 3vw;
+}
+
+.copyrightText {
+  display: flex;
+  justify-content: center;
+}
+
+/*misc*/
+
+.separatorLineWhite{
+  border-bottom: 1px solid white; 
+  margin: 0 3vw 0 3vw;
+  padding-top: 30px;
+}
+
+.separatorLineWhite2{
+  border-bottom: 1px solid white; 
+  margin: 0 3vw 0 3vw;
+}
+
+/* footer end */

@@ -1,0 +1,21 @@
+/* footer */
+
+
+.mobileFooterContainer{
+	background-color: #0A3641;
+  height: 288PX;
+  width: 100%;
+}
+
+
+
+
+/*misc*/
+
+.separatorLineWhite{
+  border-bottom: 1px solid white; 
+  margin-bottom: 10px; 
+  padding-top: 50px;
+}
+
+/* footer end */

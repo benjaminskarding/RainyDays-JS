@@ -1,0 +1,350 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.landing-section {
+    background-image: url('../../assets/project_images/Hero_image/hero5.jpg');
+    background-size: cover;
+    background-position: center top; /* Adjust as needed */
+    background-repeat: no-repeat;
+    height: 100vh; /* This ensures the body takes the full viewport height */
+    margin: 0;
+    overflow: hidden; /* Prevents scrolling beyond the viewport */
+}
+
+
+.hero-text {
+  position: absolute;
+  top: clamp(30%, 40%, 50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(2vw + 2vh);
+  font-family: "Monda";
+  color: #0A3641; 
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.shop-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh;
+  gap: 0.5em;
+}
+
+
+.shop-button {
+  border: 2px solid #0A3641; 
+  border-radius: 0.5vw; 
+  background-color: transparent; 
+  color: #0A3641; 
+  padding: 0.8vw 1.5vw; 
+  cursor: pointer; 
+  font-family: "Monda"; 
+  font-size: 1vw;
+}
+
+.shop-button:hover {
+  background-color: #0A3641; 
+  color: #FFFFFF; 
+}
+
+
+.main-grid {
+  display: grid;
+  margin-top: 1vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  grid-gap: 0.5vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr 1fr auto auto; 
+  grid-template-areas: 
+  "content1 content2 content3 content4"
+  "content5 content5 content6 content6"
+  "content7 content7 content8 content8"
+  "content9 content10 content11 content12";
+}
+
+
+#content1  { grid-area: content1;  }
+#content2  { grid-area: content2;  }
+#content3  { grid-area: content3;  }
+#content4  { grid-area: content4;  }
+#content5  { grid-area: content5;  }
+#content6  { grid-area: content6;  }
+#content7  { grid-area: content7;  }
+#content8  { grid-area: content8;  }
+#content9  { grid-area: content9;  }
+#content10 { grid-area: content10; }
+#content11 { grid-area: content11; }
+#content12 { grid-area: content12; }
+
+
+/*product images*/
+
+.product-title-container {
+  flex: 1;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.product-description-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.product-price-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.large-image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.large-image-container img {
+  width: 100%;  
+  height: 100%;
+  object-fit: cover;
+}
+
+.outlet {
+  max-width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 50px;
+}
+
+.outlet-title-container,
+.outlet-bodytext-container,
+.outlet-40-button-container{
+  text-align: center;
+}
+
+
+.phase-out-button {
+  border: 2px dashed white; 
+  border-radius: 0.5rem; 
+  background-color: transparent; 
+  color: white; 
+  padding: 20px 20px; 
+  cursor: pointer; 
+  font-family: "Monda"; 
+  font-size: 1.5625rem;
+  margin-bottom: 2rem;
+}
+
+.phase-out-button:hover {
+  background-color: white; 
+  color: #0A3641; 
+}
+
+.newsletter-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.newsletter-title{
+  color: white;
+  text-align: center;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+.newsletter-lower-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 80%;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+
+.terms-agree-container {
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+
+.terms-checkbox {
+  margin-right: 1rem;
+}
+
+.email-input {
+  width: 100%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: #0A3641;
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Monda";
+  font-size: 1.125rem;
+  color: white;
+}
+
+.email-input::placeholder {
+  color: white;
+  font-family: "Monda";
+  font-size: 1.125rem;  
+}
+
+.email-input:focus {
+  outline: none;
+  border: 1px solid white;
+  color: white;
+}
+
+.sign-up-newsletter-button {
+  width: 100%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer; 
+  font-family: "Monda";
+  font-size: 1.125rem;
+  color: black;
+}
+
+.sign-up-newsletter-button:hover {
+  background-color: #0A3641; 
+  color: white; 
+}
+
+
+.community-feedback-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.comm-feedback-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.community-feedback-lower-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 3rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.comm-feedback-col-1, .comm-feedback-col-2, .comm-feedback-col-3 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+  gap: 3rem;
+}
+
+
+.review-product {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+
+/*misc*/
+
+::placeholder {
+  color: black;
+  font-family: "Monda";
+  font-size: 1.125rem;
+}
+
+
+ul li a {
+  color: white;
+}
+
+
+@media (max-width: 2500px) {
+  .hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 2350px) {
+
+
+  .shop-button {
+    border: 2px solid #0A3641; 
+    border-radius: 0.5vw; 
+    background-color: transparent; 
+    color: #0A3641; 
+    padding: 0.8vw 1.5vw; 
+    cursor: pointer; 
+    font-family: "Monda"; 
+    font-size: 1.5vh;
+  }
+}
+
+
+@media (max-width: 1895px) {
+
+  .main-grid {
+    display: grid;
+    margin-top: 1vh;
+    margin-left: 0;
+    margin-right: 0;
+    grid-gap: 0.5vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto auto auto; 
+    grid-template-areas: 
+    "content1 content2 content3 content4"
+    "content6 content6 content6 content6"
+    "content8 content8 content8 content8"
+    "content7 content7 content7 content7"
+    "content9 content10 content11 content12";
+  }
+
+  #content5 {
+    display: none;
+  }
+
+  .hidden {
+    display: flex;
+  }  
+}
+
+
+
+

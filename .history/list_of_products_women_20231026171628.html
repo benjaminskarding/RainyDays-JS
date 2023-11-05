@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Men's_list_of_products" content="width=device-width, initial-scale=1.0">
+  <title>Women's</title>
+  <link rel="stylesheet" href="src/css/list_of_products.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png" />
+</head>
+
+
+<body>
+  <a id="closeOverlay"></a>
+    
+
+
+  <header class="header-collection">
+    <div class="promo-banner" id="promo-banner">
+      <a href="#" class="nav-link">End of Season Sale | Up to 40% off select items</a>
+    </div>
+    <nav class="header-main-nav">
+      <div class="header-nav-left">
+        <a href="#menuOverlay" class="nav-link">
+          <img src="assets/project_images/Icons/hamburger.svg" alt="Menu Icon" class="icon">
+          MENU
+        </a> 
+      </div>
+      <div class="header-logo">
+        <a href="home_page.html" class="nav-link">
+          <img src="assets/project_images/Logo/RainyDays_Logo_original_color.svg" alt="Company Logo" id="header-logo-img">
+        </a> 
+      </div>
+      <div class="header-nav-right">
+        <a href="about_page.html" class="nav-link">ABOUT US</a>
+        <a href="contact_us.html" class="nav-link">CONTACT</a>
+        <a href="#" class="nav-link search-link">
+          <img src="assets/project_images/Icons/search-line.svg" alt="Search Icon" class="icon">
+          SEARCH
+        </a>
+        <a href="#shoppingCartOverlay" class="nav-link">
+          <img src="assets/project_images/Icons/shopping-bag-fill.svg" alt="Shopping Bag Icon" class="icon">
+        </a>
+      </div>
+
+      <div class="hamburger-overlay" id="menuOverlay">
+        <a href="#closeOverlay" class="close-btn">&times;</a>
+        <div class="hamburger-overlay-content"></div>
+        <p>Menu items...</p>
+      </div>
+
+
+      <div class="cart-overlay" id="shoppingCartOverlay">
+        <a href="#closeOverlay" class="cart-close-btn">&times;</a>
+        <div class="cart-overlay-content">
+          <p>Your cart is currently empty.</p>
+        </div>
+      </div>
+  </header>
+<div>
+  <div id="filtersContainer" class="filtersContainer">
+    <div class="icon-container">
+      <a href="#"> 
+        <img src="assets/project_images/Icons/building.svg">
+          <p>URBAN</p>
+      </a>
+    </div>
+   
+    <div class="icon-container">
+      <a href="#"> 
+        <img src="assets/project_images/Icons/hiking.svg">
+          <p>HIKING</p>
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="#"> 
+        <img src="assets/project_images/Icons/skiing.svg">
+          <p>SKIING</p>
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="#"> 
+        <img src="assets/project_images/Icons/cycling.svg">
+          <p>CYCLING</p>
+      </a>
+    </div>
+  </div>
+
+    <div class="filter-section">
+      <div class="filterDropDown">
+        <a href="#dropdownFiltersContent" class="toggleFiltersDropdown">
+            <h4>FILTER BY</h4>
+        </a>
+    </div>
+    <div class="dropdown-filters-content" id="dropdownFiltersContent">
+      <div class="filters-overlay-header">
+        <a href="#" class="closeFiltersDropdown">&times;</a>
+      </div>
+      <div class=overlayTitle>
+        <h3>FILTER BY</h3>
+      </div>
+        <div class="separatorLine"></div>
+      <h5>Availability</h5>
+        <label>
+          <input type="checkbox" name="availability" value="inStock">In Stock <span class="in-stock-items-counter">(0)</span>
+        </label>
+        <div class="separatorLine"></div>
+      <h5>Gender</h5>
+        <label>
+          <input type="checkbox" name="Male" value="male">Male <span class="male-items-counter">(0)</span>
+        </label>
+        <label>
+          <input type="checkbox" name="Female" value="female">Female <span class="female-items-counter">(0)</span>
+        </label>
+        <div class="separatorLine"></div>
+      <h5>Class</h5>
+        <ul>
+          <li>
+              <label>
+                  <input type="checkbox" name="Class" value="Shell">
+                  Shell <span class="shell-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Insulated" value="insulated">
+                  Insulated <span class="insulated-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Bomber" value="bomber">
+                  Bomber <span class="bomber-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Softshell" value="softshell">
+                  Softshell <span class="softshell-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Parka" value="parka">
+                  Parka <span class="parka-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Windbreaker" value="windbreaker">
+                  Windbreaker <span class="windbreaker-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Fleece" value="fleece">
+                  Fleece <span class="fleece-items-counter">(0)</span>
+              </label>
+          </li>
+          <li>
+              <label>
+                  <input type="checkbox" name="Base layering" value="baseLayering">
+                  Base Layering <span class="base-layering-items-counter">(0)</span>
+              </label>
+          </li>
+        </ul>
+      <div class="separatorLine"></div>
+      <h5>Activity</h5>
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox" name="Hiking" value="hiking">
+              Hiking <span class="hiking-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Ice climbing" value="iceClimbing">
+              Ice Climbing <span class="ice-climbing-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Cycling" value="cycling">
+              Cycling <span class="cycling-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Expedition" value="expedition">
+              Expedition <span class="expedition-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Fishing" value="fishing">
+              Fishing <span class="fishing-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Hunting" value="hunting">
+              Hunting <span class="hunting-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Urban" value="urban">
+              Urban <span class="urban-item-counter">(0)</span>
+            </label>
+          </li>
+        </ul>
+      <div class="separatorLine"></div>
+      <h5>Color</h5>
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox" name="Beige" value="beige">
+              Beige <span class="beige-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Black" value="black">
+              Black <span class="black-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Blue" value="blue">
+              Blue <span class="blue-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Beige" value="beige">
+              Brown <span class="beige-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Green" value="green">
+              Green <span class="green-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Grey" value="grey">
+              Grey <span class="grey-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Orange" value="orange">
+              Orange <span class="orange-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Red" value="red">
+              Red <span class="red-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Silver" value="silver">
+              Silver <span class="silver-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Tan" value="tan">
+              Tan <span class="tan-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="White" value="white">
+              White <span class="white-item-counter">(0)</span>
+            </label>
+          </li>
+        </ul>
+      <div class="separatorLine"></div>
+      <h5>Size</h5>
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox" name="Extra small" value="extraSmall">
+              Extra Small <span class="extra-small-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Small" value="small">
+              Small <span class="small-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Medium" value="medium">
+              Medium <span class="medium-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Large" value="large">
+              Large <span class="large-item-counter">(0)</span>
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="Extra large" value="extraLarge">
+              Extra Large <span class="extra-large-item-counter">(0)</span>
+            </label>
+          </li>
+        </ul>
+      <div class="separatorLine"></div>
+      <div class="price-section">
+        <section>
+          <div class="price-container">
+            <h5>Price</h5>
+            <div class="price-container-main">
+              <div class="price-range">
+                <span class="price-range-currency">£</span>
+              </div>
+              <div class="price-range-field">
+                <label class="price-range-label" for="filter-price">From</label>
+                <input class="price-range-input" type="number" placeholder="0" min="0" max="9000">
+              </div>
+
+              <span class="price-range-currency">£</span>
+              <div class="price-range-field">
+                <label class="price-range-label" for="filter-price">To</label>
+                <input class="price-range-input" type="number" placeholder="9000" min="0" max="9000">
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="separatorLine"></div>
+      </div>
+      
+      
+    </div>
+
+
+      <h1 class="pageTitle">SHOP WOMENS</h1>
+      <div class="filterDropDown">
+        <a href="#sortDropdownContent" class="toggleSortDropdown">
+          <h4>SORT BY</h4>
+        </a>
+        <div class="dropdown-sort-content" id="sortDropdownContent">
+          <ul>
+              <li><a href="#">Price: Low to High</a></li>
+              <li><a href="#">Price: High to Low</a></li>
+              <li><a href="#">Alphabetically: A to Z</a></li>
+              <li><a href="#">Alphabetically: Z to A</a></li>
+              <li><a href="#">Newest Arrivals</a></li>
+              <li><a href="#">Best Sellers</a></li>
+              <li><a href="#">Featured</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+
+
+    <div class="main-grid">
+
+      
+
+
+        <div id="content1" class="content-small-shared-attributes">
+          <a href="ikaros.html" class=image-frame>
+                <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+           </a>
+          <div class="text-frame">
+            <h4>IKAROS</h4>
+            <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content2" class="content-small-shared-attributes">
+          <a href="maverick.html" class="image-frame">
+            <img src="assets/project_images/Product_images/maverick.png" alt="prod-image-1">
+          </a>
+          <div class="text-frame">
+            <h4>MAVERICK</h4>
+            <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+        
+        <div id="content3" class="content-small-shared-attributes">
+          <a href="hektor.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hektor.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEKTOR</h4>
+            <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content4" class="content-small-shared-attributes">
+          <a href="hemingway.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hemingway.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEMINGWAY</h4>
+            <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+        <div id="content5" class="content-small-shared-attributes">
+          <a href="ikaros.html" class=image-frame>
+                <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+           </a>
+          <div class="text-frame">
+            <h4>IKAROS</h4>
+            <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content6" class="content-small-shared-attributes">
+          <a href="maverick.html" class="image-frame">
+            <img src="assets/project_images/Product_images/maverick.png" alt="prod-image-1">
+          </a>
+          <div class="text-frame">
+            <h4>MAVERICK</h4>
+            <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+        
+
+        <div id="imagePerson" class="large-image-container">
+          <img src="assets/project_images/General_images/List of Products/matched_daniel-bowman-fkYugzeEDZo-unsplash 1.png" class="large-image" id="personInJacket">
+        </div>
+
+        <div id="imageClouds" class="large-image-container">
+          <img src="assets/project_images/General_images/List of Products/matched_lawton-cook-m0wptz8vYpw-unsplash 1.png" class="large-image" id="clouds">
+        </div>
+
+        <div id="content7" class="content-small-shared-attributes">
+          <a href="hektor.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hektor.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEKTOR</h4>
+            <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content8" class="content-small-shared-attributes">
+          <a href="hemingway.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hemingway.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEMINGWAY</h4>
+            <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+        
+        <div id="content9" class="content-small-shared-attributes">
+          <a href="ikaros.html" class=image-frame>
+                <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+           </a>
+          <div class="text-frame">
+            <h4>IKAROS</h4>
+            <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content10" class="content-small-shared-attributes">
+          <a href="maverick.html" class="image-frame">
+            <img src="assets/project_images/Product_images/maverick.png" alt="prod-image-1">
+          </a>
+          <div class="text-frame">
+            <h4>MAVERICK</h4>
+            <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+        
+        <div id="content11" class="content-small-shared-attributes">
+          <a href="hektor.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hektor.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEKTOR</h4>
+            <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content12" class="content-small-shared-attributes">
+          <a href="hemingway.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hemingway.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEMINGWAY</h4>
+            <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+      
+        <div id="content13" class="content-small-shared-attributes">
+          <a href="ikaros.html" class=image-frame>
+                <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+           </a>
+          <div class="text-frame">
+            <h4>IKAROS</h4>
+            <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content14" class="content-small-shared-attributes">
+          <a href="maverick.html" class="image-frame">
+            <img src="assets/project_images/Product_images/maverick.png" alt="prod-image-1">
+          </a>
+          <div class="text-frame">
+            <h4>MAVERICK</h4>
+            <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+        
+        <div id="content15" class="content-small-shared-attributes">
+          <a href="hektor.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hektor.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEKTOR</h4>
+            <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content16" class="content-small-shared-attributes">
+          <a href="hemingway.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hemingway.png" alt="prod-image-1">
+          </a>
+    
+          <div class="text-frame">
+            <h4>HEMINGWAY</h4>
+            <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+        <div id="content17" class="content-small-shared-attributes">
+          <a href="ikaros.html" class=image-frame>
+                <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+           </a>
+          <div class="text-frame">
+            <h4>IKAROS</h4>
+            <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+
+        <div id="content18" class="content-small-shared-attributes">
+          <a href="jacket_specific_page_women.html" class="image-frame">
+            <img src="assets/project_images/Product_images/maverick.png" alt="prod-image-1">
+          </a>
+          <div class="text-frame">
+            <h4>MAVERICK</h4>
+            <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+            <p class="p">£ 249</p>
+          </div> 
+        </div>
+
+        
+        
+
+
+
+
+  </div>
+
+
+
+    
+
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <footer class="footer">
+    <div class="footer-container">
+      
+        <div class="footer-left-container">
+          <img src="assets/project_images/Logo/white_logo.svg" alt="footer-logo">
+        </div>
+        
+        <div class="footer-center-container">
+
+          <div class="footer-column-1">
+            <h4 class="footer-titles">RAINYDAYS AS</h4>
+            <ul>
+              <li><a class="footer-bodytext" href="#">Remuladesletta 789</a></li>
+              <li><a class="footer-bodytext" href="#">4029 Copenhagen</a></li>
+              <li><a class="footer-bodytext" href="#">Denmark</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-2">
+            <h4 class="footer-titles">Info</h4>
+            <ul>
+              <li><a class="footer-bodytext" href="#">About Us</a></li>
+              <li><a class="footer-bodytext" href="#">Contact</a></li>
+              <li><a class="footer-bodytext" href="#">Returns</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-3">
+            <h4 class="footer-titles">Help</h4>
+            <ul>
+              <li><a class="footer-bodytext" href="#">My Account</a></li>
+              <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
+              <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-4">
+            <h4 class="footer-titles">Follow Us</h4>
+            <ul>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" ></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" ></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" ></a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="footer-right-container">
+          <div class="footer-column-5">
+            <h4 class="footer-titles">Currency</h4>
+            <div class="currency-box">
+              <div class="currency-text">EUR</div> 
+              <div class="icon-container">
+                <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+ </footer>
+
+
+
+
+
+</body>
+
+
+
+</html>

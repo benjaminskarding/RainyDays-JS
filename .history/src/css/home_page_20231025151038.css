@@ -1,0 +1,411 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+
+
+.landing-section {
+    background-image: url('../../assets/project_images/Hero_image/hero.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+}
+
+.hero-text {
+  font-family: "Monda";
+  font-size: 3.5vw;
+  color: #0A3641; 
+  z-index: 1;
+  height: auto;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.shop-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-button {
+  border: 0.11vw solid #0A3641; 
+  border-radius: 0.5vw; 
+  background-color: transparent; 
+  color: #0A3641; 
+  padding: 0.8vw 1.5vw; 
+  cursor: pointer; 
+  font-family: "Monda"; 
+  font-size: 0.9vw;
+  margin: 0;
+  padding; 0;
+}
+
+.shop-button:hover {
+  background-color: #0A3641; 
+  color: #FFFFFF; 
+}
+
+
+
+
+
+
+.main-grid {
+  display: grid;
+  margin-top: 1vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  grid-gap: 0.5vw;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 70vh) auto; 
+  grid-template-areas: 
+  "content1 content2 content3 content4"
+  "content5 content5 content6 content6"
+  "content7 content7 content8 content8"
+  "content9 content10 content11 content12";
+}
+
+/*product images*/
+
+
+
+.image-frame {
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+  height: 75%; 
+  background: linear-gradient(180deg, #B8CBD8 0%, transparent 200%);
+}
+
+.image-frame img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.text-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 25%;
+  padding-top: 1rem;
+}
+
+
+
+.product-title-container {
+  flex: 1;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.product-description-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.product-price-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.content-big-shared-attributes { /* rename*/
+  background-color: #0A3641;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.content-big-shared-attributes-white { /* rename*/
+  background-color: white;
+  display: flex;
+  border: 0.11vw dashed #0A3641; 
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.large-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.urban-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.outlet {
+  height: 100%;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.outlet-title-container,
+.outlet-bodytext-container,
+.outlet-40-button-container {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.outlet-title-container{
+  text-align: center;
+
+}
+
+.outlet-bodytext-container {
+  text-align: center;
+
+}
+
+.outlet-40-button-container {
+  text-align: center;
+
+}
+
+
+.phase-out-button {
+  border: 0.11vw dashed white; 
+  border-radius: 0.5vw; 
+  background-color: transparent; 
+  color: white; 
+  padding: 0.8vw 1.5vw; 
+  cursor: pointer; 
+  font-family: "Monda"; 
+  font-size: 1.5625rem;
+}
+
+.phase-out-button:hover {
+  background-color: white; 
+  color: #0A3641; 
+}
+
+
+
+
+
+
+
+
+
+
+.newsletter-upper-block {
+  max-width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newsletter-title{
+  color: white;
+  text-align: center;
+}
+
+.newsletter-lower-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  max-width: 80%;
+  gap: 3vh;
+}
+
+.terms-agree-container {
+  width:100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.email-input {
+  width: 100%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: #0A3641;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.email-input::placeholder {
+  color: white;  
+}
+
+.email-input:focus {
+  outline: none;
+  color: white;
+  font-family: "Monda";
+  font-size: 1.125rem;
+}
+
+.sign-up-newsletter-button {
+  width: 100%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer; 
+  font-family: "Monda";
+  font-size: 1.125rem;
+  color: black;
+}
+
+.sign-up-newsletter-button:hover {
+  background-color: #0A3641; 
+  color: white; 
+}
+
+
+::placeholder {
+  color: black;
+  font-family: "Monda";
+  font-size: 1.125rem;
+}
+
+
+
+
+
+
+.community-feedback-upper-block {
+  max-width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.comm-feedback-title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.community-feedback-lower-block {
+  display: flex;
+  justify-content: space-between;
+  height: 50%;
+  width: 100%;
+  max-width: 80%;
+}
+
+.comm-feedback-col-1, .comm-feedback-col-2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+  margin-top: -1vh;
+  margin-bottom: 12vh;
+}
+
+.review-product-1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.review-product-2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#content1 {
+  grid-area: content1;
+}
+#content2 {
+  grid-area: content2;
+}
+#content3 {
+  grid-area: content3;
+}
+#content4 {
+  grid-area: content4;
+}
+#content5 {
+  grid-area: content5;
+}
+
+#content6 {
+  grid-area: content6;
+}
+#content7 {
+  grid-area: content7;
+}
+#content8 {
+  grid-area: content8;
+}
+#content9 {
+  grid-area: content9;
+}
+#content10 {
+  grid-area: content10;
+}
+#content11 {
+  grid-area: content11;
+}
+#content12 {
+  grid-area: content12;
+}
+
+
+ul li a {
+  color: white;
+}
+

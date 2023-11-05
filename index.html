@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RainyDays</title>
+  <link rel="stylesheet" href="src/css/home_page.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
+</head>
+
+
+<body>
+  
+
+  <div class="landing-section"> <!-- Background image properties. BG-image covers entire landing page viewport. The image dynamically re-sizes on widescreen resolutions along with hero text, until width reaches 1920px. Both BG-image and hero-text becomes static at <= 1920px width. Had not considered this issue in my design at all, but figured it out eventually-->
+
+    <header class="header-collection">
+      <div class="promo-banner hide-on-mobile-res" id="promo-banner">
+        <a href="list_of_products_men.html" class="nav-link">End of Season Sale | Up to 40% off select items</a>
+      </div>
+      <nav class="header-main-nav">
+        <div class="header-nav-left">
+          <a href="#menuOverlay">
+            <img src="assets/project_images/Icons/hamburger.svg" class="icon" alt="hamburger icon in header">
+            <span class="hide-on-865px">MENU</span>
+          </a> 
+        </div>
+        <div class="header-logo">
+          <a href="index.html" class="nav-link">
+            <img src="assets/project_images/Logo/RainyDays_Logo_original_color.svg" id="header-logo-img" alt="logo image in header">
+          </a> 
+        </div>
+        <div class="header-nav-right">
+          <a href="about_page.html" class="nav-link hide-on-small-res">ABOUT US</a>
+          <a href="contact_us.html" class="nav-link hide-on-small-res">CONTACT</a>
+          <div class="nav-link search-link hide-on-865px">
+            <img src="assets/project_images/Icons/search-line.svg" class="icon" alt="magnifying glass icon in header">
+            <input type="text" class="header-search-input" placeholder="SEARCH">
+          </div>
+          <a href="#shoppingCartOverlay">
+            <span class="cart-counter" id="cartCounter1">0</span>
+            <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="icon" alt="shopping bag icon in header">
+          </a>
+        </div>
+  
+        <!--hamburger menu overlay start-->
+        <div class="hamburger-overlay" id="menuOverlay"> <!--This overlay gets targeted by <a href="#menuOverlay"> in the header. Once the href in the header is clicked and directed here, it activates this rule in common.css: .hamburger-overlay:target {visibility: visible;} which in turn makes this block visible.-->
+  
+          <div class="overlay-header">
+              <a href="#closeOverlay" class="overlay-close-btn">&times;</a>          <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
+              <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->            <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
+  
+              <div class="cart-counter-container">
+                <span class="cart-counter" id="cartCounter2">0</span>
+                <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon" alt="shopping bag icon in hamburger menu overlay">
+              </div>
+          </div>
+          
+          <div class=overlayTitle>
+            <h3>MENU</h3>
+          </div>
+          <div class="search-container">
+            <input type="text" placeholder="SEARCH">
+          </div>
+  
+          <div class="overlayOptionsContainer">
+            <div class="separatorLine" aria-hidden="true"></div>
+              <a href="list_of_products_men.html">
+                <h5 class="menu-item">MENS</h5>
+              </a>
+            <div class="separatorLine" aria-hidden="true"></div>
+              <a href="list_of_products_women.html">
+                <h5 class="menu-item">WOMENS</h5>
+            </a>
+            <div class="separatorLine" aria-hidden="true"></div>
+              <a href="list_of_products_men.html">
+                <h5 class="menu-item">PHASE OUT 40%</h5>
+            </a>
+            <div class="separatorLine" aria-hidden="true"></div>
+              <a href="about_page.html">
+                <h5 class="menu-item">ABOUT</h5>
+            </a>
+            <div class="separatorLine" aria-hidden="true"></div>
+              <a href="contact_us.html">
+                <h5 class="menu-item">CONTACT</h5>
+            </a>
+            <div class="separatorLine" aria-hidden="true"></div>
+              <a href="contact_us.html">
+                <h5 class="menu-item">SUPPORT</h5>
+            </a>
+            <div class="separatorLine" aria-hidden="true"></div>
+          </div>
+  
+          <div class="overlayLogoContainer">
+              <img src="/assets/project_images/Logo/RainyDays_Logo_original_color.svg" class="overlayLogo" alt="rainy days logo in header">
+          </div>
+        </div>
+        <!--hamburger menu overlay end-->
+  
+        <!--shopping cart overlay start-->
+        <div class="cart-overlay" id="shoppingCartOverlay"> <!-- Same principle as hamburger overlay comment-->
+  
+          <div class="overlay-header">
+            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>
+            <a id="closeOverlay"></a>
+  
+            <div class="cart-counter-container">
+              <span class="cart-counter" id="cartCounter3">0</span>
+              <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon" alt="shopping bag icon in shopping cart overlay">
+            </div>
+          </div>
+  
+          <div class="cart-overlay-content">
+            <div class="overlayTitle">
+              <h3>SHOPPING CART</h3>
+            </div>
+            <div class="separatorLine" aria-hidden="true"></div>
+  
+            <!--empty cart block start-->                  <!--This will be hidden if no items are added to cart using js, hopefully-->
+            <div id="emptyCartblock">
+              <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
+              <div class="separatorLine" aria-hidden="true"></div>
+            </div>
+            <!--empty cart block end-->
+  
+            <!--items added to cart block start-->
+            <div id="itemsAddedtoCartBlock">
+              <div class="cart-items">
+                <div class="cart-item">
+                  <h4>IKAROS Cycling Jacket</h4>
+                  <div class="attribute">
+                    <span class="label">Size:</span>
+                    <span class="value" id="itemSize">XS</span>
+                  </div>
+                  <div class="attribute">
+                    <span class="label">Color:</span>
+                    <span class="value" id="itemColor">Red</span>
+                  </div>
+                  <div class="attribute">
+                    <span class="label">Price:</span>
+                    <span class="currency-symbol" id="itemCurrencySymbol1">£</span>
+                    <span class="value" id="itemPrice">249</span>
+                  </div>
+                  <div class="attribute">
+                    <span class="label">Quantity:</span>
+                    <span class="value" id="itemQuantity">1</span>
+                  </div>
+                </div>
+              </div>
+              <div class="separatorLine" aria-hidden="true"></div>
+              <a href="list_of_products_men.html" class="continue-shopping">
+                <h5>CONTINUE SHOPPING</h5>
+              </a>
+              <div class="cart-total-cont">
+                  <div class="cart-total">
+                  <span class="label">TOTAL</span>
+                      <div>
+                          <span class="currency-symbol" id="itemCurrencySymbol2">£</span>
+                          <span class="value" id="cartTotalValue">0</span>
+                      </div>
+                  </div>
+                  <div class="checkoutButtonContainer">
+                    <a href="checkout_page.html" class="checkoutButton">CHECKOUT</a>
+                  </div>  
+              </div>
+            </div>
+            <!--items added to cart block end-->
+  
+            <!--static cart block start-->            <!-- This will be displayed whether or not any items have been added to cart-->
+            <div class="completeYourKit">
+              <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
+            </div>
+  
+            <div class="overlayProductsGrid">
+  
+              <div id="overlaycontent1" class="overlayProductsContainer">
+                <div class="overlay-products-image-frame">
+                  <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+                </div>
+                <div class="overlay-products-text-frame">
+                    <h4 style="color: black;">BENGAL HAT</h4>
+                    <p class="p2">£ 29</p>
+                    <button class="add-to-cart-button" id="addToCartBtn1">ADD TO CART</button>
+                </div>
+              </div>
+  
+              <div id="overlaycontent2" class="overlayProductsContainer">
+                <div class="overlay-products-image-frame">
+                  <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+                </div>
+                <div class="overlay-products-text-frame">
+                    <h4 style="color: black;">BENGAL HAT</h4>
+                    <p class="p2">£ 29</p>
+                    <button class="add-to-cart-button" id="addToCartBtn2">ADD TO CART</button>
+                </div>
+              </div>
+  
+              <div id="overlaycontent3" class="overlayProductsContainer">
+                <div class="overlay-products-image-frame">
+                  <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+                </div>
+                <div class="overlay-products-text-frame">
+                    <h4 style="color: black;">BENGAL HAT</h4>
+                    <p class="p2">£ 29</p>
+                    <button class="add-to-cart-button" id="addToCartBtn3">ADD TO CART</button>
+                </div>
+              </div>
+  
+              <div id="overlaycontent4" class="overlayProductsContainer">
+                <div class="overlay-products-image-frame">
+                  <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+                </div>
+                <div class="overlay-products-text-frame">
+                    <h4 style="color: black;">BENGAL HAT</h4>
+                    <p class="p2">£ 29</p>
+                    <button class="add-to-cart-button" id="addToCartBtn4">ADD TO CART</button>
+                </div>
+              </div>
+  
+              <div id="overlaycontent5" class="overlayProductsContainer">
+                <div class="overlay-products-image-frame">
+                  <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+                </div>
+                <div class="overlay-products-text-frame">
+                    <h4 style="color: black;">BENGAL HAT</h4>
+                    <p class="p2">£ 29</p>
+                    <button class="add-to-cart-button" id="addToCartBtn5">ADD TO CART</button>
+                </div>
+              </div>
+  
+              <div id="overlaycontent6" class="overlayProductsContainer">
+                <div class="overlay-products-image-frame">
+                  <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+                </div>
+                <div class="overlay-products-text-frame">
+                    <h4 style="color: black;">BENGAL HAT</h4>
+                    <p class="p2">£ 29</p>
+                    <button class="add-to-cart-button" id="addToCartBtn6">ADD TO CART</button>
+                </div>
+              </div>
+              <!--static cart block end-->
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<!--MAIN-->
+
+    <div class="hero-text"> <!-- Dynamically positioned and sized for widescreen resolutions, then static at <= 1920px width -->
+      <div>WINTER</div>
+      <div>COLLECTION</div>
+      <div>2023</div>
+  
+      <div class="shop-button-container">
+        <a href="list_of_products_women.html" class="shop-button" id="shop-womens-button">SHOP WOMENS</a>
+        <a href="list_of_products_men.html" class="shop-button" id="shop-mens-button">SHOP MENS</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-grid"> <!-- main grid with nested grids (1,2,3) inside it, in order to be able to control the margins of each section / grid individually -->
+    <div class="nestedGrid1">
+      <div id="content1" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="Picture of Ikaros product">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div>
+      </div>
+
+      <div id="content2" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="Picture of Maverick product">
+        </a>  
+        <div class="text-frame">
+          <h3>MAVERICK</h3>
+          <p class="p2">Bomber jacket for casual style and easy layering</p>
+          <p class="p3">£ 449</p>
+        </div> 
+      </div>
+
+      <div id="content3" class="content-small-shared-attributes">
+        <a href="hektor.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hektor.png" alt="Picture of Hektor product">
+        </a>
+        <div class="text-frame">
+          <h3>HEKTOR</h3>
+          <p class="p2">Versatile fleece for winter activities</p>
+          <p class="p3">£ 149</p>
+        </div> 
+      </div>
+
+      <div id="content4" class="content-small-shared-attributes">
+        <a href="hemingway.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hemingway.png" alt="Picture of Hemingway product">
+        </a>
+        <div class="text-frame">
+            <h3>HEMINGWAY</h3>
+            <p class="p2">Heavy duty expedition jacket for reliable cold protection</p>
+            <p class="p3">£ 879</p>
+        </div> 
+      </div>
+    </div>
+
+    <div class="nestedGrid3">
+      <div id="content5" class="large-image-container">
+          <img src="assets/project_images/General_images/Landing_Page/urban.jpg" class="urban-image" alt="Picture of Urban Environment" id="urbanImg">
+      </div>
+      
+      <div id="content6" class="content-big-shared-attributes">
+        <div class="outlet">
+            <h1 class="white-text">PHASE OUT DEALS</h1>
+            <p class="p2 white-text">Your ultimate source for high-performance jackets: 
+              Get last season's top picks at discounts of up to 40%.</p>
+              <a href="list_of_products_men.html" class="phase-out-button" id="shop-40-button">SHOP UP TO 40% NOW</a>
+        </div> 
+      </div>
+
+      <div id="content7" class="content-big-shared-attributes">
+        <div class="newsletter-main">
+          <h1 class="newsletter-title">SUBSCRIBE TO OUR NEWSLETTER</h1>
+          <div class="newsletter-lower-block">
+            <div class="terms-agree-container">
+              <input type="checkbox" id="termsCheckbox" class="terms-checkbox">
+              <label for="termsCheckbox" class="p2 white-text">I agree to the terms and conditions, privacy policy and cookie policy.</label>
+            </div>
+              <input type="email" class="email-input" placeholder="ENTER YOUR EMAIL">
+              <button class="sign-up-newsletter-button" id="sign-up-news">SIGN UP NOW</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="content8" class="content-big-shared-attributes-white">
+        <div class="community-feedback-main">
+          <h1 class="comm-feedback-title">COMMUNITY FEEDBACK</h1>
+            <div class="community-feedback-lower-block">
+              <div class="comm-feedback-col-1">
+                <h4 class="review-product-title">IKAROS</h4>
+                <p class="p3 low-opacity">"Tour de Enhance"</p>
+                <p class="p2 low-opacity">This jacket is so good,<br> 
+                  it's like the performance-enhancing<br> 
+                  drugs of cycling wear<br>
+                  —only it's 100% legal.<br><br><br>
+                  - Lance Armstrong
+                  </p>
+              </div>
+              <div class="comm-feedback-col-2">
+                <h4 class="review-product-title">HEMINGWAY</h4>
+                <p class="p3 low-opacity">"A Farewell To Cold"</p>
+                <p class="p2 low-opacity">Went to the Arctic. <br>
+                  The cold cuts through lies.<br> 
+                  Jacket held. <br>
+                  Thus, I've returned<br><br><br>
+                - Ernest Hemingway</p>
+              </div>
+              <div class="comm-feedback-col-3 hidden">
+                <h4 class="review-product-title">MAVERICK</h4>
+                <p class="p3 low-opacity">"Bombing Fashion Runways"</p>
+                <p class="p2 low-opacity">This thing's got style that's as smooth as a fighter jet soaring through the sky. 
+                  It's like having your own fashion wingman.<br><br><br>
+                  - Tom Cruise
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="nestedGrid2">
+      <div id="content9" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="Picture of Ikaros product">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2 text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content10" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="Picture of Maverick product">
+        </a>  
+        <div class="text-frame">
+            <h3>MAVERICK</h3>
+            <p class="p2 text-aligned-center">Bomber jacket for casual style and easy layering</p>
+            <p class="p3">£ 449</p>
+        </div> 
+      </div>
+
+      <div id="content11" class="content-small-shared-attributes">
+        <a href="hektor.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hektor.png" alt="Picture of Hektor product">
+        </a>
+        <div class="text-frame">
+            <h3>HEKTOR</h3>
+            <p class="p2">Versatile fleece for winter activities</p>
+            <p class="p3">£ 149</p>
+        </div> 
+      </div>
+
+      <div id="content12" class="content-small-shared-attributes">
+        <a href="hemingway.html" class="image-frame">
+            <img src="assets/project_images/Product_images/hemingway.png" alt="Picture of Hemingway product">
+        </a>  
+        <div class="text-frame">
+            <h3>HEMINGWAY</h3>
+            <p class="p2">Heavy duty expedition jacket for reliable cold protection</p>
+            <p class="p3">£ 879</p>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+ <!--FOOTER--> 
+
+  <footer id=desktop-footer class="footer">
+    <div class="footer-container">
+          <!--footer left side-->
+          <a href="index.html" class="footer-left-container">
+            <img src="assets/project_images/Logo/white_logo.svg" class="footer-logo" alt="rainydays company logo in footer">
+          </a>
+        <!--footer center-->
+        <div class="footer-center-container">
+          <div class="footer-column-1">
+            <h3 class="footer-titles">RAINYDAYS AS</h3>
+            <ul>
+              <li class="footer-bodytext">Remuladesletta 789</li>
+              <li class="footer-bodytext">4029 Copenhagen</li>
+              <li class="footer-bodytext">Denmark</li>
+            </ul>
+          </div>
+          <div class="footer-column-2">
+            <h3 class="footer-titles">Info</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="about_page.html">About Us</a></li>
+              <li><a class="footer-bodytext" href="contact_us.html">Contact</a></li>
+              <li><a class="footer-bodytext" href="contact_us.html">Returns</a></li>
+            </ul>
+          </div>
+          <div class="footer-column-3">
+            <h3 class="footer-titles">Help</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#">My Account</a></li>
+              <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
+              <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-column-4">
+            <h3 class="footer-titles">Follow Us</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" alt="facebook icon in footer"></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" alt="youtube icon in footer"></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" alt="instagram icon in footer"></a></li>
+            </ul>
+          </div>
+        </div>
+        <!--footer right side-->
+        <div class="footer-right-container">
+          <div class="footer-column-5">
+            <h3 class="footer-titles">Currency</h3>
+            <div class="currency-box">
+              <div class="currency-text">EUR</div> 
+              <div class="icon-container">
+                <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+              </div>
+              <div class="currency-dropdown-content">
+                <a href="#">USD</a>
+                <a href="#">DKK</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+ </footer>
+
+ <!--MOBILE FOOTER-->
+ 
+<footer id="mobile-footer" class="mobile-footer">
+  <div class="mobileFooterContainer">
+      <div class="separatorLineWhite" aria-hidden="true"></div>
+      <div class="mobileFooterMenuItems">
+          <a href="list_of_products_men.html">
+              <h6 class="white-text">SHOP</h6>
+          </a>
+          <a href="about_page.html">
+              <h6 class="white-text">ABOUT</h6>
+          </a>
+      </div>
+      <div class="mobileCompanyLogo">
+        <a href="index.html"><img src="assets/project_images/Logo/white_logo.svg" alt="rainydays company logo in mobile footer"></a>
+      </div>
+      <div class="mobileFooterMenuItems">
+          <a href="contact_us.html">
+              <h6 class="white-text">CONTACT</h6>
+           </a>
+           <a href="contact_us.html">
+              <h6 class="white-text">SUPPORT</h6>
+          </a>
+      </div>
+      <div class="separatorLineWhite2" aria-hidden="true"></div>
+      <div class="getApp_and_socialMediaIcons">
+          <a href="#"><img src="assets/project_images/Icons/googlePlay.svg" class="appIcons" alt="google play icon in mobile footer"></a>
+          <a href="#"><img src="assets/project_images/Icons/fbIcon.svg" class="socialmediaIcons" alt="facebook icon in mobile footer"></a>
+          <a href="#"><img src="assets/project_images/Icons/youtubeIcon.svg" class="socialmediaIcons" alt="youtube icon in mobile footer"></a>
+          <a href="#"><img src="assets/project_images/Icons/instagramIcon.svg" class="socialmediaIcons" alt="instagram icon in mobile footer"></a>
+          <a href="#"><img src="assets/project_images/Icons/appStore.svg" class="appIcons" alt="app store icon in mobile footer"></a>
+      </div>
+      <div class="copyrightText">
+          <h6 class="white-text">© 2023 RAINYDAYS</h6>
+      </div>
+  </div>
+
+</footer>
+
+  
+</body>
+
+
+
+</html>

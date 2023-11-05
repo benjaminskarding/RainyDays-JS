@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maverick</title>
+  <title>Hemingway</title>
   <link rel="stylesheet" href="src/css/jacket_specific_page.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Armata&family=Monda:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -46,8 +47,8 @@
       <div class="hamburger-overlay" id="menuOverlay"> <!--This overlay gets targeted by <a href="#menuOverlay"> in the header. Once the href in the header is clicked and directed here, it activates this rule in common.css: .hamburger-overlay:target {visibility: visible;} which in turn makes this block visible.-->
 
         <div class="overlay-header">
-            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>        <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
-            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->        <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
+            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>            <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
+            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->          <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
 
             <div class="cart-counter-container">
               <span class="cart-counter" id="cartCounter2">0</span>
@@ -115,7 +116,7 @@
           </div>
           <div class="separatorLine" aria-hidden="true"></div>
 
-          <!--empty cart block start-->                 <!--This will be hidden if no items are added to cart using js, hopefully-->
+          <!--empty cart block start-->              <!--This will be hidden if no items are added to cart using js, hopefully-->
           <div id="emptyCartblock">
             <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
             <div class="separatorLine" aria-hidden="true"></div>
@@ -165,7 +166,7 @@
           </div>
           <!--items added to cart block end-->
 
-          <!--static cart block start-->                    <!-- This will be displayed whether or not any items have been added to cart-->
+          <!--static cart block start-->        <!-- This will be displayed whether or not any items have been added to cart-->
           <div class="completeYourKit">
             <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
           </div>
@@ -244,13 +245,13 @@
     </nav>
   </header>
 
-<!--MAIN-->
+  <!--MAIN-->
 
     <div class="main-grid">
         <div id="bigImage" class="bigImageFrame">
           <div class="bigImageContainer">
             <a href="#">
-              <img src="assets/project_images/Product_images/maverick.png" class="product-big-img" alt="big product image">
+              <img src="assets/project_images/Product_images/hemingway.png" class="product-big-img" alt="big product image">
             </a> 
           </div>
           <div class="breadcrumb">
@@ -259,29 +260,27 @@
           <div class="image-arrows-nav">
             <img src="assets/project_images/Icons/arrow-left-line.svg" alt="previous image arrow" class="arrow-left">
             <img src="assets/project_images/Icons/arrow-right-line.svg" alt="next image arrow" class="arrow-right">
-          </div>
+          </div>        
         </div>
 
         <div class="productText">
-          <h4>MAVERICK BOMBER JACKET</h4>
-          <p class="p2">£ 449</p>
+          <h4>HEMINGWAY EXPEDITION JACKET</h4>
+          <p class="p2">£ 879</p>
           <div class="separatorLine" aria-hidden="true"></div>
-          <!--Color Section Start-->
+
           <div class="color-section">
             <div class="p2">Color</div>
-            <div class="color-options p2" role="radiogroup" aria-label="Color options">
-              <button class="color-option in-stock p2" role="radio" aria-checked="false" data-color="gray">Gray</button> <!--Data-attribute ready for javascript implementation, hopefully-->
-              <button class="color-option out-of-stock p2" role="radio" disabled aria-checked="false" data-color="red">Red</button>
+            <div class="color-options p2" role="radiogroup" aria-label="Color Options">
+              <button class="color-option in-stock p2" role="radio" aria-checked="false" data-color="red">Red</button> <!--Data-attribute ready for javascript implementation, hopefully-->
+              <button class="color-option out-of-stock p2" role="radio" disabled aria-checked="false" data-color="blue">Blue</button>
             </div>
           </div>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <!--Color Section End-->
+            <div class="separatorLine" aria-hidden="true"></div>
 
-          <!--Size Section Start-->
           <div class="size-section">
             <div class="p2">Size</div>
             <div class="size-options p2" role="radiogroup" aria-label="Size options"> 
-              <button class="p2" role="radio" aria-checked="false" data-size="XS">XS</button>
+              <button class="p2" role="radio" aria-checked="false" data-size="XS">XS</button> 
               <button class="p2" role="radio" aria-checked="false" data-size="S">S</button>
               <button class="p2" role="radio" aria-checked="false" data-size="M">M</button>
               <button class="p2" role="radio" aria-checked="false" data-size="L">L</button>
@@ -290,12 +289,12 @@
           </div>
           <div class="separatorLine" aria-hidden="true"></div>
           <button type="submit" id="sizeButton" class="select-size-button">SELECT A SIZE</button>
-          <!--Size Section End-->
 
           <div class="about">
             <h5>About</h5>
             <div class="separatorLine" aria-hidden="true"></div>
-            <p>Exuding a blend of classic charm and urban flair, the Maverick Bomber Jacket stands as a symbol for the contemporary traveler. Its water-resistant shell guards against sudden showers, while the intuitive zipper design offers seamless adaptability. Ingenious airflow channels ensure consistent temperature moderation, enhanced with gleaming trims for visibility during twilight journeys. Merging a sleek silhouette with robust functionality, the Maverick Bomber Jacket is designed for the trailblazing spirit.</p>
+            <p>Designed with rugged elegance, the Hemingway Expedition Jacket is your steadfast companion in adventures. The moisture-repellent fabric ensures dryness in all weather conditions, while the full-zip closure allows for quick and easy adjustments. Strategic ventilation panels offer optimal airflow, partnered with reflective detailing for enhanced safety during low-light explorations. Lightweight yet durable, the Hemingway Expedition Jacket is crafted for the bold.</p>
+
           </div>
 
           <div class="details">
@@ -326,7 +325,6 @@
           <h2>COMPLETE YOUR KIT</h2>
         </div>
 
-        <!--Other Products Section Start-->
         <div id="product1" class="content-small-shared-attributes">
           <a href="ikaros.html" class="image-frame">
             <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
@@ -382,7 +380,7 @@
           </div> 
         </div>
 
-        <div id="product6" class="content-small-shared-attributes">     <!-- Realized i can clean them up like this, but don't have time to do the others atm-->
+        <div id="product6" class="content-small-shared-attributes">
           <a href="ikaros.html" class="image-frame">
             <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
           </a>
@@ -391,9 +389,9 @@
               <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
               <p class="p3">£ 249</p>
           </div>
-        </div>
-    </div>
-    
+        </div>  
+  </div>
+
 <!--FOOTER-->
 
 <footer id=desktop-footer class="footer">
@@ -433,7 +431,7 @@
           <ul>
             <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" alt="facebook icon in footer"></a></li>
             <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" alt="youtube icon in footer"></a></li>
-            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" alt="instagram icon in footer"></a></li>
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" alt="instagram icon in footer" ></a></li>
           </ul>
         </div>
       </div>
@@ -494,6 +492,7 @@
   </div>
 
 </footer>
+
 
 
 

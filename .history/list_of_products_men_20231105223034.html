@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women's</title>
+  <title>Men's</title>
   <link rel="stylesheet" href="src/css/list_of_products.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Armata&family=Monda:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -46,8 +47,8 @@
       <div class="hamburger-overlay" id="menuOverlay"> <!--This overlay gets targeted by <a href="#menuOverlay"> in the header. Once the href in the header is clicked and directed here, it activates this rule in common.css: .hamburger-overlay:target {visibility: visible;} which in turn makes this block visible.-->
 
         <div class="overlay-header">
-            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>        <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
-            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->          <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
+            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>       <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
+            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->            <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
 
             <div class="cart-counter-container">
               <span class="cart-counter" id="cartCounter2">0</span>
@@ -115,7 +116,7 @@
           </div>
           <div class="separatorLine" aria-hidden="true"></div>
 
-          <!--empty cart block start-->               <!--This will be hidden if no items are added to cart using js, hopefully-->
+          <!--empty cart block start-->                 <!--This will be hidden if no items are added to cart using js, hopefully-->
           <div id="emptyCartblock">
             <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
             <div class="separatorLine" aria-hidden="true"></div>
@@ -165,12 +166,12 @@
           </div>
           <!--items added to cart block end-->
 
-          <!--static cart block start-->             <!-- This will be displayed whether or not any items have been added to cart-->
+          <!--static cart block start-->           <!-- This will be displayed whether or not any items have been added to cart-->
           <div class="completeYourKit">
             <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
           </div>
 
-          <div class="overlayProductsGrid">
+          <div class="overlayProductsGrid" id="overlayProdGrid">
 
             <div id="overlaycontent1" class="overlayProductsContainer">
               <div class="overlay-products-image-frame">
@@ -254,7 +255,6 @@
           <p>URBAN</p>
       </a>
     </div>
-   
     <div class="icon-container">
       <a href="#"> 
         <img src="assets/project_images/Icons/hiking.svg" alt="hiking icon filter selector">
@@ -274,280 +274,280 @@
       </a>
     </div>
   </div>
-
-  <h1 class="pageTitleHidden">SHOP WOMENS</h1>
+    
+  <h1 class="pageTitleHidden">SHOP MENS</h1> <!-- Made this to trigger at mobile resolutions (538px media query). Replaces the original SHOP MENS title. Positions it centered  between the filter icons and filter / sort by text, instead of horizontally between-->
 
 <!--FILTER OVERLAY CONTENT--> 
-    <div class="filter-section">
-      <div class="filterOverlay">
-        <a href="#overlayFiltersContent">
-            <h4>FILTER BY</h4>
-        </a>
+  <div class="filter-section">
+    <div class="filterOverlay">
+      <a href="#overlayFiltersContent">
+          <h4>FILTER BY</h4>
+      </a>
     </div>
     <div class="overlay-filters-content" id="overlayFiltersContent">
-        <a href="#" class="closeFiltersOverlay">&times;</a>
-      <div class=overlayTitle>
-        <h3>FILTER BY</h3>
-      </div>
-        <div class="separatorLine" aria-hidden="true"></div>
-      <h5>Availability</h5>
-        <label>
-          <input type="checkbox" name="availability" value="inStock">In Stock <span class="in-stock-items-counter">(0)</span>
-        </label>
-        <div class="separatorLine" aria-hidden="true"></div>
-      <h5>Gender</h5>
-        <label>
-          <input type="checkbox" name="Gender" value="male">Male <span class="male-items-counter">(0)</span>
-        </label>
-        <label>
-          <input type="checkbox" name="Gender" value="female">Female <span class="female-items-counter">(0)</span>
-        </label>
-        <div class="separatorLine" aria-hidden="true"></div>
-      <h5>Class</h5>
-        <ul>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="Shell">
-                  Shell <span class="shell-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="insulated">
-                  Insulated <span class="insulated-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="bomber">
-                  Bomber <span class="bomber-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="softshell">
-                  Softshell <span class="softshell-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="parka">
-                  Parka <span class="parka-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="windbreaker">
-                  Windbreaker <span class="windbreaker-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="fleece">
-                  Fleece <span class="fleece-items-counter">(0)</span>
-              </label>
-          </li>
-          <li>
-              <label>
-                  <input type="checkbox" name="Class" value="baseLayering">
-                  Base Layering <span class="base-layering-items-counter">(0)</span>
-              </label>
-          </li>
-        </ul>
+      <a href="#" class="closeFiltersOverlay">&times;</a>
+    <div class=overlayTitle>
+      <h3>FILTER BY</h3>
+    </div>
       <div class="separatorLine" aria-hidden="true"></div>
-      <h5>Activity</h5>
-        <ul>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="hiking">
-              Hiking <span class="hiking-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="iceClimbing">
-              Ice Climbing <span class="ice-climbing-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="cycling">
-              Cycling <span class="cycling-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="expedition">
-              Expedition <span class="expedition-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="fishing">
-              Fishing <span class="fishing-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="hunting">
-              Hunting <span class="hunting-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Activity" value="urban">
-              Urban <span class="urban-item-counter">(0)</span>
-            </label>
-          </li>
-        </ul>
+    <h5>Availability</h5>
+      <label>
+        <input type="checkbox" name="availability" value="inStock">In Stock <span class="in-stock-items-counter">(0)</span>
+      </label>
       <div class="separatorLine" aria-hidden="true"></div>
-      <h5>Color</h5>
-        <ul>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="beige">
-              Beige <span class="beige-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="black">
-              Black <span class="black-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="blue">
-              Blue <span class="blue-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="beige">
-              Brown <span class="beige-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="green">
-              Green <span class="green-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="grey">
-              Grey <span class="grey-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="orange">
-              Orange <span class="orange-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="red">
-              Red <span class="red-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="silver">
-              Silver <span class="silver-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="tan">
-              Tan <span class="tan-item-counter">(0)</span>
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="Color" value="white">
-              White <span class="white-item-counter">(0)</span>
-            </label>
-          </li>
-        </ul>
+    <h5>Gender</h5>
+      <label>
+        <input type="checkbox" name="Gender" value="male">Male <span class="male-items-counter">(0)</span>
+      </label>
+      <label>
+        <input type="checkbox" name="Gender" value="female">Female <span class="female-items-counter">(0)</span>
+      </label>
       <div class="separatorLine" aria-hidden="true"></div>
-      <h5>Size</h5>
-        <ul>
-          <li>
+    <h5>Class</h5>
+      <ul>
+        <li>
             <label>
-              <input type="checkbox" name="Size" value="extraSmall">
-              Extra Small <span class="extra-small-item-counter">(0)</span>
+                <input type="checkbox" name="Class" value="Shell">
+                Shell <span class="shell-items-counter">(0)</span>
             </label>
-          </li>
-          <li>
+        </li>
+        <li>
             <label>
-              <input type="checkbox" name="Size" value="small">
-              Small <span class="small-item-counter">(0)</span>
+                <input type="checkbox" name="Class" value="insulated">
+                Insulated <span class="insulated-items-counter">(0)</span>
             </label>
-          </li>
-          <li>
+        </li>
+        <li>
             <label>
-              <input type="checkbox" name="Size" value="medium">
-              Medium <span class="medium-item-counter">(0)</span>
+                <input type="checkbox" name="Class" value="bomber">
+                Bomber <span class="bomber-items-counter">(0)</span>
             </label>
-          </li>
-          <li>
+        </li>
+        <li>
             <label>
-              <input type="checkbox" name="Size" value="large">
-              Large <span class="large-item-counter">(0)</span>
+                <input type="checkbox" name="Class" value="softshell">
+                Softshell <span class="softshell-items-counter">(0)</span>
             </label>
-          </li>
-          <li>
+        </li>
+        <li>
             <label>
-              <input type="checkbox" name="Size" value="extraLarge">
-              Extra Large <span class="extra-large-item-counter">(0)</span>
+                <input type="checkbox" name="Class" value="parka">
+                Parka <span class="parka-items-counter">(0)</span>
             </label>
-          </li>
-        </ul>
-      <div class="separatorLine" aria-hidden="true"></div>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="Class" value="windbreaker">
+                Windbreaker <span class="windbreaker-items-counter">(0)</span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="Class" value="fleece">
+                Fleece <span class="fleece-items-counter">(0)</span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="Class" value="baseLayering">
+                Base Layering <span class="base-layering-items-counter">(0)</span>
+            </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+    <h5>Activity</h5>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="hiking">
+            Hiking <span class="hiking-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="iceClimbing">
+            Ice Climbing <span class="ice-climbing-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="cycling">
+            Cycling <span class="cycling-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="expedition">
+            Expedition <span class="expedition-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="fishing">
+            Fishing <span class="fishing-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="hunting">
+            Hunting <span class="hunting-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Activity" value="urban">
+            Urban <span class="urban-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+    <h5>Color</h5>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="beige">
+            Beige <span class="beige-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="black">
+            Black <span class="black-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="blue">
+            Blue <span class="blue-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="beige">
+            Brown <span class="beige-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="green">
+            Green <span class="green-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="grey">
+            Grey <span class="grey-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="orange">
+            Orange <span class="orange-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="red">
+            Red <span class="red-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="silver">
+            Silver <span class="silver-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="tan">
+            Tan <span class="tan-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Color" value="white">
+            White <span class="white-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+    <h5>Size</h5>
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" name="Size" value="extraSmall">
+            Extra Small <span class="extra-small-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Size" value="small">
+            Small <span class="small-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Size" value="medium">
+            Medium <span class="medium-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Size" value="large">
+            Large <span class="large-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox" name="Size" value="extraLarge">
+            Extra Large <span class="extra-large-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
 
-      <div class="price-section">
-        <section>
-          <div class="price-container">
-            <h5>Price</h5>
-            <div class="price-container-main">
-              <div class="price-range-field">
-                <label class="price-range-label" for="filter-price-from">From</label>
-                <input class="price-range-input" id="filter-price-from" type="number" placeholder="0" min="0" max="9000">
-              </div>
-              <span class="price-range-currency">£</span>
-              <div class="price-range-field">
-                <label class="price-range-label" for="filter-price-to">To</label>
-                <input class="price-range-input" id="filter-price-to" type="number" placeholder="9000" min="0" max="9000">
-              </div>
+    <div class="price-section">
+      <section> 
+        <div class="price-container">
+          <h5>Price</h5>
+          <div class="price-container-main">
+            <div class="price-range-field">
+              <label class="price-range-label" for="filter-price-from">From</label>
+              <input class="price-range-input" id="filter-price-from" type="number" placeholder="0" min="0" max="9000">
+            </div>
+            <span class="price-range-currency">£</span>
+            <div class="price-range-field">
+              <label class="price-range-label" for="filter-price-to">To</label>
+              <input class="price-range-input" id="filter-price-to" type="number" placeholder="9000" min="0" max="9000">
             </div>
           </div>
-        </section>
-        <div class="separatorLine" aria-hidden="true"></div>
-      </div>
-    </div>
-
-      <h1 class="pageTitle">SHOP WOMENS</h1>
-
-      <div class="filterOverlay">
-        <a href="#sortDropdownContent">
-          <h4>SORT BY</h4>
-        </a>
-        <div class="dropdown-sort-content" id="sortDropdownContent"> <!--once #sortDropdownContent is clicked, it targets this class, making it visible. Same principle as header overlays-->
-          <ul>
-              <li><a href="#">Price: Low to High</a></li>
-              <li><a href="#">Price: High to Low</a></li>
-              <li><a href="#">Alphabetically: A to Z</a></li>
-              <li><a href="#">Alphabetically: Z to A</a></li>
-              <li><a href="#">Newest Arrivals</a></li>
-              <li><a href="#">Best Sellers</a></li>
-              <li><a href="#">Featured</a></li>
-          </ul>
         </div>
-      </div>
-      </div> <!--not a stray, will fix later-->
+      </section>
+      <div class="separatorLine" aria-hidden="true"></div>
+    </div>
+  </div>
 
-<!--MAIN-->    
+  <h1 class="pageTitle">SHOP MENS</h1> <!-- is replaced by pageTitleHidden at 538px media query -->
+
+  <div class="filterOverlay">
+    <a href="#sortDropdownContent"> 
+      <h4>SORT BY</h4>
+    </a>
+    <div class="dropdown-sort-content" id="sortDropdownContent"> <!--once #sortDropdownContent is clicked, it targets this class, making it visible. Same principle as header overlays-->
+      <ul>
+          <li><a href="#">Price: Low to High</a></li>
+          <li><a href="#">Price: High to Low</a></li>
+          <li><a href="#">Alphabetically: A to Z</a></li>
+          <li><a href="#">Alphabetically: Z to A</a></li>
+          <li><a href="#">Newest Arrivals</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Featured</a></li>
+      </ul>
+    </div>
+  </div>
+  </div> <!--not a stray, will fix later-->
+    
+<!--MAIN-->
 
     <div class="main-grid">
 
@@ -557,7 +557,7 @@
           </a>
         <div class="text-frame">
           <h4>IKAROS</h4>
-          <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p text-aligned-center" id="prodDescription1">Lightweight cycling jacket for optimal speed and agility</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -568,7 +568,7 @@
         </a>
         <div class="text-frame">
           <h4>MAVERICK</h4>
-          <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+          <p class="p text-aligned-center" id="prodDescription2">Bomber jacket for casual style and easy layering</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -579,7 +579,7 @@
         </a>
         <div class="text-frame">
           <h4>HEKTOR</h4>
-          <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+          <p class="p text-aligned-center" id="prodDescription3">Versatile fleece for winter activities</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -590,7 +590,7 @@
         </a>
         <div class="text-frame">
           <h4>HEMINGWAY</h4>
-          <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p text-aligned-center" id="prodDescription4">Heavy duty expedition jacket for reliable cold protection</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -601,7 +601,7 @@
           </a>
         <div class="text-frame">
           <h4>IKAROS</h4>
-          <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p text-aligned-center" id="prodDescription5">Lightweight cycling jacket for optimal speed and agility</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -612,11 +612,11 @@
         </a>
         <div class="text-frame">
           <h4>MAVERICK</h4>
-          <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+          <p class="p text-aligned-center" id="prodDescription6">Bomber jacket for casual style and easy layering</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
-
+      
       <div id="imagePerson" class="large-image-container">
         <img src="assets/project_images/General_images/List_of_Products/jacketForest.png" class="large-image" id="personInJacket" alt="image of person in jacket">
       </div>
@@ -631,7 +631,7 @@
         </a>
         <div class="text-frame">
           <h4>HEKTOR</h4>
-          <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+          <p class="p text-aligned-center" id="prodDescription7">Versatile fleece for winter activities</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -642,7 +642,7 @@
         </a>
         <div class="text-frame">
           <h4>HEMINGWAY</h4>
-          <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p text-aligned-center" id="prodDescription8">Heavy duty expedition jacket for reliable cold protection</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -653,7 +653,7 @@
           </a>
         <div class="text-frame">
           <h4>IKAROS</h4>
-          <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p text-aligned-center" id="prodDescription9">Lightweight cycling jacket for optimal speed and agility</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -664,7 +664,7 @@
         </a>
         <div class="text-frame">
           <h4>MAVERICK</h4>
-          <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+          <p class="p text-aligned-center" id="prodDescription10">Bomber jacket for casual style and easy layering</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -675,7 +675,7 @@
         </a>
         <div class="text-frame">
           <h4>HEKTOR</h4>
-          <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+          <p class="p text-aligned-center" id="prodDescription11">Versatile fleece for winter activities</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -686,7 +686,7 @@
         </a>
         <div class="text-frame">
           <h4>HEMINGWAY</h4>
-          <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p text-aligned-center" id="prodDescription12">Heavy duty expedition jacket for reliable cold protection</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -694,10 +694,10 @@
       <div id="content13" class="content-small-shared-attributes">
         <a href="ikaros.html" class=image-frame>
               <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
+        </a>
         <div class="text-frame">
           <h4>IKAROS</h4>
-          <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p text-aligned-center" id="prodDescription13">Lightweight cycling jacket for optimal speed and agility</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -708,7 +708,7 @@
         </a>
         <div class="text-frame">
           <h4>MAVERICK</h4>
-          <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+          <p class="p text-aligned-center" id="prodDescription14">Bomber jacket for casual style and easy layering</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -719,7 +719,7 @@
         </a>
         <div class="text-frame">
           <h4>HEKTOR</h4>
-          <p class="p text-aligned-center">Versatile fleece for winter activities</p>
+          <p class="p text-aligned-center" id="prodDescription15">Versatile fleece for winter activities</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -730,7 +730,7 @@
         </a>
         <div class="text-frame">
           <h4>HEMINGWAY</h4>
-          <p class="p text-aligned-center">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p text-aligned-center" id="prodDescription16">Heavy duty expedition jacket for reliable cold protection</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -741,7 +741,7 @@
           </a>
         <div class="text-frame">
           <h4>IKAROS</h4>
-          <p class="p text-aligned-center">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p text-aligned-center" id="prodDescription17">Lightweight cycling jacket for optimal speed and agility</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -752,7 +752,7 @@
         </a>
         <div class="text-frame">
           <h4>MAVERICK</h4>
-          <p class="p text-aligned-center">Bomber jacket for casual style and easy layering</p>
+          <p class="p text-aligned-center" id="prodDescription18">Bomber jacket for casual style and easy layering</p>
           <p class="p">£ 249</p>
         </div> 
       </div>
@@ -858,7 +858,6 @@
   </div>
 
 </footer>
-
 
 
 

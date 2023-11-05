@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maverick</title>
-  <link rel="stylesheet" href="src/css/jacket_specific_page.css">
+  <title>Contact</title>
+  <link rel="stylesheet" href="src/css/contact_us.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Armata&family=Monda:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -32,10 +33,10 @@
       <div class="header-nav-right">
         <a href="about_page.html" class="nav-link hide-on-small-res">ABOUT US</a>
         <a href="contact_us.html" class="nav-link hide-on-small-res">CONTACT</a>
-        <div class="nav-link search-link hide-on-865px">
+        <a href="#" class="nav-link search-link hide-on-865px">
           <img src="assets/project_images/Icons/search-line.svg" class="icon" alt="magnifying glass icon in header">
           <input type="text" class="header-search-input" placeholder="SEARCH">
-        </div>
+        </a>
         <a href="#shoppingCartOverlay">
           <span class="cart-counter" id="cartCounter1">0</span>
           <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="icon" alt="shopping bag icon in header">
@@ -46,8 +47,8 @@
       <div class="hamburger-overlay" id="menuOverlay"> <!--This overlay gets targeted by <a href="#menuOverlay"> in the header. Once the href in the header is clicked and directed here, it activates this rule in common.css: .hamburger-overlay:target {visibility: visible;} which in turn makes this block visible.-->
 
         <div class="overlay-header">
-            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>        <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
-            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->        <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
+            <a href="#closeOverlay" class="overlay-close-btn">&times;</a>      <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
+            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->          <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
 
             <div class="cart-counter-container">
               <span class="cart-counter" id="cartCounter2">0</span>
@@ -115,7 +116,7 @@
           </div>
           <div class="separatorLine" aria-hidden="true"></div>
 
-          <!--empty cart block start-->                 <!--This will be hidden if no items are added to cart using js, hopefully-->
+          <!--empty cart block start-->                   <!--This will be hidden if no items are added to cart using js, hopefully-->
           <div id="emptyCartblock">
             <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
             <div class="separatorLine" aria-hidden="true"></div>
@@ -160,12 +161,12 @@
                 </div>
                 <div class="checkoutButtonContainer">
                   <a href="checkout_page.html" class="checkoutButton">CHECKOUT</a>
-                </div>  
+                </div>
             </div>
           </div>
           <!--items added to cart block end-->
 
-          <!--static cart block start-->                    <!-- This will be displayed whether or not any items have been added to cart-->
+          <!--static cart block start-->         <!-- This will be displayed whether or not any items have been added to cart-->
           <div class="completeYourKit">
             <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
           </div>
@@ -246,154 +247,84 @@
 
 <!--MAIN-->
 
-    <div class="main-grid">
-        <div id="bigImage" class="bigImageFrame">
-          <div class="bigImageContainer">
-            <a href="#">
-              <img src="assets/project_images/Product_images/maverick.png" class="product-big-img" alt="big product image">
-            </a> 
-          </div>
-          <div class="breadcrumb">
-            <a href="index.html">Home</a> <img src="assets/project_images/Icons/arrow-right-line-full-opacity.svg" class="breadcrumb-icon" alt="breadcrumb arrow right"> <a href="list_of_products_men.html">Mens</a>
-          </div>
-          <div class="image-arrows-nav">
-            <img src="assets/project_images/Icons/arrow-left-line.svg" alt="previous image arrow" class="arrow-left">
-            <img src="assets/project_images/Icons/arrow-right-line.svg" alt="next image arrow" class="arrow-right">
-          </div>
-        </div>
+  <div class="main-grid">
 
-        <div class="productText">
-          <h4>MAVERICK BOMBER JACKET</h4>
-          <p class="p2">£ 449</p>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <!--Color Section Start-->
-          <div class="color-section">
-            <div class="p2">Color</div>
-            <div class="color-options p2" role="radiogroup" aria-label="Color options">
-              <button class="color-option in-stock p2" role="radio" aria-checked="false" data-color="gray">Gray</button> <!--Data-attribute ready for javascript implementation, hopefully-->
-              <button class="color-option out-of-stock p2" role="radio" disabled aria-checked="false" data-color="red">Red</button>
-            </div>
-          </div>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <!--Color Section End-->
-
-          <!--Size Section Start-->
-          <div class="size-section">
-            <div class="p2">Size</div>
-            <div class="size-options p2" role="radiogroup" aria-label="Size options"> 
-              <button class="p2" role="radio" aria-checked="false" data-size="XS">XS</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="S">S</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="M">M</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="L">L</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="XL">XL</button>
-            </div>
-          </div>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <button type="submit" id="sizeButton" class="select-size-button">SELECT A SIZE</button>
-          <!--Size Section End-->
-
-          <div class="about">
-            <h5>About</h5>
-            <div class="separatorLine" aria-hidden="true"></div>
-            <p>Exuding a blend of classic charm and urban flair, the Maverick Bomber Jacket stands as a symbol for the contemporary traveler. Its water-resistant shell guards against sudden showers, while the intuitive zipper design offers seamless adaptability. Ingenious airflow channels ensure consistent temperature moderation, enhanced with gleaming trims for visibility during twilight journeys. Merging a sleek silhouette with robust functionality, the Maverick Bomber Jacket is designed for the trailblazing spirit.</p>
-          </div>
-
-          <div class="details">
-            <h5>Details</h5>
-            <div class="separatorLine" aria-hidden="true"></div>
-            <div class="details-and-sizing-parent-container">
-              <div class="details-list-container">
-                  <ul>
-                    <li>3205M moisture-wicking fabric</li>
-                    <li>Rainy Days custom full-zip closure</li>
-                    <li>Mandarin collar</li>
-                    <li>Elasticated sleeve cuffs and hem</li>
-                    <li>Ventilation panels strategically placed</li>
-                    <li>DWR (Durable Water Repellent) finish</li>
-                    <li>Style: RK01-0570-00</li>
-                    <li>Color: Alpine Green</li>
-                    <li>Material: 90% Polyester, 10% Spandex</li>
-                  </ul>
-              </div>
-              <div class="size-chart-container">
-                <a href="#sizingOverlay" class="sizing-info">SIZE INFO</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="horizontalText">
-          <h2>COMPLETE YOUR KIT</h2>
-        </div>
-
-        <!--Other Products Section Start-->
-        <div id="product1" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product2" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product3" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product4" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product5" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product6" class="content-small-shared-attributes">     <!-- Realized i can clean them up like this, but don't have time to do the others atm-->
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div>
-        </div>
+    <div class="title">
+      <h1>CONTACT US</h1>
     </div>
-    
+
+    <div class="customer-service">
+      <h3>CUSTOMER SERVICE</h3>
+      <div class="customerService-container">
+        <div class="subtitle p3">
+          General Inquiries
+        </div>
+          <p>info@rainydays.dk</p>     
+        <div class="subtitle p3">
+          Customer Support
+        </div>
+            <p>support@rainydays.dk</p>
+        <div class="subtitle p3">
+          Sales
+        </div>
+            <p>sales@rainydays.dk</p>
+        <div class="faqRetShip">
+          <a href="#" class="subtitle p3">
+            FAQ
+          </a>
+          <a href="#" class="subtitle p3">
+            Returns
+          </a>
+          <a href="#" class="subtitle p3">
+            Shipping
+          </a>
+        </div>   
+      </div> 
+    </div>
+
+    <div class="contact-form">
+      <form action="#" method="post">
+        <div class="input-group">
+          <label for="email">Email:</label> <!-- the FOR tag instructs the browser what the label is, well, for.  If user clicks the label itself, browser automatically targets the input field-->
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" pattern="^[A-Za-z]+\s[A-Za-z]+$" title="Please enter both first and last names separated by a space." required>
+        </div>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="8" required></textarea>
+        </div>
+        <div class="input group checkbox-group">
+          <input type="checkbox" id="newsletter" name="newsletter">
+          <label for="newsletter">I would like to receive the newsletter</label>
+        </div>
+          <button type="submit" class="contact-form button" id="submitFormBtn">SUBMIT</button>
+      </form>
+    </div>
+   
+    <div class="store-info">
+      <h3>OUR STORES</h3>
+      <div class="storeInfo-container">
+        <div class="subtitle p3">
+          Copenhagen Branch
+        </div>
+          <p>789 Remuladesletta, CO 1029 Denmark<br><br>
+            +45 31 847689<br><br>
+            copenhagen.info@rainydays.dk
+          </p>
+        <div class="subtitle p3">
+          New York Branch
+        </div>
+          <p>89 Manhattan, NY 2229 USA<br><br>
+            +1 212 8376588<br><br>
+            ny.info@rainydays.com
+          </p>
+      </div>
+    </div>
+  </div>
+
 <!--FOOTER-->
 
 <footer id=desktop-footer class="footer">
@@ -496,7 +427,7 @@
 </footer>
 
 
-
+  
 </body>
 
 

@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maverick</title>
+  <title>Ikaros</title>
   <link rel="stylesheet" href="src/css/jacket_specific_page.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Armata&family=Monda:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -47,7 +48,7 @@
 
         <div class="overlay-header">
             <a href="#closeOverlay" class="overlay-close-btn">&times;</a>        <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->
-            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->        <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
+            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->            <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
 
             <div class="cart-counter-container">
               <span class="cart-counter" id="cartCounter2">0</span>
@@ -160,12 +161,12 @@
                 </div>
                 <div class="checkoutButtonContainer">
                   <a href="checkout_page.html" class="checkoutButton">CHECKOUT</a>
-                </div>  
+                </div> 
             </div>
           </div>
           <!--items added to cart block end-->
 
-          <!--static cart block start-->                    <!-- This will be displayed whether or not any items have been added to cart-->
+          <!--static cart block start-->       <!-- This will be displayed whether or not any items have been added to cart-->
           <div class="completeYourKit">
             <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
           </div>
@@ -244,220 +245,229 @@
     </nav>
   </header>
 
-<!--MAIN-->
+<!--MAIN-->  
 
-    <div class="main-grid">
-        <div id="bigImage" class="bigImageFrame">
-          <div class="bigImageContainer">
-            <a href="#">
-              <img src="assets/project_images/Product_images/maverick.png" class="product-big-img" alt="big product image">
-            </a> 
-          </div>
-          <div class="breadcrumb">
-            <a href="index.html">Home</a> <img src="assets/project_images/Icons/arrow-right-line-full-opacity.svg" class="breadcrumb-icon" alt="breadcrumb arrow right"> <a href="list_of_products_men.html">Mens</a>
-          </div>
-          <div class="image-arrows-nav">
-            <img src="assets/project_images/Icons/arrow-left-line.svg" alt="previous image arrow" class="arrow-left">
-            <img src="assets/project_images/Icons/arrow-right-line.svg" alt="next image arrow" class="arrow-right">
-          </div>
+  <div class="main-grid">
+      <div id="bigImage" class="bigImageFrame">
+        <div class="bigImageContainer">
+          <a href="#">
+            <img src="assets/project_images/Product_images/ikarosbig.png" class="product-big-img" alt="big product image">
+          </a> 
         </div>
-
-        <div class="productText">
-          <h4>MAVERICK BOMBER JACKET</h4>
-          <p class="p2">£ 449</p>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <!--Color Section Start-->
-          <div class="color-section">
-            <div class="p2">Color</div>
-            <div class="color-options p2" role="radiogroup" aria-label="Color options">
-              <button class="color-option in-stock p2" role="radio" aria-checked="false" data-color="gray">Gray</button> <!--Data-attribute ready for javascript implementation, hopefully-->
-              <button class="color-option out-of-stock p2" role="radio" disabled aria-checked="false" data-color="red">Red</button>
-            </div>
-          </div>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <!--Color Section End-->
-
-          <!--Size Section Start-->
-          <div class="size-section">
-            <div class="p2">Size</div>
-            <div class="size-options p2" role="radiogroup" aria-label="Size options"> 
-              <button class="p2" role="radio" aria-checked="false" data-size="XS">XS</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="S">S</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="M">M</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="L">L</button>
-              <button class="p2" role="radio" aria-checked="false" data-size="XL">XL</button>
-            </div>
-          </div>
-          <div class="separatorLine" aria-hidden="true"></div>
-          <button type="submit" id="sizeButton" class="select-size-button">SELECT A SIZE</button>
-          <!--Size Section End-->
-
-          <div class="about">
-            <h5>About</h5>
-            <div class="separatorLine" aria-hidden="true"></div>
-            <p>Exuding a blend of classic charm and urban flair, the Maverick Bomber Jacket stands as a symbol for the contemporary traveler. Its water-resistant shell guards against sudden showers, while the intuitive zipper design offers seamless adaptability. Ingenious airflow channels ensure consistent temperature moderation, enhanced with gleaming trims for visibility during twilight journeys. Merging a sleek silhouette with robust functionality, the Maverick Bomber Jacket is designed for the trailblazing spirit.</p>
-          </div>
-
-          <div class="details">
-            <h5>Details</h5>
-            <div class="separatorLine" aria-hidden="true"></div>
-            <div class="details-and-sizing-parent-container">
-              <div class="details-list-container">
-                  <ul>
-                    <li>3205M moisture-wicking fabric</li>
-                    <li>Rainy Days custom full-zip closure</li>
-                    <li>Mandarin collar</li>
-                    <li>Elasticated sleeve cuffs and hem</li>
-                    <li>Ventilation panels strategically placed</li>
-                    <li>DWR (Durable Water Repellent) finish</li>
-                    <li>Style: RK01-0570-00</li>
-                    <li>Color: Alpine Green</li>
-                    <li>Material: 90% Polyester, 10% Spandex</li>
-                  </ul>
-              </div>
-              <div class="size-chart-container">
-                <a href="#sizingOverlay" class="sizing-info">SIZE INFO</a>
-              </div>
-            </div>
-          </div>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> <img src="assets/project_images/Icons/arrow-right-line-full-opacity.svg" class="breadcrumb-icon" alt="breadcrumb arrow right"> <a href="list_of_products_women.html">Womens</a>
         </div>
-        
-        <div class="horizontalText">
-          <h2>COMPLETE YOUR KIT</h2>
-        </div>
-
-        <!--Other Products Section Start-->
-        <div id="product1" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product2" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product3" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product4" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product5" class="content-small-shared-attributes">
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div> 
-        </div>
-
-        <div id="product6" class="content-small-shared-attributes">     <!-- Realized i can clean them up like this, but don't have time to do the others atm-->
-          <a href="ikaros.html" class="image-frame">
-            <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
-          </a>
-          <div class="text-frame">
-              <h3>IKAROS</h3>
-              <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
-              <p class="p3">£ 249</p>
-          </div>
-        </div>
-    </div>
-    
-<!--FOOTER-->
-
-<footer id=desktop-footer class="footer">
-  <div class="footer-container">
-        <!--footer left side-->
-        <a href="index.html" class="footer-left-container">
-          <img src="assets/project_images/Logo/white_logo.svg" class="footer-logo" alt="rainydays company logo in footer">
-        </a>
-      <!--footer center-->
-      <div class="footer-center-container">
-        <div class="footer-column-1">
-          <h3 class="footer-titles">RAINYDAYS AS</h3>
-          <ul>
-            <li class="footer-bodytext">Remuladesletta 789</li>
-            <li class="footer-bodytext">4029 Copenhagen</li>
-            <li class="footer-bodytext">Denmark</li>
-          </ul>
-        </div>
-        <div class="footer-column-2">
-          <h3 class="footer-titles">Info</h3>
-          <ul>
-            <li><a class="footer-bodytext" href="about_page.html">About Us</a></li>
-            <li><a class="footer-bodytext" href="contact_us.html">Contact</a></li>
-            <li><a class="footer-bodytext" href="contact_us.html">Returns</a></li>
-          </ul>
-        </div>
-        <div class="footer-column-3">
-          <h3 class="footer-titles">Help</h3>
-          <ul>
-            <li><a class="footer-bodytext" href="#">My Account</a></li>
-            <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
-            <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-column-4">
-          <h3 class="footer-titles">Follow Us</h3>
-          <ul>
-            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" alt="facebook icon in footer"></a></li>
-            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" alt="youtube icon in footer"></a></li>
-            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" alt="instagram icon in footer"></a></li>
-          </ul>
+        <div class="image-arrows-nav">
+          <img src="assets/project_images/Icons/arrow-left-line.svg" alt="previous image arrow" class="arrow-left">
+          <img src="assets/project_images/Icons/arrow-right-line.svg" alt="next image arrow" class="arrow-right">
         </div>
       </div>
-      <!--footer right side-->
-      <div class="footer-right-container">
-        <div class="footer-column-5">
-          <h3 class="footer-titles">Currency</h3>
-          <div class="currency-box">
-            <div class="currency-text">EUR</div> 
-            <div class="icon-container">
-              <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+
+      <div class="productText">
+        <h4>IKAROS CYCLING JACKET</h4>
+        <p class="p2">£ 249</p>
+        <div class="separatorLine" aria-hidden="true"></div>
+        <!--Color Section Start-->
+        <div class="color-section">
+          <div class="p2">Color</div>
+          <div class="color-options p2" role="radiogroup" aria-label="Color Options">
+              <button class="color-option in-stock p2" role="radio" aria-checked="false" data-color="gray">Gray</button> <!--Data-attribute ready for javascript implementation, hopefully-->
+              <button class="color-option out-of-stock p2" role="radio" disabled aria-checked="false" data-color="red">Red</button>
+          </div>
+        </div>
+        <div class="separatorLine" aria-hidden="true"></div>
+        <!--Color Section End-->
+
+        <!--Size Section Start-->
+        <div class="size-section">
+          <div class="p2">Size</div>
+          <div class="size-options p2" role="radiogroup" aria-label="Size options"> 
+            <button class="p2" role="radio" aria-checked="false" data-size="XS">XS</button>
+            <button class="p2" role="radio" aria-checked="false" data-size="S">S</button>
+            <button class="p2" role="radio" aria-checked="false" data-size="M">M</button>
+            <button class="p2" role="radio" aria-checked="false" data-size="L">L</button>
+            <button class="p2" role="radio" aria-checked="false" data-size="XL">XL</button>
+          </div>
+        </div>
+        <div class="separatorLine" aria-hidden="true"></div>
+        <button type="submit" id="sizeButton" class="select-size-button">SELECT A SIZE</button>
+        <!--Size Section End-->
+
+        <div class="about">
+          <h5>About</h5>
+          <div class="separatorLine" aria-hidden="true"></div>
+          <p>Engineered with a focus on durability and aerodynamic efficiency, this jacket features an advanced moisture-wicking fabric. A full-zip closure ensures easy on-and-off, while carefully placed ventilation panels provide optimal airflow. The jacket showcases the signature Rainy Days craftsmanship with reflective detailing for enhanced visibility. Lightweight and packable, the Ikaros is your ultimate companion for any cycling adventure.</p>
+        </div>
+
+        <div class="details">
+          <h5>Details</h5>
+          <div class="separatorLine" aria-hidden="true"></div>
+          <div class="details-and-sizing-parent-container">
+            <div class="details-list-container">
+                <ul>
+                  <li>3205M moisture-wicking fabric</li>
+                  <li>Rainy Days custom full-zip closure</li>
+                  <li>Mandarin collar</li>
+                  <li>Elasticated sleeve cuffs and hem</li>
+                  <li>Ventilation panels strategically placed</li>
+                  <li>DWR (Durable Water Repellent) finish</li>
+                  <li>Style: RK01-0570-00</li>
+                  <li>Color: Alpine Green</li>
+                  <li>Material: 90% Polyester, 10% Spandex</li>
+                </ul>
             </div>
-            <div class="currency-dropdown-content">
-              <a href="#">USD</a>
-              <a href="#">DKK</a>
+            <div class="size-chart-container">
+              <a href="#sizingOverlay" class="sizing-info">SIZE INFO</a>
             </div>
           </div>
+        </div>
+      </div>
+      
+      <div class="horizontalText">
+        <h2>COMPLETE YOUR KIT</h2>
+      </div>
+
+      <!--Other Products Section Start-->
+      <div id="product1" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="product2" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="product3" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="product4" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="product5" class="content-small-shared-attributes">
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="product6" class="content-small-shared-attributes">     <!-- Realized i can clean them up like this, but don't have time to do the others atm-->
+        <a href="ikaros.html" class="image-frame">
+          <img src="assets/project_images/Product_images/ikaros.png" alt="prod-image-1">
+        </a>
+        <div class="text-frame">
+            <h3>IKAROS</h3>
+            <p class="p2">Lightweight cycling jacket for optimal speed and agility</p>
+            <p class="p3">£ 249</p>
         </div>
       </div>
   </div>
-</footer>
 
-<!--MOBILE FOOTER-->
+  
+<!--FOOTER-->
 
+  <footer id=desktop-footer class="footer">
+    <div class="footer-container">
+      
+
+          <a href="index.html" class="footer-left-container">
+            <img src="assets/project_images/Logo/white_logo.svg" class="footer-logo" alt="rainydays company logo in footer">
+          </a>
+
+        
+        <div class="footer-center-container">
+
+          <div class="footer-column-1">
+            <h3 class="footer-titles">RAINYDAYS AS</h3>
+            <ul>
+              <li class="footer-bodytext">Remuladesletta 789</li>
+              <li class="footer-bodytext">4029 Copenhagen</li>
+              <li class="footer-bodytext">Denmark</li>
+            </ul>
+          </div>
+
+          <div class="footer-column-2">
+            <h3 class="footer-titles">Info</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="about_page.html">About Us</a></li>
+              <li><a class="footer-bodytext" href="contact_us.html">Contact</a></li>
+              <li><a class="footer-bodytext" href="contact_us.html">Returns</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-3">
+            <h3 class="footer-titles">Help</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#">My Account</a></li>
+              <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
+              <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column-4">
+            <h3 class="footer-titles">Follow Us</h3>
+            <ul>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" alt="facebook icon in footer"></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" alt="youtube icon in footer"></a></li>
+              <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" alt="instagram icon in footer"></a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="footer-right-container">
+          <div class="footer-column-5">
+            <h3 class="footer-titles">Currency</h3>
+            <div class="currency-box">
+              <div class="currency-text">EUR</div> 
+              <div class="icon-container">
+                <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+              </div>
+              <div class="currency-dropdown-content">
+                <a href="#">USD</a>
+                <a href="#">DKK</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  
+ </footer>
+
+ <!--MOBILE FOOTER-->
+ 
 <footer id="mobile-footer" class="mobile-footer">
   <div class="mobileFooterContainer">
       <div class="separatorLineWhite" aria-hidden="true"></div>
@@ -494,6 +504,7 @@
   </div>
 
 </footer>
+
 
 
 

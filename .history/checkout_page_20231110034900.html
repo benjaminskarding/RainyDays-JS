@@ -335,7 +335,6 @@
               <label for="billing_address_country">Country *</label>
               <div class="row countryOption">
                 <select id="billing_address_country" name="country" required aria-required="true">
-                  <option value="" disabled selected>Select Country</option>
                   <option value="USA">United States</option>
                   <option value="Denmark">Denmark</option>
                   <option value="Kazakhstan">Kazakhstan is # 1</option>
@@ -368,14 +367,14 @@
       </div>
           <div class="inputField-container" id="sameAsbillingContainer">
               <label>
-                  <input type="radio" name="delivery_address_option" class="hidden-original-radio" id="sameAsBillingAddressRadio" checked>
+                  <input type="radio" name="delivery_address_option_1" class="hidden-original-radio" id="sameAsBillingAddressRadio" checked>
                   <span class="custom-radio"></span>
                   Same as billing address
               </label>
           </div>
           <div class="inputField-container" id="addnewAddressContainer">
               <label>
-                  <input type="radio" name="delivery_address_option" class="hidden-original-radio" id="addNewAddressRadio">
+                  <input type="radio" name="delivery_address_option_2" class="hidden-original-radio" id="addNewAddressRadio">
                   <span class="custom-radio"></span>
                   Add a new address
               </label>
@@ -399,7 +398,6 @@
                     <label for="add_new_address_country">Country *</label>
                     <div class="row countryOption">
                         <select id="add_new_address_country" name="add_new_address_country">
-                            <option value="" disabled selected>Select Country</option>
                             <option value="USA">United States</option>
                             <option value="Denmark">Denmark</option>
                             <option value="Kazakhstan">Kazakhstan is # 1</option>

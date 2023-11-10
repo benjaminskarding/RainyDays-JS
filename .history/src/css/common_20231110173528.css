@@ -647,7 +647,7 @@ select { /* custom dropdown arrow */
   background-position: 98% center;
   background-repeat: no-repeat;
   background-size: 32px 32px;
-  background-color: white;
+  background-color: none;
 }
                     
 select:focus {

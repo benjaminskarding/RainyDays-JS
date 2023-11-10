@@ -44,6 +44,7 @@ ul {
 
 button, select {
   color: black; 
+  -webkit-appearance: none; 
 }
 
 /* header */
@@ -647,7 +648,6 @@ select { /* custom dropdown arrow */
   background-position: 98% center;
   background-repeat: no-repeat;
   background-size: 32px 32px;
-  background-color: white;
 }
                     
 select:focus {

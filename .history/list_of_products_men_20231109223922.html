@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's</title>
+  <link rel="stylesheet" href="src/css/list_of_products.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Armata&family=Monda:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <header class="header-collection">
+    <div class="promo-banner hide-on-mobile-res" id="promo-banner" role="banner" aria-label="Promotional Banner">
+      <a href="list_of_products_men.html" class="nav-link" aria-label="End of Season Sale - Up to 40% off select items">End of Season Sale | Up to 40% off select items</a>
+    </div>
+    <nav class="header-main-nav" role="navigation">
+      <div class="header-nav-left">
+        <a href="#menuOverlay" aria-label="Open menu">
+          <img src="assets/project_images/Icons/hamburger.svg" class="icon" alt="hamburger icon in header">
+          <span class="hide-on-865px">MENU</span>
+        </a> 
+      </div>
+      <div class="header-logo">
+        <a href="index.html" class="nav-link" aria-label="Go to homepage">
+          <img src="assets/project_images/Logo/RainyDays_Logo_original_color.svg" id="header-logo-img" alt="logo image in header">
+        </a> 
+      </div>
+      <div class="header-nav-right">
+        <a href="about_page.html" class="nav-link hide-on-small-res" aria-label="Learn about us">ABOUT US</a>
+        <a href="contact_us.html" class="nav-link hide-on-small-res" aria-label="Contact us">CONTACT</a>
+        <div class="nav-link search-link hide-on-865px">
+          <img src="assets/project_images/Icons/search-line.svg" class="icon" alt="magnifying glass icon in header">
+          <input type="text" class="header-search-input" placeholder="SEARCH" aria-label="Search site">
+        </div>
+        <a href="#shoppingCartOverlay" aria-label="View shopping cart">
+          <span class="cart-counter" id="cartCounter1" aria-label="Items in cart">0</span>
+          <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="icon" alt="shopping bag icon in header">
+        </a>
+      </div>
+
+      <!--hamburger menu overlay start-->
+      <div class="hamburger-overlay" id="menuOverlay" aria-label="Menu overlay">   <!--This overlay gets targeted by <a href="#menuOverlay"> in the header. Once the href in the header is clicked and directed here, it activates this rule in common.css: .hamburger-overlay:target {visibility: visible;} which in turn makes this block visible.-->
+
+        <div class="overlay-header">
+            <a href="#closeOverlay" class="overlay-close-btn" aria-label="Close menu">&times;</a>    <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->  
+            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->       <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
+
+            <div class="cart-counter-container">
+              <span class="cart-counter" id="cartCounter2" aria-label="Items in cart">0</span>
+              <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon" alt="shopping bag icon in hamburger menu overlay">
+            </div>
+        </div>
+        
+        <div class=overlayTitle>
+          <h3>MENU</h3>
+        </div>
+        <div class="search-container">
+          <input type="text" placeholder="SEARCH" aria-label="Search site">
+        </div>
+
+        <div class="overlayOptionsContainer">
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_men.html">
+              <h5 class="menu-item">MENS</h5>
+            </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_women.html">
+              <h5 class="menu-item">WOMENS</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_men.html">
+              <h5 class="menu-item">PHASE OUT 40%</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="about_page.html">
+              <h5 class="menu-item">ABOUT</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="contact_us.html">
+              <h5 class="menu-item">CONTACT</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+            <a href="contact_us.html">
+              <h5 class="menu-item">SUPPORT</h5>
+          </a>
+          <div class="separatorLine" aria-hidden="true"></div>
+        </div>
+
+        <div class="overlayLogoContainer">
+            <img src="/assets/project_images/Logo/RainyDays_Logo_original_color.svg" class="overlayLogo" alt="rainy days logo in header">
+        </div>
+      </div>
+      <!--hamburger menu overlay end-->
+
+      <!--shopping cart overlay start-->
+      <div class="cart-overlay" id="shoppingCartOverlay" aria-label="Shopping cart overlay">
+
+        <div class="overlay-header">
+          <a href="#closeOverlay" class="overlay-close-btn" aria-label="Close shopping cart">&times;</a> 
+          <a id="closeOverlay"></a>  
+
+          <div class="cart-counter-container">
+            <span class="cart-counter" id="cartCounter3" aria-label="Items in cart">0</span>
+            <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon" alt="shopping bag icon in shopping cart overlay">
+          </div>
+        </div>
+
+        <div class="cart-overlay-content" aria-label="Shopping cart content">
+          <div class="overlayTitle">
+            <h3>SHOPPING CART</h3>
+          </div>
+          <div class="separatorLine" aria-hidden="true"></div>
+
+          <!--empty cart block start-->           <!--This will be hidden if no items are added to cart using js, hopefully-->
+          <div id="emptyCartblock" aria-label="Empty cart block">
+            <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
+            <div class="separatorLine" aria-hidden="true"></div>
+          </div>
+          <!--empty cart block end-->
+
+          <!--items added to cart block start-->
+          <div id="itemsAddedtoCartBlock" aria-label="Items added to cart block">
+            <div class="cart-items" aria-label="Items in shopping cart">
+              <div class="cart-item" aria-label="Cart item">
+                <h4>IKAROS Cycling Jacket</h4>
+                <div class="attribute">
+                  <span class="label">Size:</span>
+                  <span class="value" id="itemSize">XS</span>
+                </div>
+                <div class="attribute">
+                  <span class="label">Color:</span>
+                  <span class="value" id="itemColor">Red</span>
+                </div>
+                <div class="attribute">
+                  <span class="label">Price:</span>
+                  <span class="currency-symbol" id="itemCurrencySymbol1">£</span>
+                  <span class="value" id="itemPrice">249</span>
+                </div>
+                <div class="attribute">
+                  <span class="label">Quantity:</span>
+                  <span class="value" id="itemQuantity">1</span>
+                </div>
+              </div>
+            </div>
+            <div class="separatorLine" aria-hidden="true"></div>
+            <a href="list_of_products_men.html" class="continue-shopping" aria-label="Continue shopping">
+              <h5>CONTINUE SHOPPING</h5>
+            </a>
+            <div class="cart-total-cont">
+                <div class="cart-total" aria-label="Total cost of items in cart">
+                <span class="label">TOTAL</span>
+                    <div>
+                        <span class="currency-symbol" id="itemCurrencySymbol2">£</span>
+                        <span class="value" id="cartTotalValue">0</span>
+                    </div>
+                </div>
+                <div class="checkoutButtonContainer">
+                  <a href="checkout_page.html" class="checkoutButton" aria-label="Checkout">CHECKOUT</a>
+                </div>
+            </div>
+          </div>
+          <!--items added to cart block end-->
+
+          <!--static cart block start-->                    <!-- This will be displayed whether or not any items have been added to cart-->
+          <div class="completeYourKit" aria-label="Complete your kit section">
+            <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
+          </div>
+
+          <div class="overlayProductsGrid" aria-label="Product selection">
+
+            <div id="overlaycontent1" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+              </div>
+              <div class="overlay-products-text-frame">
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                  <p class="p2">£ 29</p>
+                  <button class="add-to-cart-button" id="addToCartBtn1" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+              </div>
+            </div>
+
+            <div id="overlaycontent2" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+              </div>
+              <div class="overlay-products-text-frame">
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                  <p class="p2">£ 29</p>
+                  <button class="add-to-cart-button" id="addToCartBtn2" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+              </div>
+            </div>
+
+            <div id="overlaycontent3" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+              </div>
+              <div class="overlay-products-text-frame">
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                  <p class="p2">£ 29</p>
+                  <button class="add-to-cart-button" id="addToCartBtn3" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+              </div>
+            </div>
+
+            <div id="overlaycontent4" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+              </div>
+              <div class="overlay-products-text-frame">
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                  <p class="p2">£ 29</p>
+                  <button class="add-to-cart-button" id="addToCartBtn4" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+              </div>
+            </div>
+
+            <div id="overlaycontent5" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+              </div>
+              <div class="overlay-products-text-frame">
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                  <p class="p2">£ 29</p>
+                  <button class="add-to-cart-button" id="addToCartBtn5" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+              </div>
+            </div>
+
+            <div id="overlaycontent6" class="overlayProductsContainer">
+              <div class="overlay-products-image-frame">
+                <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
+              </div>
+              <div class="overlay-products-text-frame">
+                  <h4 style="color: black;">BENGAL HAT</h4>
+                  <p class="p2">£ 29</p>
+                  <button class="add-to-cart-button" id="addToCartBtn6" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+              </div>
+            </div>
+            <!--static cart block end-->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<!--FILTER OVERLAY SECTION-->
+
+<!--FILTER ICONS-->  
+  <div id="iconFiltersContainer" class="iconFiltersContainer" role="navigation" aria-label="Activity Filters">
+    <div class="icon-container" role="button" aria-pressed="false">
+      <a href="#" aria-label="Filter by Urban"> 
+        <img src="assets/project_images/Icons/building.svg" alt="urban icon filter selector">
+          <p>URBAN</p>
+      </a>
+    </div>
+    <div class="icon-container" role="button" aria-pressed="false">
+      <a href="#" aria-label="Filter by Hiking"> 
+        <img src="assets/project_images/Icons/hiking.svg" alt="hiking icon filter selector">
+          <p>HIKING</p>
+      </a>
+    </div>
+    <div class="icon-container" role="button" aria-pressed="false">
+      <a href="#" aria-label="Filter by Skiing"> 
+        <img src="assets/project_images/Icons/skiing.svg" alt="skiing icon filter selector">
+          <p>SKIING</p>
+      </a>
+    </div>
+    <div class="icon-container" role="button" aria-pressed="false">
+      <a href="#" aria-label="Filter by Cycling"> 
+        <img src="assets/project_images/Icons/cycling.svg" alt="cycling icon filter selector">
+          <p>CYCLING</p>
+      </a>
+    </div>
+  </div>
+    
+  <h1 class="pageTitleHidden">SHOP MENS</h1> <!-- Made this to trigger at mobile resolutions (538px media query). Replaces the original SHOP MENS title. Positions it centered  between the filter icons and filter / sort by text, instead of horizontally between-->
+
+<!--FILTER OVERLAY CONTENT--> 
+  <div class="filter-section">
+    <div class="filterOverlay">
+      <a href="#overlayFiltersContent" aria-label="Open Filter Options">
+          <h4>FILTER BY</h4>
+      </a>
+    </div>
+    <div class="overlay-filters-content" id="overlayFiltersContent" aria-modal="true">
+      <a href="#" class="closeFiltersOverlay" aria-label="Close Filter Options">&times;</a>
+    <div class=overlayTitle>
+      <h3>FILTER BY</h3>
+    </div>
+      <div class="separatorLine" aria-hidden="true"></div>
+      <h5 id="availabilityHeading">Availability</h5>
+      <label for="availability">
+        <input type="checkbox" name="availability" value="inStock" aria-labelledby="availabilityHeading availabilityLabel">
+        <span id="availabilityLabel">In Stock <span class="in-stock-items-counter">(0)</span></span>
+      </label>
+      <div class="separatorLine" aria-hidden="true"></div>
+    <h5 id="genderHeading">Gender</h5>
+      <label for="maleGender">
+        <input type="checkbox" name="Gender" value="male" aria-labelledby="genderHeading maleLabel">
+        <span id="maleLabel">Male <span class="male-items-counter">(0)</span></span>
+      </label>
+      <label for="femaleGender">
+        <input type="checkbox" name="Gender" value="female" aria-labelledby="genderHeading femaleLabel">
+        <span id="femaleLabel">Female <span class="female-items-counter">(0)</span></span>
+      </label>
+      <div class="separatorLine" aria-hidden="true"></div>
+    <h5 id="classHeading">Class</h5>
+      <ul>
+        <li>
+            <label id="shellLabel">
+                <input type="checkbox" id="shellCheckbox" name="Class" value="Shell"  aria-labelledby="classHeading shellLabel">
+                Shell <span class="shell-items-counter">(0)</span>
+            </label>
+        </li>
+        <li>
+          <label id="insulatedLabel">
+            <input type="checkbox" id="insulatedCheckbox" name="Class" value="insulated" aria-labelledby="classHeading insulatedLabel">
+            Insulated <span class="insulated-items-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="bomberLabel">
+            <input type="checkbox" id="bomberCheckbox" name="Class" value="bomber" aria-labelledby="classHeading bomberLabel">
+            Bomber <span class="bomber-items-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="softshellLabel">
+            <input type="checkbox" id="softshellCheckbox" name="Class" value="softshell" aria-labelledby="classHeading softshellLabel">
+            Softshell <span class="softshell-items-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="parkaLabel">
+            <input type="checkbox" id="parkaCheckbox" name="Class" value="parka" aria-labelledby="classHeading parkaLabel">
+            Parka <span class="parka-items-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="windbreakerLabel">
+            <input type="checkbox" id="windbreakerCheckbox" name="Class" value="windbreaker" aria-labelledby="classHeading windbreakerLabel">
+            Windbreaker <span class="windbreaker-items-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="fleeceLabel">
+            <input type="checkbox" id="fleeceCheckbox" name="Class" value="fleece" aria-labelledby="classHeading fleeceLabel">
+            Fleece <span class="fleece-items-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="baseLayeringLabel">
+            <input type="checkbox" id="baseLayeringCheckbox" name="Class" value="baseLayering" aria-labelledby="classHeading baseLayeringLabel">
+            Base Layering <span class="base-layering-items-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+    <h5 id="activityHeading">Activity</h5>
+      <ul>
+        <li>
+          <label id="hikingLabel">
+            <input type="checkbox" id="hikingCheckbox" name="Activity" value="hiking" aria-labelledby="activityHeading hikingLabel">
+            Hiking <span class="hiking-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="iceClimbingLabel">
+            <input type="checkbox" id="iceClimbingCheckbox" name="Activity" value="iceClimbing" aria-labelledby="activityHeading iceClimbingLabel">
+            Ice Climbing <span class="ice-climbing-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="cyclingLabel">
+            <input type="checkbox" id="cyclingCheckbox" name="Activity" value="cycling" aria-labelledby="activityHeading cyclingLabel">
+            Cycling <span class="cycling-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="expeditionLabel">
+            <input type="checkbox" id="expeditionCheckbox" name="Activity" value="expedition" aria-labelledby="activityHeading expeditionLabel">
+            Expedition <span class="expedition-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="fishingLabel">
+            <input type="checkbox" id="fishingCheckbox" name="Activity" value="fishing" aria-labelledby="activityHeading fishingLabel">
+            Fishing <span class="fishing-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="huntingLabel">
+            <input type="checkbox" id="huntingCheckbox" name="Activity" value="hunting" aria-labelledby="activityHeading huntingLabel">
+            Hunting <span class="hunting-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="urbanLabel">
+            <input type="checkbox" id="urbanCheckbox" name="Activity" value="urban" aria-labelledby="activityHeading urbanLabel">
+            Urban <span class="urban-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+    <h5 id="colorHeading">Color</h5>
+      <ul>
+        <li>
+          <label id="beigeLabel">
+            <input type="checkbox" id="beigeCheckbox" name="Color" value="beige" aria-labelledby="colorHeading beigeLabel">
+            Beige <span class="beige-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="blackLabel">
+            <input type="checkbox" id="blackCheckbox" name="Color" value="black" aria-labelledby="colorHeading blackLabel">
+            Black <span class="black-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="blueLabel">
+            <input type="checkbox" id="blueCheckbox" name="Color" value="blue" aria-labelledby="colorHeading blueLabel">
+            Blue <span class="blue-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="brownLabel">
+            <input type="checkbox" id="brownCheckbox" name="Color" value="brown" aria-labelledby="colorHeading brownLabel">
+            Brown <span class="brown-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="greenLabel">
+            <input type="checkbox" id="greenCheckbox" name="Color" value="green" aria-labelledby="colorHeading greenLabel">
+            Green <span class="green-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="greyLabel">
+            <input type="checkbox" id="greyCheckbox" name="Color" value="grey" aria-labelledby="colorHeading greyLabel">
+            Grey <span class="grey-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="orangeLabel">
+            <input type="checkbox" id="orangeCheckbox" name="Color" value="orange" aria-labelledby="colorHeading orangeLabel">
+            Orange <span class="orange-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="redLabel">
+            <input type="checkbox" id="redCheckbox" name="Color" value="red" aria-labelledby="colorHeading redLabel">
+            Red <span class="red-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="silverLabel">
+            <input type="checkbox" id="silverCheckbox" name="Color" value="silver" aria-labelledby="colorHeading silverLabel">
+            Silver <span class="silver-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="tanLabel">
+            <input type="checkbox" id="tanCheckbox" name="Color" value="tan" aria-labelledby="colorHeading tanLabel">
+            Tan <span class="tan-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="whiteLabel">
+            <input type="checkbox" id="whiteCheckbox" name="Color" value="white" aria-labelledby="colorHeading whiteLabel">
+            White <span class="white-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+    <h5 id="sizeHeading">Size</h5>
+      <ul>
+        <li>
+          <label id="extraSmallLabel">
+            <input type="checkbox" id="extraSmallCheckbox" name="Size" value="extraSmall" aria-labelledby="sizeHeading extraSmallLabel">
+            Extra Small <span class="extra-small-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="smallLabel">
+            <input type="checkbox" id="smallCheckbox" name="Size" value="small" aria-labelledby="sizeHeading smallLabel">
+            Small <span class="small-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="mediumLabel">
+            <input type="checkbox" id="mediumCheckbox" name="Size" value="medium" aria-labelledby="sizeHeading mediumLabel">
+            Medium <span class="medium-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="largeLabel">
+            <input type="checkbox" id="largeCheckbox" name="Size" value="large" aria-labelledby="sizeHeading largeLabel">
+            Large <span class="large-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="extraLargeLabel">
+            <input type="checkbox" id="extraLargeCheckbox" name="Size" value="extraLarge" aria-labelledby="sizeHeading extraLargeLabel">
+            Extra Large <span class="extra-large-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+
+    <div class="price-section">
+      <section> 
+        <div class="price-container">
+          <h5 id="priceHeading">Price</h5>
+          <div class="price-container-main">
+            <div class="price-range-field">
+              <label class="price-range-label" for="filter-price-from">From</label>
+              <input class="price-range-input" id="filter-price-from" type="number" placeholder="0" min="0" max="9000" aria-labelledby="priceHeading filter-price-from-label">
+            </div>
+            <span class="price-range-currency">£</span>
+            <div class="price-range-field">
+              <label class="price-range-label" for="filter-price-to">To</label>
+              <input class="price-range-input" id="filter-price-to" type="number" placeholder="9000" min="0" max="9000" aria-labelledby="priceHeading filter-price-to-label">
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="separatorLine" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <h1 class="pageTitle">SHOP MENS</h1> <!-- is replaced by pageTitleHidden at 538px media query -->
+
+  <div class="filterOverlay">
+    <a href="#sortDropdownContent" aria-haspopup="true" aria-expanded="false" id="sortDropdownToggle"> 
+      <h4>SORT BY</h4>
+    </a>
+    <div class="dropdown-sort-content" id="sortDropdownContent" aria-labelledby="sortDropdownToggle" aria-hidden="true"> <!--once #sortDropdownContent is clicked, it targets this class, making it visible. Same principle as header overlays-->
+      <ul>
+          <li><a href="#">Price: Low to High</a></li>
+          <li><a href="#">Price: High to Low</a></li>
+          <li><a href="#">Alphabetically: A to Z</a></li>
+          <li><a href="#">Alphabetically: Z to A</a></li>
+          <li><a href="#">Newest Arrivals</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Featured</a></li>
+      </ul>
+    </div>
+  </div>
+  </div> <!--not a stray, will fix later-->
+    
+<!--MAIN-->
+
+    <div class="main-grid">
+
+      <div id="content1" class="content-small-shared-attributes">
+        <a href="ikaros.html" class=image-frame>
+              <img src="assets/project_images/Product_images/ikaros.png" alt="product-image-ikaros" role="img">
+          </a>
+        <div class="text-frame">
+          <h4>IKAROS</h4>
+          <p class="p text-aligned-center" id="prodDescription1" role="paragraph">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p" role="text">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content2" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="product-image-maverick">
+        </a>
+        <div class="text-frame">
+          <h4>MAVERICK</h4>
+          <p class="p text-aligned-center" id="prodDescription2">Bomber jacket for casual style and easy layering</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+      
+      <div id="content3" class="content-small-shared-attributes">
+        <a href="hektor.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hektor.png" alt="product-image-hektor">
+        </a>
+        <div class="text-frame">
+          <h4>HEKTOR</h4>
+          <p class="p text-aligned-center" id="prodDescription3">Versatile fleece for winter activities</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content4" class="content-small-shared-attributes">
+        <a href="hemingway.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hemingway.png" alt="product-image-hemingway">
+        </a>
+        <div class="text-frame">
+          <h4>HEMINGWAY</h4>
+          <p class="p text-aligned-center" id="prodDescription4">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content5" class="content-small-shared-attributes">
+        <a href="ikaros.html" class=image-frame>
+              <img src="assets/project_images/Product_images/ikaros.png" alt="product-image-ikaros">
+          </a>
+        <div class="text-frame">
+          <h4>IKAROS</h4>
+          <p class="p text-aligned-center" id="prodDescription5">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content6" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="product-image-maverick">
+        </a>
+        <div class="text-frame">
+          <h4>MAVERICK</h4>
+          <p class="p text-aligned-center" id="prodDescription6">Bomber jacket for casual style and easy layering</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+      
+      <div id="imagePerson" class="large-image-container">
+        <img src="assets/project_images/General_images/List_of_Products/jacketForest.png" class="large-image" id="personInJacket" alt="image of person in jacket">
+      </div>
+
+      <div id="imageClouds" class="large-image-container">
+        <img src="assets/project_images/General_images/List_of_Products/cloudsblue.png" class="large-image" id="clouds" alt="image of clouds">
+      </div>
+
+      <div id="content7" class="content-small-shared-attributes">
+        <a href="hektor.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hektor.png" alt="product-image-hektor">
+        </a>
+        <div class="text-frame">
+          <h4>HEKTOR</h4>
+          <p class="p text-aligned-center" id="prodDescription7">Versatile fleece for winter activities</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content8" class="content-small-shared-attributes">
+        <a href="hemingway.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hemingway.png" alt="product-image-hemingway">
+        </a>
+        <div class="text-frame">
+          <h4>HEMINGWAY</h4>
+          <p class="p text-aligned-center" id="prodDescription8">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+      
+      <div id="content9" class="content-small-shared-attributes">
+        <a href="ikaros.html" class=image-frame>
+              <img src="assets/project_images/Product_images/ikaros.png" alt="product-image-ikaros">
+          </a>
+        <div class="text-frame">
+          <h4>IKAROS</h4>
+          <p class="p text-aligned-center" id="prodDescription9">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content10" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="product-image-maverick">
+        </a>
+        <div class="text-frame">
+          <h4>MAVERICK</h4>
+          <p class="p text-aligned-center" id="prodDescription10">Bomber jacket for casual style and easy layering</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+      
+      <div id="content11" class="content-small-shared-attributes">
+        <a href="hektor.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hektor.png" alt="product-image-hektor">
+        </a>
+        <div class="text-frame">
+          <h4>HEKTOR</h4>
+          <p class="p text-aligned-center" id="prodDescription11">Versatile fleece for winter activities</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content12" class="content-small-shared-attributes">
+        <a href="hemingway.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hemingway.png" alt="product-image-hemingway">
+        </a>
+        <div class="text-frame">
+          <h4>HEMINGWAY</h4>
+          <p class="p text-aligned-center" id="prodDescription12">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+    
+      <div id="content13" class="content-small-shared-attributes">
+        <a href="ikaros.html" class=image-frame>
+              <img src="assets/project_images/Product_images/ikaros.png" alt="product-image-ikaros">
+        </a>
+        <div class="text-frame">
+          <h4>IKAROS</h4>
+          <p class="p text-aligned-center" id="prodDescription13">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content14" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="product-image-maverick">
+        </a>
+        <div class="text-frame">
+          <h4>MAVERICK</h4>
+          <p class="p text-aligned-center" id="prodDescription14">Bomber jacket for casual style and easy layering</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+      
+      <div id="content15" class="content-small-shared-attributes">
+        <a href="hektor.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hektor.png" alt="product-image-hektor">
+        </a>
+        <div class="text-frame">
+          <h4>HEKTOR</h4>
+          <p class="p text-aligned-center" id="prodDescription15">Versatile fleece for winter activities</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content16" class="content-small-shared-attributes">
+        <a href="hemingway.html" class="image-frame">
+          <img src="assets/project_images/Product_images/hemingway.png" alt="product-image-hemingway">
+        </a>
+        <div class="text-frame">
+          <h4>HEMINGWAY</h4>
+          <p class="p text-aligned-center" id="prodDescription16">Heavy duty expedition jacket for reliable cold protection</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content17" class="content-small-shared-attributes">
+        <a href="ikaros.html" class=image-frame>
+              <img src="assets/project_images/Product_images/ikaros.png" alt="product-image-ikaros">
+          </a>
+        <div class="text-frame">
+          <h4>IKAROS</h4>
+          <p class="p text-aligned-center" id="prodDescription17">Lightweight cycling jacket for optimal speed and agility</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+
+      <div id="content18" class="content-small-shared-attributes">
+        <a href="maverick.html" class="image-frame">
+          <img src="assets/project_images/Product_images/maverick.png" alt="product-image-maverick>
+        </a>
+        <div class="text-frame">
+          <h4>MAVERICK</h4>
+          <p class="p text-aligned-center" id="prodDescription18">Bomber jacket for casual style and easy layering</p>
+          <p class="p">£ 249</p>
+        </div> 
+      </div>
+    </div>
+
+<!--FOOTER-->
+
+<footer id=desktop-footer class="footer">
+  <div class="footer-container">
+        <!--footer left side-->
+        <a href="index.html" class="footer-left-container" aria-label="Back to homepage">
+          <img src="assets/project_images/Logo/white_logo.svg" class="footer-logo" alt="rainydays company logo in footer">
+        </a>
+      <!--footer center-->
+      <div class="footer-center-container">
+        <div class="footer-column-1">
+          <h3 class="footer-titles">RAINYDAYS AS</h3>
+          <ul aria-label="Company address">
+            <li class="footer-bodytext">Remuladesletta 789</li>
+            <li class="footer-bodytext">4029 Copenhagen</li>
+            <li class="footer-bodytext">Denmark</li>
+          </ul>
+        </div>
+        <div class="footer-column-2">
+          <h3 class="footer-titles">Info</h3>
+          <ul aria-label="Information and support links">
+            <li><a class="footer-bodytext" href="about_page.html">About Us</a></li>
+            <li><a class="footer-bodytext" href="contact_us.html">Contact</a></li>
+            <li><a class="footer-bodytext" href="contact_us.html">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-column-3">
+          <h3 class="footer-titles">Help</h3>
+          <ul aria-label="Links for user account and privacy policies">
+            <li><a class="footer-bodytext" href="#">My Account</a></li>
+            <li><a class="footer-bodytext" href="#">Terms & Conditions</a></li>
+            <li><a class="footer-bodytext" href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column-4">
+          <h3 class="footer-titles">Follow Us</h3>
+          <ul aria-label="Social media links">
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/facebook-circle-fill.svg" alt="facebook icon in footer"></a></li>
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/youtube-fill.svg" alt="youtube icon in footer"></a></li>
+            <li><a class="footer-bodytext" href="#"><img src="assets/project_images/Icons/instagram-fill.svg" alt="instagram icon in footer"></a></li>
+          </ul>
+        </div>
+      </div>
+      <!--footer right side-->
+      <div class="footer-right-container">
+        <div class="footer-column-5">
+          <h3 class="footer-titles">Currency</h3>
+          <div class="currency-box">
+            <div class="currency-text">EUR</div> 
+            <div class="icon-container">
+              <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
+            </div>
+            <div class="currency-dropdown-content">
+              <a href="#">USD</a>
+              <a href="#">DKK</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</footer>
+
+<!--MOBILE FOOTER-->
+
+<footer id="mobile-footer" class="mobile-footer">
+<div class="mobileFooterContainer">
+    <div class="separatorLineWhite" aria-hidden="true"></div>
+    <div class="mobileFooterMenuItems" aria-label="Footer navigation">
+        <a href="list_of_products_men.html">
+            <h6 class="white-text">SHOP</h6>
+        </a>
+        <a href="about_page.html">
+            <h6 class="white-text">ABOUT</h6>
+        </a>
+    </div>
+    <div class="mobileCompanyLogo">
+      <a href="index.html"><img src="assets/project_images/Logo/white_logo.svg" alt="rainydays company logo in mobile footer"></a>
+    </div>
+    <div class="mobileFooterMenuItems" aria-label="Additional footer navigation">
+        <a href="contact_us.html">
+            <h6 class="white-text">CONTACT</h6>
+         </a>
+         <a href="contact_us.html">
+            <h6 class="white-text">SUPPORT</h6>
+        </a>
+    </div>
+    <div class="separatorLineWhite2" aria-hidden="true"></div>
+    <div class="getApp_and_socialMediaIcons" aria-label="Download apps and social media links">
+        <a href="#"><img src="assets/project_images/Icons/googlePlay.svg" class="appIcons" alt="google play icon in mobile footer"></a>
+        <a href="#"><img src="assets/project_images/Icons/fbIcon.svg" class="socialmediaIcons" alt="facebook icon in mobile footer"></a>
+        <a href="#"><img src="assets/project_images/Icons/youtubeIcon.svg" class="socialmediaIcons" alt="youtube icon in mobile footer"></a>
+        <a href="#"><img src="assets/project_images/Icons/instagramIcon.svg" class="socialmediaIcons" alt="instagram icon in mobile footer"></a>
+        <a href="#"><img src="assets/project_images/Icons/appStore.svg" class="appIcons" alt="app store icon in mobile footer"></a>
+    </div>
+    <div class="copyrightText">
+        <h6 class="white-text">© 2023 RAINYDAYS</h6>
+    </div>
+</div>
+
+</footer>
+
+
+
+</body>
+
+
+
+</html>

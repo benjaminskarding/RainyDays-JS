@@ -514,7 +514,7 @@ button, select {
   position: fixed;
   top: 0;
   right: 0;
-  width: auto;
+  width: 30rem;
   height: 100%;
   background-color: white;
   z-index: 2;

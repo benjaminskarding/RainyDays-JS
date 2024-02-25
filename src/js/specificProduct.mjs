@@ -120,7 +120,7 @@ async function displayAdditionalProducts(currentProductId) {
 
     // Append additional products after the insertion point
     additionalProducts.forEach((product, index) => {
-        // Determine price display based on the onSale status
+        // Determine price display based on the sale status
         let priceHTML = product.onSale
             ? `<p class="original-price">£${product.price.toFixed(2)}</p>
                <p class="sale-price">£${product.discountedPrice.toFixed(2)}</p>`

@@ -14,7 +14,7 @@ async function DisplayHomepageProducts() {
         const femaleProducts = products.filter(product => product.gender === 'Female').slice(0, 4);
         const maleProducts = products.filter(product => product.gender === 'Male').slice(0, 4);
 
-        // Select the DOM elements where products will be inserted
+        // Select the elements where products will be inserted
         const grid1 = document.querySelector('.nestedGrid1'); // Female products grid
         const grid2 = document.querySelector('.nestedGrid2'); // Male products grid
 
@@ -22,7 +22,7 @@ async function DisplayHomepageProducts() {
         grid1.innerHTML = '';
         grid2.innerHTML = '';
 
-        // Populate grids with limited number of products
+        // Populate grids with products
         femaleProducts.forEach(product => grid1.appendChild(createHomepageProducts(product)));
         maleProducts.forEach(product => grid2.appendChild(createHomepageProducts(product)));
 

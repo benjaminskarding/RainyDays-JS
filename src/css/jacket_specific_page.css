@@ -27,6 +27,8 @@
 #product6 { grid-area: product6; }  
 .bigImageFrame {grid-area: bigImageFrame}
 
+
+
 /* PRODUCT PHOTO SECTION */
 
 .bigImageFrame {
@@ -110,18 +112,14 @@ height: 100%;
 .color-option {
     background: none;
     border: none;
-    cursor: pointer;
     margin: 0 5px;
     text-decoration: none;
     outline: none;
     padding-bottom: 1px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s;
-}
-
-.color-option:hover,
-.color-option:focus {
-    border-bottom: 1px solid currentColor;
+    font-family: var(--font-secondary);
+    font-size: 16px;
 }
 
 /* SIZE SECTION */
@@ -198,6 +196,38 @@ height: 100%;
     font-family: "Monda";
     line-height: 1;
 }
+
+.sizing-overlay {
+    position: fixed;
+    top: 80%; 
+    right: -15%;
+    width: 40rem;
+    height: auto; 
+    max-height: 50%; 
+    background-color: white;
+    z-index: 1000; 
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    box-sizing: border-box;
+    transform: translateX(100%) translateY(-50%); 
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    overflow-y: auto; 
+    border-radius: 4px; 
+}
+
+.sizing-overlay.active {
+    display: block; 
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.size-chart-image {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
 
 /* Complete your kit */
 

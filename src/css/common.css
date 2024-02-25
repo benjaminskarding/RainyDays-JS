@@ -40,10 +40,63 @@ ul {
   border-bottom: 1px solid black; 
   margin-bottom: 10px; 
   margin-top: 10px;
+  width: 100%;
 }
 
 button, select {
   color: black; 
+}
+
+.hidden {
+  display: none;
+}
+
+/* Loading indicator */
+
+.spinner {
+  margin: 100px auto 0;
+  width: 70px;
+  text-align: center;
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner > div {
+  width: 25px;
+  height: 25px;
+  background-color: #0A3641;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
 }
 
 /* header */
@@ -174,6 +227,7 @@ button, select {
   position: relative;
   white-space: nowrap;
 }
+
 
 /* header end */
 
@@ -325,10 +379,21 @@ button, select {
   display: block;
 }
 
-/* footer end */
-
-
 /* Hamburger overlay */
+
+.overlayMenuButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 1.375rem;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  margin-left: -0.14em;
+  cursor: pointer;
+}
 
 .hamburger-overlay {
   position: fixed;
@@ -337,13 +402,18 @@ button, select {
   width: 30rem;
   height: 100%;
   background-color: white;
-  z-index: 1000;
-  visibility: hidden; 
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 2;
   display: flex; 
   flex-direction: column; 
   justify-content: space-between; 
+  transform: translateX(-100%); 
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0; 
+}
+
+.hamburger-overlay.active {
+  transform: translateX(0%); 
+  opacity: 1; 
 }
 
 .overlay-header {
@@ -351,13 +421,8 @@ button, select {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  
 }
 
-.hamburger-overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
 
 .overlayOptionsContainer {
   flex-direction: column;
@@ -371,7 +436,7 @@ button, select {
 }
 
 .search-container input[type="text"] {
-  background-image: url(../../assets/project_images/Icons/search-line-black.svg); /* magnifying glass icon */
+  background-image: url(../../assets/project_images/Icons/search-line-black.svg); 
   background-position: 10px center;
   background-repeat: no-repeat;
   width: 75%;
@@ -419,6 +484,8 @@ button, select {
 }
 
 .overlay-close-btn {
+  display: flex;
+  align-items: center;
   padding-top: 10px;
   margin-left: 1rem;
   color: black;
@@ -428,29 +495,13 @@ button, select {
   cursor: pointer;
 }
 
-.cart-counter-container {
-  display: flex;
-  align-items: center;
-  margin-right: 1rem;
-  margin-top: 1rem;
-}
-
-.cart-icon {
-  width: 24px;
-  height: auto;
-}
-
-.cart-counter {
-  font-family: "Monda";
-  font-size: 1.275rem;
-}
-
-/* Hamburger overlay end*/
-
 /* Shopping cart overlay */
 
-.cart-overlay::-webkit-scrollbar { /* scrollbar not visible on overlay */
-  display: none;
+.cartOverlayButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 0rem;
 }
 
 .cart-overlay {
@@ -460,23 +511,69 @@ button, select {
   width: auto;
   height: 100%;
   background-color: white;
-  z-index: 1000;
-  visibility: hidden; 
+  z-index: 2;
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+  transform: translateX(100%); 
+  transition: transform 0.5s ease, opacity 0.5s ease;
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none; 
 }
 
+.cart-overlay.active {
+  transform: translateX(0%); 
+  opacity: 1; 
+}
+
+.cart-overlay::-webkit-scrollbar { /* scrollbar not visible on overlay */
+  display: none;
+}
+
+.cart-icon {
+  width: 24px;
+  height: auto;
+}
+
+.price-container {
+  display: inline-block;
+}
+
+.cartQuantityInc,
+.cartQuantityDec {
+  display: inline-flex;
+  background: none;
+  border: none;
+  align-items: center;
+}
+
+.cartQuantityDec img,
+.cartQuantityInc img {
+  width: 14px;
+  height: 14px;
+}
+
+.quantity-attribute {
+  display: inline-flex;
+  margin-left: 10rem;
+  gap: 2rem;
+}
+
+.cart-counter-container,
+.cartOverlayButton {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-counter {
+  font-family: "Monda";
+  font-size: 1.275rem;
+}
+
 .cart-overlay-content {
   display: flex;
   flex-direction: column;
-}
-
-.cart-overlay:target {
-  visibility: visible;
-  opacity: 1;
 }
 
 .cart-items {
@@ -485,7 +582,17 @@ button, select {
   align-items: center;
   flex-direction: column;
   margin-bottom: 1rem;
-  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.cart-items .separatorLine{
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.cart-item {
+  margin-bottom: 1rem;
 }
 
 .continue-shopping {
@@ -497,7 +604,7 @@ button, select {
 .cart-total {
   display: flex;
   justify-content: space-between;
-  margin-top: 350px;
+  margin-top: 2rem;
   margin-left: 1rem;
   margin-right: 1rem;
   width: 100%;
@@ -507,9 +614,7 @@ button, select {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 1rem 0.5rem 1rem;
   background-color: #0A3641;
   color: white;
   border: none;
@@ -528,7 +633,7 @@ button, select {
 .completeYourKit {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -594,7 +699,6 @@ button, select {
   line-height: 1;
 }
 
-
 .add-to-cart-button {
   display: flex;
   justify-content: center;
@@ -625,13 +729,15 @@ button, select {
 
 /* Shopping cart overlay end */
 
-
-/* Stock status */
-
 .out-of-stock {
   opacity: 0.5;
   pointer-events: none; 
   cursor: not-allowed; 
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
 }
 
 
@@ -690,7 +796,7 @@ select:focus {
 
 .image-frame img {
   position: absolute;
-  width: 70%;  
+  width: 95%;  
   height: 70%;  
   top: 50%;
   left: 50%;
@@ -763,7 +869,7 @@ select:focus {
 
 /* Header -> Mobile Header */
 
-@media (max-width: 1593px) {
+@media (max-width: 1674px) {
   .hide-on-small-res {
     display: none !important;
   }
@@ -771,8 +877,8 @@ select:focus {
 
 
 
-@media (max-width: 865px) {
-  .hide-on-865px {        
+@media (max-width: 958px) {
+  .hide-on-958px {        
     display: none !important;
   }
   .hide-on-high-res {

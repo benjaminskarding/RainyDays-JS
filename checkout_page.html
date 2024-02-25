@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" defer src='src/js/checkout.mjs'></script>
   <title>Checkout</title>
   <link rel="stylesheet" href="src/css/checkout_page.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
@@ -13,16 +14,22 @@
 
 
 <body>
+  <div class="spinner" id="loadingIndicator">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  
   <header class="header-collection">
     <div class="promo-banner hide-on-mobile-res" id="promo-banner" aria-label="Promotional Banner">
-      <a href="list_of_products_men.html" class="nav-link" aria-label="End of Season Sale - Up to 40% off select items">End of Season Sale | Up to 40% off select items</a>
+      <a href="list_of_products.html?gender=Male" class="nav-link" aria-label="End of Season Sale - Up to 40% off select items">End of Season Sale | Up to 40% off select items</a>
     </div>
     <nav class="header-main-nav">
       <div class="header-nav-left">
-        <a href="#menuOverlay" aria-label="Open menu">
+        <button class="overlayMenuButton" id="openMenuOverlay" aria-label="Open menu">
           <img src="assets/project_images/Icons/hamburger.svg" class="icon" alt="hamburger icon in header">
-          <span class="hide-on-865px">MENU</span>
-        </a> 
+          <span class="hide-on-958px">MENU</span>
+        </button> 
       </div>
       <div class="header-logo">
         <a href="index.html" class="nav-link" aria-label="Go to homepage">
@@ -32,24 +39,21 @@
       <div class="header-nav-right">
         <a href="about_page.html" class="nav-link hide-on-small-res" aria-label="Learn about us">ABOUT US</a>
         <a href="contact_us.html" class="nav-link hide-on-small-res" aria-label="Contact us">CONTACT</a>
-        <div class="nav-link search-link hide-on-865px">
+        <div class="nav-link search-link hide-on-958px">
           <img src="assets/project_images/Icons/search-line.svg" class="icon" alt="magnifying glass icon in header">
           <input type="text" class="header-search-input" placeholder="SEARCH" aria-label="Search site">
         </div>
-        <a href="#shoppingCartOverlay" aria-label="View shopping cart">
-          <span class="cart-counter" id="cartCounter1" aria-label="Items in cart">0</span>
+        <button class="cartOverlayButton" aria-label="View shopping cart" id="openCartOverlay"> 
+          <span class="cart-counter" id="cartCounter" aria-label="Items in cart">0</span>
           <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="icon" alt="shopping bag icon in header">
-        </a>
+        </button>
       </div>
 
-      <!--hamburger menu overlay start-->
-      <div class="hamburger-overlay" id="menuOverlay" aria-label="Menu overlay">  <!--This overlay gets targeted by <a href="#menuOverlay"> in the header. Once the href in the header is clicked and directed here, it activates this rule in common.css: .hamburger-overlay:target {visibility: visible;} which in turn makes this block visible.-->
-
+      <!--hamburger menu overlay-->
+      <div class="hamburger-overlay" id="menuOverlay" aria-label="Menu overlay">  
 
         <div class="overlay-header">
-            <a href="#closeOverlay" class="overlay-close-btn" aria-label="Close menu">&times;</a> <!-- the &times; cmd represents an X symbol for closing the overlay - without having to use an svg-->            
-            <a id="closeOverlay"></a> <!-- When #closeOverlay is clicked, the URL changes. This deselects #menuOverlay, which returns the page to its original state before the overlay was triggered -->     <!-- This has the same ID as the one in shopping cart overlay, which i guess could be problematic, but it works for demo purposes, and will be replaced by javascript anyway -->
-
+          <button class="overlay-close-btn" id="closeMenuOverlay" aria-label="Close shopping cart">&times;</button>
             <div class="cart-counter-container">
               <span class="cart-counter" id="cartCounter2" aria-label="Items in cart">0</span>
               <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon" alt="shopping bag icon in hamburger menu overlay">
@@ -65,15 +69,15 @@
 
         <div class="overlayOptionsContainer">
           <div class="separatorLine" aria-hidden="true"></div>
-            <a href="list_of_products_men.html">
+            <a href="list_of_products.html?gender=Male">
               <h5 class="menu-item">MENS</h5>
             </a>
           <div class="separatorLine" aria-hidden="true"></div>
-            <a href="list_of_products_women.html">
+            <a href="list_of_products.html?gender=Female">
               <h5 class="menu-item">WOMENS</h5>
           </a>
           <div class="separatorLine" aria-hidden="true"></div>
-            <a href="list_of_products_men.html">
+            <a href="list_of_products.html?gender=Male">
               <h5 class="menu-item">PHASE OUT 40%</h5>
           </a>
           <div class="separatorLine" aria-hidden="true"></div>
@@ -95,15 +99,11 @@
             <img src="assets/project_images/Logo/RainyDays_Logo_original_color.svg" class="overlayLogo" alt="rainy days logo in hamburger overlay">
         </div>
       </div>
-      <!--hamburger menu overlay end-->
-
-      <!--shopping cart overlay start-->
-      <div class="cart-overlay" id="shoppingCartOverlay" aria-label="Shopping cart overlay"> <!-- Same principle as hamburger overlay comment-->
+      <!--shopping cart overlay -->
+      <div class="cart-overlay" id="shoppingCartOverlay" aria-label="Shopping cart overlay">
 
         <div class="overlay-header">
-          <a href="#closeOverlay" class="overlay-close-btn" aria-label="Close shopping cart">&times;</a>
-          <a id="closeOverlay"></a>
-
+          <button class="overlay-close-btn" id="closeCartOverlay" aria-label="Close shopping cart">&times;</button>  
           <div class="cart-counter-container">
             <span class="cart-counter" id="cartCounter3" aria-label="Items in cart">0</span>
             <img src="assets/project_images/Icons/shopping-bag-fill.svg" class="cart-icon" alt="shopping bag icon in shopping cart overlay">
@@ -115,73 +115,49 @@
             <h3>SHOPPING CART</h3>
           </div>
           <div class="separatorLine" aria-hidden="true"></div>
-
-          <!--empty cart block start-->       <!--This will be hidden if no items are added to cart using js, hopefully-->
+    
           <div id="emptyCartblock" aria-label="Empty cart block">
             <h6 class="no-items-added">NO ITEMS ADDED YET</h6>
             <div class="separatorLine" aria-hidden="true"></div>
           </div>
-          <!--empty cart block end-->
 
-          <!--items added to cart block start-->
           <div id="itemsAddedtoCartBlock" aria-label="Items added to cart block">
-            <div class="cart-items" aria-label="Items in shopping cart">
-              <div class="cart-item" aria-label="Cart item">
-                <h4>IKAROS Cycling Jacket</h4>
-                <div class="attribute">
-                  <span class="label">Size:</span>
-                  <span class="value" id="itemSize">XS</span>
-                </div>
-                <div class="attribute">
-                  <span class="label">Color:</span>
-                  <span class="value" id="itemColor">Red</span>
-                </div>
-                <div class="attribute">
-                  <span class="label">Price:</span>
-                  <span class="currency-symbol" id="itemCurrencySymbol1">£</span>
-                  <span class="value" id="itemPrice">249</span>
-                </div>
-                <div class="attribute">
-                  <span class="label">Quantity:</span>
-                  <span class="value" id="itemQuantity">1</span>
-                </div>
-              </div>
+            <div class="cart-items" aria-label="Items in shopping cart" id="cart-items-container">
+              
             </div>
-            <div class="separatorLine" aria-hidden="true"></div>
-            <a href="list_of_products_men.html" class="continue-shopping" aria-label="Continue shopping">
+            
+            <a href="list_of_products.html" class="continue-shopping list-of-products-link" aria-label="Continue shopping"> 
               <h5>CONTINUE SHOPPING</h5>
             </a>
             <div class="cart-total-cont">
-                <div class="cart-total" aria-label="Total cost of items in cart">
+              <div class="cart-total" aria-label="Total cost of items in cart">
                 <span class="label">TOTAL</span>
-                    <div>
-                        <span class="currency-symbol" id="itemCurrencySymbol2">£</span>
-                        <span class="value" id="cartTotalValue">0</span>
-                    </div>
+                <div>
+                  <span class="currency-symbol" id="itemCurrencySymbol2">£</span>
+                  <span class="value" id="cartTotalValue">0</span>
                 </div>
-                <div class="checkoutButtonContainer">
-                  <div class="checkoutButtonContainer">
-                    <a href="checkout_page.html" class="checkoutButton" aria-label="Checkout">CHECKOUT</a>
-                </div>                
+              </div>
+              <div class="checkoutButtonContainer">
+                <a href="checkout_page.html" class="checkoutButton" aria-label="Checkout">CHECKOUT</a>
+              </div>
             </div>
           </div>
-          <!--items added to cart block end-->
-
-          <!--static cart block start-->         <!-- This will be displayed whether or not any items have been added to cart-->
+          <!--static cart block start-->               
           <div class="completeYourKit" aria-label="Complete your kit section">
             <h5 class="low-opacity">COMPLETE YOUR KIT</h5>
           </div>
-
-          <div class="overlayProductsGrid" id="overlayProdGrid" aria-label="Product selection">
+          <div class="overlayProductsGrid" aria-label="Product selection">
 
             <div id="overlaycontent1" class="overlayProductsContainer">
               <div class="overlay-products-image-frame">
                 <img src="assets/project_images/Product_images/bengal_hat.png" alt="bengal hat image">
               </div>
               <div class="overlay-products-text-frame">
-                  <h4 style="color: black;">BENGAL HAT</h4>
-                  <p class="p2">£ 29</p>
-                  <button class="add-to-cart-button" id="addToCartBtn1" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+                  <h4 style="color: black;">Product Name</h4>
+                  <p class="p2">Product Price</p>
+                  <div>Black</div>
+                  <div>XS S M L XL</div>
+                  <button class="add-to-cart-button" data-product-id="b8b528fc-6c60-41f6-a5a9-9a8b27a9482a" aria-label="Add Bengal hat to cart">ADD TO CART</button>
               </div>
             </div>
 
@@ -192,7 +168,7 @@
               <div class="overlay-products-text-frame">
                   <h4 style="color: black;">BENGAL HAT</h4>
                   <p class="p2">£ 29</p>
-                  <button class="add-to-cart-button" id="addToCartBtn2" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+                  <button class="add-to-cart-button" data-product-id="b8b528fc-6c60-41f6-a5a9-9a8b27a9482a" aria-label="Add Bengal hat to cart">ADD TO CART</button>
               </div>
             </div>
 
@@ -203,7 +179,7 @@
               <div class="overlay-products-text-frame">
                   <h4 style="color: black;">BENGAL HAT</h4>
                   <p class="p2">£ 29</p>
-                  <button class="add-to-cart-button" id="addToCartBtn3" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+                  <button class="add-to-cart-button" data-product-id="b8b528fc-6c60-41f6-a5a9-9a8b27a9482a" aria-label="Add Bengal hat to cart">ADD TO CART</button>
               </div>
             </div>
 
@@ -214,7 +190,7 @@
               <div class="overlay-products-text-frame">
                   <h4 style="color: black;">BENGAL HAT</h4>
                   <p class="p2">£ 29</p>
-                  <button class="add-to-cart-button" id="addToCartBtn4" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+                  <button class="add-to-cart-button" data-product-id="b8b528fc-6c60-41f6-a5a9-9a8b27a9482a" aria-label="Add Bengal hat to cart">ADD TO CART</button>
               </div>
             </div>
 
@@ -225,7 +201,7 @@
               <div class="overlay-products-text-frame">
                   <h4 style="color: black;">BENGAL HAT</h4>
                   <p class="p2">£ 29</p>
-                  <button class="add-to-cart-button" id="addToCartBtn5" aria-label="Add Bengal hat to cart">ADD TO CART</button>
+                  <button class="add-to-cart-button" data-product-id="b8b528fc-6c60-41f6-a5a9-9a8b27a9482a" aria-label="Add Bengal hat to cart">ADD TO CART</button>
               </div>
             </div>
 
@@ -236,13 +212,16 @@
               <div class="overlay-products-text-frame">
                   <h4 style="color: black;">BENGAL HAT</h4>
                   <p class="p2">£ 29</p>
-                  <button class="add-to-cart-button" id="addToCartBtn6" aria-label="Add Bengal hat to cart">ADD TO CART</button>
-                </div>
+                  <button class="add-to-cart-button" data-product-id="b8b528fc-6c60-41f6-a5a9-9a8b27a9482a" aria-label="Add Bengal hat to cart">ADD TO CART</button>
               </div>
             </div>
-            <!--static cart block end-->
           </div>
         </div>
+      </div>
+      <!--Security Code Overlay-->
+      <div id="cvvInfoOverlay" class="cvv-info-overlay">
+        <p class="cvvTitle p3">Where do I find the Security Code on my credit card?</p>
+        <p>Visa and Mastercard have a three-digit CVV number on the back of the card, to the right of the signature.</p>
       </div>
     </nav>
   </header>
@@ -250,72 +229,34 @@
 <!--MAIN-->
 
   <div class="main-grid">
-    <div class="orderSummary">
-        <div class="SectionHeader" id="productsHeader">  
-            <h6>ORDER SUMMARY</h6> 
-            <h6 class="hide-on-865px">QUANTITY</h6>  <!--These section headers are replaced by a different layout at 865px width--> 
-            <h6 class="hide-on-865px">PRICE</h6>
-            <h6 class="hide-on-865px">DISCOUNT</h6>
-            <h6 class="hide-on-865px">TOTAL</h6>
-        </div>
-        <!--static block / part of both layouts -->
-        <div id="productsContainer">
-            <div class="row">
-                <div class="order-summary-row-col-1" id="nameSizeColor-Column" aria-label="Product details">
-                    <div class="p3">Product Name</div>
-                    <div class="attr-row p2" id="selected-size" aria-label="Selected size: XS">
-                        <div class="attr-key">Size:&nbsp;</div>
-                        <div class="attr-value">xs</div>
-                    </div>
-                    <div class="attr-row p2" id="selected-color" aria-label="Selected color: Gray">
-                        <div class="attr-key">Color:&nbsp;</div>
-                        <div class="attr-value">Gray</div>
-                    </div>
+ 
+      <div class="orderSummary">
+          <div class="SectionHeader" id="productsHeader">  
+            <div class="headerOrderSummary h6">ORDER SUMMARY</div>
+            <div class="headerQuantity h6">QUANTITY</div>
+            <div class="headerPrice h6">PRICE</div>
+            <div class="headerDiscount h6">DISCOUNT</div>
+            <div class="headerItemTotal h6">ITEM TOTAL</div>
+          </div>
+          <div class="productsContainer" id="productsContainer">
+            <div class="productRow">
+                <div class="columnOrderSummary">
+                    <div class="productName p3"></div>
+                    <div class="productSize p2"></div>
+                    <div class="productColor p2"></div>
                 </div>
-                <!--static block end-->
-
-                <div class="order-summary-row-col-2 p2" id="selected-quantity" aria-label="Selected quantity: 1">
-                    <div class="attrKey-container">                          
-                      <div class="attr-key hide-on-high-res">Quantity:&nbsp;</div>    <!--Comes into play at resolution width 865px and less-->
-
-                      <div class="attr-value">1</div>   <!--Static / part of both layouts -->
-                    </div>
-                </div>
-                <div class="order-summary-row-col-3 p2" id="price-Column" aria-label="Price: £249">
-                  <div class="attrKey-container">                          
-                    <div class="attr-key hide-on-high-res" id="low-res-price-styling">Price:&nbsp;</div> <!--Comes into play at resolution width 865px or less-->
-                    
-                    <div class="attr-value">£ 249</div>  <!--Static / part of both layouts -->
-                  </div>
-                </div>
-                <div class="order-summary-row-col-4 p2" id="discount-Column" aria-label="Discount: 0%">
-                  <div class="attrKey-container">                        
-                    <div class="attr-key hide-on-high-res">Discount:&nbsp;</div>     <!--Comes into play at resolution width 865px and less-->
-
-                    <div class="attr-value">0%</div>    <!--Static / part of both layouts -->
-                  </div>
-
-
-
-                   <!--Item calculated SUM Low Resolution inline container. | Same principle as the Quantity label comment. This has both the label (Total) and sum (£ 249) on a single horizontal line. As opposed to higher resolutions where the label is in the section header and the value vertically beneath it-->
-                  <div class="low-res-itemsum" aria-label="Total: £249">
-                    <div class="attr-key hide-on-high-res">Total:&nbsp;</div>
-                    <div class="attr-value hide-on-high-res" id="itemSum-lowRes">£ 249</div>
-                  </div>
-                </div>
-                <!--Item Calculated SUM High Resolution Column.  |  Again, same principle as the Quantity label comment. This is the itemsum for high resolutions.-->
-                <div class="order-summary-row-col-5 p2" id="itemSum-Column" aria-label="Total: £249">
-                    <div class="attr-value hide-on-865px" id="itemSum-highRes">£ 249</div> 
-                </div>
+                <div class="columnQuantity p2"></div>
+                <div class="columnPrice p2"></div>
+                <div class="columnDiscount p2"></div>
+                <div class="columnItemTotal p2"></div>
             </div>
-            <!--THE GENERAL IDEA IS THAT ADDITIONAL ITEMS THE USER ADDS TO CART WILL BE PLACED BENEATH THIS POINT - UTILIZING JS - WILL HAVE TO SEE IF THAT WORKS -->
+          </div>
+      </div>
 
-          
-        </div>
-    </div>
+    
     <div class="billingAddress">
          <div class="SectionHeader" id="billingHeader">
-            <h6>BILLING ADDRESS</h6>
+            <div class="h6">BILLING ADDRESS</div>
          </div>
          <form action="#" method="post">
           <div class="form-container">
@@ -364,7 +305,7 @@
 
     <div class="deliveryAddress">
       <div class="SectionHeader" id="deliveryHeader">
-          <h6>DELIVERY ADDRESS</h6>
+          <div class="h6">DELIVERY ADDRESS</div>
       </div>
           <div class="inputField-container" id="sameAsbillingContainer">
               <label>
@@ -380,8 +321,7 @@
                   Add a new address
               </label>
           </div>
-          <!--Add new address form. Initially hidden and fetched on click using js (hopefully)-->
-          <form action="#" method="post" id="addnewAddressForm">
+          <form action="#" method="post" id="addnewAddressForm" style="display: none">
             <div class="form-container">
                 <div class="inputField-container"> 
                     <label for="add_new_address_firstName">First Name *</label>
@@ -428,7 +368,7 @@
 
     <div class="shippingMethod">
       <div class="SectionHeader" id="shippingMethodHeader">
-          <h6>SHIPPING METHOD</h6>
+          <div class="h6">SHIPPING METHOD</div>
       </div>
       <div class="shippingOptionsContainer">
         <div class="row shippingOption" id="standardShippingOptionStyling">
@@ -450,19 +390,31 @@
 
     <div class="payment">
         <div class="SectionHeader" id="paymentHeader">
-            <h6>PAYMENT</h6>
+            <div class="h6">PAYMENT</div>
         </div>
         <div class="payment-methods" aria-label="Payment Methods">
-          <img src="assets/project_images/Icons/visa.svg" id="visa" alt="visa icon">
-          <img src="assets/project_images/Icons/Vipps_logo.svg" id="vipps" alt="vipps icon">
-          <img src="assets/project_images/Icons/Klarna.svg" id="klarna" alt="klarna icon">
-          <img src="assets/project_images/Icons/paypal.svg" id="paypal" alt="paypal icon">
+          <input type="radio" name="paymentMethod" id="visa" value="visa" required hidden />
+          <label for="visa">
+            <img src="assets/project_images/Icons/visa.svg" alt="Visa">
+          </label>
+          <input type="radio" name="paymentMethod" id="vipps" value="vipps" required hidden />
+          <label for="vipps">
+            <img src="assets/project_images/Icons/Vipps_logo.svg" alt="Vipps">
+          </label>
+          <input type="radio" name="paymentMethod" id="klarna" value="klarna" required hidden />
+          <label for="klarna">
+            <img src="assets/project_images/Icons/Klarna.svg" alt="Klarna">
+          </label>
+          <input type="radio" name="paymentMethod" id="paypal" value="paypal" required hidden />
+          <label for="paypal">
+            <img src="assets/project_images/Icons/paypal.svg" alt="Paypal">
+          </label>
         </div>
         <form action="#" method="post">
             <div class="form-container">
               <div class="inputField-container keepRow">
                 <label for="cardNumber">Card Number *</label>
-                <input type="text" id="cardNumber" name="cardNumber" class="cardNumberStyling" aria-required="true">
+                <input type="text" id="cardNumber" name="cardNumber" class="cardNumberStyling" required aria-required="true">
               </div>
               <div class="inputField-container keepRow">
                 <label>Expiry Date *</label>
@@ -472,26 +424,24 @@
               <div class="inputField-container keepRow">
                 <label for="cardSecCode">Security Code *</label>
                 <input type="text" id="cardSecCode" name="cardSecCode" class="cardSecCodeStyling" pattern="\d{3}" title="Please enter a valid security code (3 digits)" required aria-required="true">
-                <a class="underlined-text" href="#">What is this?</a>
+                <a class="underlined-text" href="#" id="whatsThisCvv">What is this?</a>
               </div>
             </div>
             <div class="termsAgreeText">
               By clicking on 'Pay and Place Order', you agree (i) to make your purchase from RainyDays as the merchant of record for this transaction, subject to RainyDays' Terms of Sale; (ii) that your information will be handled by RainyDays in accordance with the RainyDays Privacy Policy; and (iii) that RainyDays will share your information (excluding the payment details) with RainyDays.
             </div>
-            <a href="checkout_success_page.html" class="place-order-btn" role="button" aria-label="Place your order">
-              <h6>PLACE ORDER</h6>
-            </a>
+            <button type="submit" class="place-order-btn" id="placeOrder" aria-label="Place your order">PLACE ORDER</button>
         </form>
     </div>
 
     <div class="billingSummary">
         <div class="SectionHeader" id="billingSummaryHeader">
-            <h6>BILLING SUMMARY</h6>
+            <div class="h6">BILLING SUMMARY</div>
         </div>
           <form>
             <div class="form-container">
               <div class="voucher-container">
-                <input type="text" id="voucherCode" name="voucher" class="voucherStyling" placeholder="Voucher Code / Gift Card" aria-label="Voucher Code">
+                <input type="text" id="voucherCode" name="voucher" class="voucherStyling" placeholder="Voucher Code / Use: NOROFF" aria-label="Voucher Code">
                 <button type="submit" class="applyVoucherBtn">APPLY</button>
               </div>
             </div>
@@ -499,15 +449,15 @@
         <div class="order-calculation-container">
               <div class="calculation-row">
                 <span class="calc-label">Items Total</span>
-                <span class="calc-value">£ <span id="itemsTotal">0</span></span>
+                <span class="calc-value">$ <span id="itemsTotal"></span></span>
               </div>
               <div class="calculation-row">
                 <span class="calc-label">Shipping Cost</span>
-                <span class="calc-value" id="shippingCost">£ 15</span>
+                <span class="calc-value" id="shippingCost">$ 15</span>
               </div>
             <div class="calculation-row">
               <span class="calc-label p3">ORDER TOTAL</span>
-              <span class="calc-value p3">£ <span id="orderTotal">0</span></span>
+              <span class="calc-value p3">$ <span id="orderTotal"></span></span>
             </div>
         </div>
     </div>
@@ -581,11 +531,11 @@
   <div class="mobileFooterContainer">
       <div class="separatorLineWhite" aria-hidden="true"></div>
       <div class="mobileFooterMenuItems" aria-label="Footer navigation">
-          <a href="list_of_products_men.html">
-              <h6 class="white-text">SHOP</h6>
+          <a href="list_of_products.html">
+              <div class="white-text h6">SHOP</div>
           </a>
           <a href="about_page.html">
-              <h6 class="white-text">ABOUT</h6>
+              <div class="white-text h6">ABOUT</div>
           </a>
       </div>
       <div class="mobileCompanyLogo">
@@ -593,10 +543,10 @@
       </div>
       <div class="mobileFooterMenuItems" aria-label="Additional footer navigation">
           <a href="contact_us.html">
-              <h6 class="white-text">CONTACT</h6>
+              <div class="white-text h6">CONTACT</div>
            </a>
            <a href="contact_us.html">
-              <h6 class="white-text">SUPPORT</h6>
+              <div class="white-text h6">SUPPORT</div>
           </a>
       </div>
       <div class="separatorLineWhite2" aria-hidden="true"></div>
@@ -608,7 +558,7 @@
           <a href="#"><img src="assets/project_images/Icons/appStore.svg" class="appIcons" alt="app store icon in mobile footer"></a>
       </div>
       <div class="copyrightText">
-          <h6 class="white-text">© 2023 RAINYDAYS</h6>
+          <div class="white-text h6">© 2023 RAINYDAYS</div>
       </div>
   </div>
 

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" defer src='src/js/checkoutSuccess.mjs'></script>
-  <title>Checkout Success</title>
-  <link rel="stylesheet" href="src/css/checkout_success_page.css">
+  <script type="module" defer src='src/js/listOfProducts.mjs'></script>
+  <title>Men's</title>
+  <link rel="stylesheet" href="src/css/list_of_products.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/project_images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/project_images/favicon/favicon-16x16.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 
   <header class="header-collection">
     <div class="promo-banner hide-on-mobile-res" id="promo-banner" role="banner" aria-label="Promotional Banner">
-      <a href="list_of_products.html?gender=Male" class="nav-link" aria-label="End of Season Sale - Up to 40% off select items">End of Season Sale | Up to 40% off select items</a>
+      <a href="list_of_products.html?gender=Male" class="nav-link list-of-products-link" aria-label="End of Season Sale - Up to 40% off select items">End of Season Sale | Up to 40% off select items</a>
     </div>
     <nav class="header-main-nav">
       <div class="header-nav-left">
@@ -221,22 +221,173 @@
     </nav>
   </header>
 
+<!--FILTER OVERLAY SECTION-->
+
+<!--FILTER ICONS-->  
+<div id="iconFiltersContainer" class="iconFiltersContainer" aria-label="Icons filter-by buttons">
+  <button class="icon-container" aria-pressed="false">
+      <img src="assets/project_images/Icons/building.svg" alt="Urban">
+      <span>URBAN</span>
+  </button>
+  
+  <button class="icon-container" aria-pressed="false">
+    <img src="assets/project_images/Icons/hiking.svg" alt="Hiking">
+    <span>HIKING</span>
+  </button>
+
+  <button class="icon-container" aria-pressed="false">
+    <img src="assets/project_images/Icons/skiing.svg" alt="Skiing">
+    <span>SKIING</span>
+  </button>
+
+  <button class="icon-container" aria-pressed="false">
+    <img src="assets/project_images/Icons/cycling.svg" alt="Cycling">
+    <span>CYCLING</span>
+  </button>
+</div>
+    
+  <h1 class="pageTitleHidden" id="pageTitle2">SHOP MENS</h1> 
+
+<!--FILTER OVERLAY--> 
+  <div class="filter-section">
+    <div class="filterOverlay">
+      <button aria-label="Open Filter Options" class="filterOverlayButton" id="filterButton">
+        <h4>FILTER BY</h4>
+      </button>
+    </div>
+    <!--Filter Overlay Content-->
+    <div class="overlay-filters-content" id="overlayFiltersContent" aria-modal="true" role="dialog">
+      <a href="#" class="closeFiltersOverlay" aria-label="Close Filter Options">&times;</a>
+    <div class="overlayTitle">
+      <h3>FILTER BY</h3>
+    </div>
+      <div class="separatorLine" aria-hidden="true"></div>
+    <div class="genderFilter">
+        <h5 id="genderHeading">Gender</h5>
+        <label for="maleGender">
+          <input type="checkbox" id="maleGender" name="Gender" value="male" aria-labelledby="maleLabel maleItemsCounter">
+          <span id="maleLabel">Male <span id="maleItemsCounter" class="male-items-counter">(0)</span></span>
+        </label>
+        <label for="femaleGender">
+          <input type="checkbox" id="femaleGender" name="Gender" value="female" aria-labelledby="femaleLabel femaleItemsCounter">
+          <span id="femaleLabel">Female <span id="femaleItemsCounter" class="female-items-counter">(0)</span></span>
+        </label>
+      </div>
+      <div class="separatorLine" aria-hidden="true"></div>
+    <h5 id="colorHeading">Color</h5>
+      <ul>
+        <li>
+          <label id="beigeLabel">
+            <input type="checkbox" id="beigeCheckbox" name="Color" value="beige" aria-labelledby="beigeLabel beigeItemsCounter">
+            Beige <span id="beigeItemsCounter" class="beige-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="blackLabel">
+            <input type="checkbox" id="blackCheckbox" name="Color" value="black" aria-labelledby="blackLabel blackItemsCounter">
+            Black <span id="blackItemsCounter" class="black-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="blueLabel">
+            <input type="checkbox" id="blueCheckbox" name="Color" value="blue" aria-labelledby="blueLabel blueItemsCounter">
+            Blue <span id="blueItemsCounter" class="blue-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="brownLabel">
+            <input type="checkbox" id="brownCheckbox" name="Color" value="brown" aria-labelledby="brownLabel brownItemsCounter">
+            Brown <span id="brownItemsCounter" class="brown-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="greenLabel">
+            <input type="checkbox" id="greenCheckbox" name="Color" value="green" aria-labelledby="greenLabel greenItemsCounter">
+            Green <span id="greenItemsCounter" class="green-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="greyLabel">
+            <input type="checkbox" id="greyCheckbox" name="Color" value="grey" aria-labelledby="greyLabel greyItemsCounter">
+            Grey <span id="greyItemsCounter" class="grey-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="orangeLabel">
+            <input type="checkbox" id="orangeCheckbox" name="Color" value="orange" aria-labelledby="orangeLabel orangeItemsCounter">
+            Orange <span id="orangeItemsCounter" class="orange-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="redLabel">
+            <input type="checkbox" id="redCheckbox" name="Color" value="red" aria-labelledby="redLabel redItemsCounter">
+            Red <span id="redItemsCounter" class="red-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="silverLabel">
+            <input type="checkbox" id="silverCheckbox" name="Color" value="silver" aria-labelledby="silverLabel silverItemsCounter">
+            Silver <span id="silverItemsCounter" class="silver-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="tanLabel">
+            <input type="checkbox" id="tanCheckbox" name="Color" value="tan" aria-labelledby="tanLabel tanItemsCounter">
+            Tan <span id="tanItemsCounter" class="tan-item-counter">(0)</span>
+          </label>
+        </li>
+        <li>
+          <label id="whiteLabel">
+            <input type="checkbox" id="whiteCheckbox" name="Color" value="white" aria-labelledby="whiteLabel whiteItemsCounter">
+            White <span id="whiteItemsCounter" class="white-item-counter">(0)</span>
+          </label>
+        </li>
+      </ul>
+    <div class="separatorLine" aria-hidden="true"></div>
+  
+    <div class="price-section">
+      <section> 
+        <div class="price-container">
+          <h5 id="priceHeading">Price</h5>
+          <div class="price-container-main">
+            <div class="price-range-field">
+              <label class="price-range-label" for="filter-price-from">From</label>
+              <input class="price-range-input" id="filter-price-from" type="number" placeholder="0" min="0" max="9000" aria-labelledby="filter-price-from">
+            </div>
+            <span class="price-range-currency">£</span>
+            <div class="price-range-field">
+              <label class="price-range-label" for="filter-price-to">To</label>
+              <input class="price-range-input" id="filter-price-to" type="number" placeholder="9000" min="0" max="9000" aria-labelledby="filter-price-to">
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="separatorLine" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <h1 class="pageTitle" id="pageTitle1">SHOP MENS</h1> <!-- is replaced by pageTitleHidden at 538px media query -->
+
+  <div class="filterOverlay">
+    <button aria-label="Open Sort By Options" aria-haspopup="true" aria-expanded="false" id="sortDropdownToggle" class="filterOverlayButton"> 
+      <h4>SORT BY</h4>
+    </button>
+    <div class="dropdown-sort-content" id="sortDropdownContent" aria-labelledby="sortDropdownToggle" aria-hidden="true"> 
+      <ul>
+          <li><a href="#">Price: Low to High</a></li>
+          <li><a href="#">Price: High to Low</a></li>
+          <li><a href="#">Alphabetically: A to Z</a></li>
+          <li><a href="#">Alphabetically: Z to A</a></li>
+      </ul>
+    </div>
+  </div>
+  </div> 
+    
 <!--MAIN-->
 
-  <div class="main-grid">
-    <div class="checkoutSuccess">
-        <div class="title">
-            <h1>YOUR ORDER IS ON ITS WAY!</h1>
-        </div>
-        <span class="orderNumberLabel p4" >Your order number is: <span id="orderNumberValue">00000001</span></span> 
-        <div class="emailConf p3">
-          <h4>We'll send you an email confirmation with details and tracking info.</h4>
-        </div>
-        <a href="list_of_products.html?gender=Male" class="continueShoppingBtn" role="button" aria-label="Continue Shopping">
-          CONTINUE SHOPPING
-        </a>
-    </div>    
-  </div>
+    <div class="main-grid">
+
+    </div>
 
 <!--FOOTER-->
 
@@ -306,7 +457,7 @@
 <div class="mobileFooterContainer">
     <div class="separatorLineWhite" aria-hidden="true"></div>
     <div class="mobileFooterMenuItems" aria-label="Footer navigation">
-        <a href="list_of_products.html">
+        <a href="list_of_products_men.html">
             <h6 class="white-text">SHOP</h6>
         </a>
         <a href="about_page.html">
@@ -338,6 +489,7 @@
 </div>
 
 </footer>
+
 
 
 </body>

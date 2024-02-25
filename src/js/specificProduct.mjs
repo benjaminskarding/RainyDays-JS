@@ -95,17 +95,14 @@ export function setupSizeSelection() {
 }
 
 export function setupAddToCartButton() {
-    showLoadingIndicator();
     const addToCartButton = document.getElementById('sizeButton');
-    addToCartButton.addEventListener('click', () => {
+    addToCartButton.onclick = null; // Clear existing event listeners
+    addToCartButton.addEventListener('click', function() {
         if (!selectedSize) {
             alert('Please select a size first!');
             return;
         }
-
-        addToCart(productDetails, selectedSize);
     });
-    hideLoadingIndicator();
 }
 
 async function displayAdditionalProducts(currentProductId) {

@@ -77,7 +77,7 @@
               <h5 class="menu-item">WOMENS</h5>
           </a>
           <div class="separatorLine" aria-hidden="true"></div>
-            <a href="list_of_products.html?gender=Male">
+            <a href="list_of_products.html?gender=Male" class="product-link">
               <h5 class="menu-item">PHASE OUT 40%</h5>
           </a>
           <div class="separatorLine" aria-hidden="true"></div>
@@ -266,11 +266,11 @@
         <h5 id="genderHeading">Gender</h5>
         <label for="maleGender">
           <input type="checkbox" id="maleGender" name="Gender" value="male" aria-labelledby="maleLabel maleItemsCounter">
-          <span id="maleLabel">Male <span id="maleItemsCounter" class="male-items-counter">(0)</span></span>
+          <span id="maleLabel">Male <span id="maleItemsCounter" class="male-items-counter"></span></span>
         </label>
         <label for="femaleGender">
           <input type="checkbox" id="femaleGender" name="Gender" value="female" aria-labelledby="femaleLabel femaleItemsCounter">
-          <span id="femaleLabel">Female <span id="femaleItemsCounter" class="female-items-counter">(0)</span></span>
+          <span id="femaleLabel">Female <span id="femaleItemsCounter" class="female-items-counter"></span></span>
         </label>
       </div>
       <div class="separatorLine" aria-hidden="true"></div>
@@ -354,7 +354,7 @@
               <label class="price-range-label" for="filter-price-from">From</label>
               <input class="price-range-input" id="filter-price-from" type="number" placeholder="0" min="0" max="9000" aria-labelledby="filter-price-from">
             </div>
-            <span class="price-range-currency">£</span>
+            <span class="price-range-currency">$</span>
             <div class="price-range-field">
               <label class="price-range-label" for="filter-price-to">To</label>
               <input class="price-range-input" id="filter-price-to" type="number" placeholder="9000" min="0" max="9000" aria-labelledby="filter-price-to">
@@ -374,10 +374,10 @@
     </button>
     <div class="dropdown-sort-content" id="sortDropdownContent" aria-labelledby="sortDropdownToggle" aria-hidden="true"> 
       <ul>
-          <li><a href="#">Price: Low to High</a></li>
-          <li><a href="#">Price: High to Low</a></li>
-          <li><a href="#">Alphabetically: A to Z</a></li>
-          <li><a href="#">Alphabetically: Z to A</a></li>
+        <li><a href="#" id="sortLowToHigh">Price: Low to High</a></li>
+        <li><a href="#" id="sortHighToLow">Price: High to Low</a></li>
+        <li><a href="#" id="sortAToZ">Alphabetically: A to Z</a></li>
+        <li><a href="#" id="sortZToA">Alphabetically: Z to A</a></li>
       </ul>
     </div>
   </div>
@@ -433,21 +433,7 @@
         </div>
       </div>
       <!--footer right side-->
-      <div class="footer-right-container">
-        <div class="footer-column-5">
-          <h3 class="footer-titles">Currency</h3>
-          <div class="currency-box">
-            <div class="currency-text">EUR</div> 
-            <div class="icon-container">
-              <img src="assets/project_images/Icons/arrow-drop-down-fill_WHITE.svg" alt="Arrow" class="currency-arrow">
-            </div>
-            <div class="currency-dropdown-content">
-              <a href="#">USD</a>
-              <a href="#">DKK</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      
   </div>
 </footer>
 

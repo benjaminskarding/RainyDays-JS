@@ -49,12 +49,28 @@ async function displayMainProductDetails() {
                 sizeButton.addEventListener('click', function() {
                     selectedSize = size;
                     document.getElementById('sizeButton').textContent = 'ADD TO CART'; 
-
                     document.querySelectorAll('.size-option').forEach(button => {
                         button.classList.remove('selected'); 
                     });
                     sizeButton.classList.add('selected'); 
                 });
+            });
+            const addToCartButton = document.getElementById('sizeButton');
+            addToCartButton.addEventListener('click', function() {
+                addToCart(productDetails, selectedSize); 
+                this.textContent = 'ADDED TO CART'; 
+                this.disabled = true; 
+
+                // Timeout to reset text and re-enable button
+                setTimeout(() => {
+                    this.textContent = 'SELECT A SIZE'; 
+                    this.disabled = false; 
+     
+                    selectedSize = null; 
+                    document.querySelectorAll('.size-option').forEach(button => {
+                        button.classList.remove('selected');
+                    });
+                }, 2500); 
             });
         } else {
             console.error('No product details found.');

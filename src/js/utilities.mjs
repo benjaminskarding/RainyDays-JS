@@ -28,3 +28,7 @@ export function isListOfProductsPage() {
 }
 
 
+// Helper function to capitalize the first letter of each word
+export function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  }

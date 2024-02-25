@@ -498,10 +498,17 @@ button, select {
 /* Shopping cart overlay */
 
 .cartOverlayButton {
+  display: flex;
   background: none;
   border: none;
+  padding: 0;
   cursor: pointer;
   margin-top: 0rem;
+}
+
+.cartOverlayButton img {
+  padding: 0;
+  margin: 0;
 }
 
 .cart-overlay {
@@ -558,12 +565,16 @@ button, select {
   gap: 2rem;
 }
 
-.cart-counter-container,
+
 .cartOverlayButton {
   display: flex;
   align-items: center;
+}
+
+.cart-counter-container {
+  display: flex;
+  align-items: center;
   margin-right: 1rem;
-  margin-top: 1rem;
 }
 
 .cart-counter {

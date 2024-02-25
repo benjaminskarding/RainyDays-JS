@@ -248,7 +248,7 @@
                 <div class="columnQuantity p2"></div>
                 <div class="columnPrice p2"></div>
                 <div class="columnDiscount p2"></div>
-                <div class="columnItemTotal p2"></div>
+                <div class="columnItemTotal p2 js-item-total"></div>
             </div>
           </div>
       </div>
@@ -258,10 +258,11 @@
          <div class="SectionHeader" id="billingHeader">
             <div class="h6">BILLING ADDRESS</div>
          </div>
+         <div class="billingAddressContainer">
          <form action="#" method="post">
           <div class="form-container">
             <div class="inputField-container"> 
-              <label class="" for="billing_address_firstName">First Name *</label>
+              <label class="inputField-container firstField" for="billing_address_firstName">First Name *</label>
               <input type="text" id="billing_address_firstName" name="firstName" class="firstnameStyling" aria-required="true">
             </div>
             <div class="inputField-container">
@@ -302,11 +303,13 @@
           </div>
       </form>
     </div>
+    </div>
 
     <div class="deliveryAddress">
       <div class="SectionHeader" id="deliveryHeader">
           <div class="h6">DELIVERY ADDRESS</div>
       </div>
+      <div class="deliveryAddressContainer">
           <div class="inputField-container" id="sameAsbillingContainer">
               <label>
                   <input type="radio" name="delivery_address_option" class="hidden-original-radio" id="sameAsBillingAddressRadio" checked>
@@ -364,6 +367,7 @@
                 </div>
             </div> 
           </form>
+        </div>
     </div>
 
     <div class="shippingMethod">

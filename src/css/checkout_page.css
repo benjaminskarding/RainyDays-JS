@@ -12,15 +12,14 @@
     "billingAddress deliveryAddress"
     "shippingMethod shippingMethod"
     "payment billingSummary";
-
 }
 
-.orderSummary     { grid-area: orderSummary}
-.billingAddress   { grid-area: billingAddress}  
-.deliveryAddress  { grid-area: deliveryAddress}  
-.shippingMethod   { grid-area: shippingMethod}
-.payment          { grid-area: payment}  
-.billingSummary   { grid-area: billingSummary} 
+.orderSummary     { grid-area: orderSummary }
+.billingAddress   { grid-area: billingAddress }  
+.deliveryAddress  { grid-area: deliveryAddress }  
+.shippingMethod   { grid-area: shippingMethod }
+.payment          { grid-area: payment }  
+.billingSummary   { grid-area: billingSummary } 
 
 /* ROWS, COLUMNS, SECTION-HEADERS */
 
@@ -31,6 +30,7 @@
 
 .SectionHeader {
     display: flex;
+    justify-content: space-between;
     background-color: #0A3641;
     color: white;
     padding: 0.5rem;
@@ -42,13 +42,14 @@
 .headerPrice,
 .headerDiscount,
 .headerItemTotal {
-    flex-basis: 25%; /* Adjust the percentage based on your design */
+    flex-basis: 25%; 
     text-align: center;
 }
 
+
 .columnOrderSummary {
     flex-basis: 25%;
-    text-align: left; /* Align the product name and details to the left */
+    text-align: left; 
 }
 
 .columnQuantity,
@@ -108,12 +109,16 @@
     height: 3.5rem;
 }
 
+.billingAddressContainer {
+    margin-top: 1rem;
+}
+
 .countryOption {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 40%; 
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
 }
 
 .countryOption .p {
@@ -134,9 +139,14 @@
 
 /*DELIVERY ADDRESS */
 
+.deliveryAddressContainer {
+    margin-top: 1.5rem;
+    margin-bottom: -0.5rem;
+}
+
 #sameAsbillingContainer, #addnewAddressContainer {
     margin-right: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
  }
  
  #sameAsbillingContainer > label, #addnewAddressContainer > label {
@@ -194,6 +204,7 @@ transform: scale(1);
 .shippingOptionsContainer {
     display: flex;
     width: 100%;
+    margin-top: 1rem;
 }
 
 .shippingOption {
@@ -265,7 +276,7 @@ transform: scale(1);
 .inputField-container {
     display: flex;
     align-items: center;
-    margin: 0.1rem 0;
+    margin: 0rem 0;
 }
 
 .inputField-container label {
@@ -370,8 +381,7 @@ input {
 .voucher-container {
     display: flex;
     align-items: center;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin: 1rem 1rem 0 1rem;
 }
 
 .voucherStyling {
@@ -436,7 +446,7 @@ input {
         padding-top: 1rem;
         grid-gap: 1rem;
         grid-template-columns: 1fr;
-        grid-template-rows: 50vh auto;
+        grid-template-rows: auto;
         grid-template-areas: 
         "orderSummary"
         "billingAddress"
@@ -463,19 +473,37 @@ input {
 
 @media (max-width: 958px) {
 
+    .SectionHeader {
+        justify-content: center;
+    }
+
+    .headerOrderSummary {
+        flex-basis: auto; 
+    }
+
+    .headerQuantity,
+    .headerPrice,
+    .headerDiscount,
+    .headerItemTotal {
+        display: none;
+    }
+
+    .mobile-product-name {
+        margin-top: 1rem;
+    }
+
+    .mobile-discount-item-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     /* Related to introduction of new order summary elements + layout */
 
-    .order-summary-row-col-4 { /*  inline alignment of [discount percentage + itemsum] div @ major order summary header layout change */
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    .firstField {
+        padding-top: 1rem;
     }
     
-    .low-res-itemsum { /* horizontally aligns itemsum text */
-    display: flex;
-    margin-right: 2rem;
-    }
-
     .row { 
         display: flex;
         flex-direction: column;
@@ -483,10 +511,10 @@ input {
         align-items: flex-start;
     }
 
-    .order-summary-row-col-2, /* margin for new order summary elements */
-    .order-summary-row-col-3,
-    .order-summary-row-col-4,
-    .order-summary-row-col-5,
+    .shippingOption {
+        margin-top: 0.5rem;
+    }
+
     .inputField-container:not(.payment .inputField-container) input {
         margin-left: 1rem;
     }
@@ -520,17 +548,6 @@ input {
         margin-top: 2rem;
     }
 
-    .orderSummaryTotalSum {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
     /* Misc */
 
     .p2 {
@@ -554,6 +571,10 @@ input {
     .applyVoucherBtn {
         font-size: 1rem;
     }
+    
+    .cvv-info-overlay {
+        width: 15rem;
+      }
 }
 
 @media (max-width: 493px) {

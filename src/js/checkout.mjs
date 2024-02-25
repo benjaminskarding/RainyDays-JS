@@ -79,17 +79,15 @@ function applyVoucher() {
 // Update the items total based on cart items
 export function updateItemsTotal() {
     if (isCheckoutPage()) {
-        const itemTotalElements = document.querySelectorAll('.columnItemTotal');
+        const itemTotalElements = document.querySelectorAll('.js-item-total');
 
         let itemsTotal = Array.from(itemTotalElements).reduce((total, itemElement) => {
             const itemTotalValue = parseFloat(itemElement.textContent.replace('$', ''));
             return total + itemTotalValue;
         }, 0);
-    
         const itemsTotalSpan = document.getElementById('itemsTotal');
         itemsTotalSpan.textContent = itemsTotal.toFixed(2);
     }
-    
 }
 
 // Calculate and update the order total
@@ -98,7 +96,7 @@ export function updateOrderTotal() {
         const itemsTotal = parseFloat(document.getElementById('itemsTotal').textContent) || 0;
         const shippingCost = parseFloat(document.getElementById('shippingCost').textContent.replace('$', '')) || 0;
         const voucherDiscount = parseFloat(document.querySelector('.calculation-row.discount .calc-value')?.textContent.replace('$', '')) || 0;
-    
+
         const orderTotal = itemsTotal + shippingCost - Math.abs(voucherDiscount);
         document.getElementById('orderTotal').textContent = orderTotal.toFixed(2);
     }  

@@ -17,7 +17,9 @@ export async function fetchAllProductDetails() {
     } finally {
       hideLoadingIndicator();
     }
+    
 }
+
 
 export async function fetchProductDetailsById(id) {
   showLoadingIndicator();

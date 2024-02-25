@@ -169,66 +169,110 @@ export function incrementQuantity(id, size) {
     hideLoadingIndicator();
 }
 
-
 // Update Checkout page
 
-function createCheckoutPageCartItemElement(item) {
-    showLoadingIndicator();
-
-
-    let discountPercentage = 0;
-    let priceHTML;
-
+function createDesktopLayoutItemElement(item) {
+    const itemElement = document.createElement('div');
+    itemElement.className = 'cart-item';
+    itemElement.setAttribute('data-id', item.id);
+    itemElement.setAttribute('data-size', item.size);
+    
     // Calculate discount
+    let discountPercentage = 0;
     if (item.onSale) {
         discountPercentage = ((item.price - item.discountedPrice) / item.price * 100).toFixed(0);
-        priceHTML = `<div class="original-price">$${item.price.toFixed(2)}</div>
-                     <div class="sale-price">$${item.discountedPrice.toFixed(2)}</div>
-                     <div class="discount-percentage">${discountPercentage}% OFF</div>`;
-    } else {
-        priceHTML = `<div class="product-price">$${item.price.toFixed(2)}</div>`;
     }
 
+    // Calculate the item total price
     const itemTotalPrice = item.onSale ? item.discountedPrice : item.price;
 
-    // Create the row for the product item
-    const itemElement = document.createElement('div');
-    itemElement.className = 'productRow';
-
-    // Fill the row with product details
     itemElement.innerHTML = `
-        <div class="columnOrderSummary">
-            <div class="productName p3">${item.name}</div>
-            <div class="productSize p2">Size: ${item.size}</div>
-            <div class="productColor p2">Color: ${item.color}</div>
+        <div class="productRow">
+            <div class="columnOrderSummary">
+                <div class="productName p3">${item.name}</div>
+                <div class="productSize p2">Size: ${item.size}</div>
+                <div class="productColor p2">Color: ${item.color}</div>
+            </div>
+            <div class="columnQuantity p2">${item.quantity}</div>
+            <div class="columnPrice p2">${item.price}</div>
+            <div class="columnDiscount p2">${discountPercentage}%</div>
+            <div class="columnItemTotal p2 js-item-total">$${(item.quantity * itemTotalPrice).toFixed(2)}</div>
         </div>
-        <div class="columnQuantity p2">${item.quantity}</div>
-        <div class="columnPrice p2">${item.price}</div>
-        <div class="columnDiscount p2">${discountPercentage}%</div>
-        <div class="columnItemTotal p2">$${(item.quantity * itemTotalPrice).toFixed(2)}</div>
     `;
-    hideLoadingIndicator();
+
     return itemElement;
-    
 }
+
+function createMobileLayoutItemElement(item) {
+    const itemElement = document.createElement('div');
+    itemElement.className = 'cart-item-mobile';
+    itemElement.setAttribute('data-id', item.id);
+    itemElement.setAttribute('data-size', item.size);
+    
+    // Calculate discount
+    let discountPercentage = 0;
+    if (item.onSale) {
+        discountPercentage = ((item.price - item.discountedPrice) / item.price * 100).toFixed(0);
+    }
+    
+    // Calculate the item total price
+    const itemTotalPrice = item.onSale ? item.discountedPrice : item.price;
+
+    itemElement.innerHTML = `
+        <div class="mobile-product-name p3">${item.name}</div>
+        <div class="mobile-attribute p2">Size: ${item.size}</div>
+        <div class="mobile-attribute p2">Color: ${item.color}</div>
+        <div class="mobile-attribute p2">Quantity: ${item.quantity}</div>
+        <div class="mobile-attribute p2">Price: $ ${item.price}</div>
+        <div class="mobile-discount-item-total">
+        <div class="mobile-attribute p2">Discount: ${discountPercentage}%</div>
+        <div class="mobile-attribute p2">Item Total: $ <span class="js-item-total">${(item.quantity * itemTotalPrice).toFixed(2)}</span></div>
+        </div>
+    `;
+    return itemElement;
+}
+
 
 export function updateCheckoutPage() {
     if (isCheckoutPage()) {
         showLoadingIndicator();
         const productsContainer = document.getElementById('productsContainer');
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
         productsContainer.innerHTML = ''; 
     
         if (cart.length > 0) {
             cart.forEach(item => {
-                productsContainer.appendChild(createCheckoutPageCartItemElement(item));
+                let itemElement;
+                if (viewportWidth <= 958) {
+                    // Mobile layout
+                    itemElement = createMobileLayoutItemElement(item);
+                } else {
+                    // Desktop layout
+                    itemElement = createDesktopLayoutItemElement(item);
+                }
+                productsContainer.appendChild(itemElement);
             });
+        } else {
+            updateItemsTotal();
+            updateOrderTotal();
         }
-      
+        
         hideLoadingIndicator(); 
     }
-    
 }
 
 
 window.decrementQuantity = decrementQuantity;
 window.incrementQuantity = incrementQuantity;
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (isCheckoutPage()) {
+            updateCheckoutPage();
+            updateItemsTotal();
+            updateOrderTotal();
+        }
+    }, 100);
+});

@@ -36,6 +36,7 @@ ul {
 }
 
 /* misc */
+
 .separatorLine{
   border-bottom: 1px solid black; 
   margin-bottom: 10px; 
@@ -227,9 +228,6 @@ button, select {
   position: relative;
   white-space: nowrap;
 }
-
-
-
 
 /* footer */
 
@@ -428,23 +426,102 @@ button, select {
   height: 100%;
 }
 
-.search-container {
+/* Search bars */
+
+.searchProduct {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.search-container input[type="text"] {
+.searchProduct img {
+  height: auto;
+  width: 100px;
+  padding: 10px 0;
+}
+
+.product-image-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-title-search {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-details-search {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.search-results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  overflow-y: auto;
+  max-height: 100vh;
+  z-index: 1000;
+  margin-bottom: -1.5rem;
+}
+
+.noproducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.menu-search-container input[type="text"] {
   background-image: url(../../assets/project_images/Icons/search-line-black.svg); 
   background-position: 10px center;
   background-repeat: no-repeat;
   width: 75%;
   height: 40px;
-  padding: 10px;
   border: 1px solid black;
   box-sizing: border-box;
   text-align: center;
 }
+
+/* Header Search Bar */
+
+.search-overlay-container {
+  position: fixed; 
+  top: 0;
+  right: -30rem; 
+  width: 30rem;
+  height: 100vh;
+  z-index: 1000; 
+  background-color: white;
+  padding-top: 1rem;
+  transition: right 0.5s ease; 
+  border-left: 1px solid black;
+}
+
+.searchOverlayContent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* Menu */
 
 .menu-item {
   display: flex;
@@ -903,6 +980,10 @@ select:focus {
 
   .hamburger-overlay {
     width: 100%;
+}
+
+.search-overlay-container {
+  width: 100%;
 }
 
 

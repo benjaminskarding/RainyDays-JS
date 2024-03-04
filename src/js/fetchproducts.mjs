@@ -16,8 +16,7 @@ export async function fetchAllProductDetails() {
       console.error('Error fetching product details: ', error);
     } finally {
       hideLoadingIndicator();
-    }
-    
+    } 
 }
 
 

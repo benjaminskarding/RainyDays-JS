@@ -34,7 +34,7 @@ export function addToCart(product, selectedSize) {
     if (existingItem) {
         existingItem.quantity++; 
     } else {
-        // Create a new cart item if it doesn't exist
+        // Create new cart item if it doesn't exist
         const cartItem = {
             id: product.id,
             name: product.title,
@@ -118,19 +118,18 @@ export function updateCartOverlay() {
         itemsAddedToCartBlock.style.display = 'none';
         cartItemsContainer.innerHTML = '';
     }
-
-    // Update cart counters and total price
+    // Update all cart counters
     document.querySelectorAll('.cart-counter').forEach(counter => {
         counter.textContent = totalItems.toString();
     });
-
+    // Update total price of cart
     if(cartTotalValue) {
         cartTotalValue.textContent = totalPrice.toFixed(2);
     }
-
     hideLoadingIndicator();
 }
 
+// Increment & Decrement item quantities
 export function decrementQuantity(id, size) {
     showLoadingIndicator();
     const itemIndex = cart.findIndex(item => item.id === id && item.size === size);
@@ -169,7 +168,7 @@ export function incrementQuantity(id, size) {
     hideLoadingIndicator();
 }
 
-// Update Checkout page
+// Create HTML for checkout page based on current cart content
 
 function createDesktopLayoutItemElement(item) {
     const itemElement = document.createElement('div');
@@ -232,7 +231,8 @@ function createMobileLayoutItemElement(item) {
     return itemElement;
 }
 
-
+// Update checkout page by calling relevant HTML generating function, based on viewport width.
+// Also updates checkout page items total and order total.
 export function updateCheckoutPage() {
     if (isCheckoutPage()) {
         showLoadingIndicator();
@@ -256,15 +256,15 @@ export function updateCheckoutPage() {
             updateItemsTotal();
             updateOrderTotal();
         }
-        
         hideLoadingIndicator(); 
     }
 }
 
-
+// Make increment & decrement functions globally accessible. Ensures elements can be updated not only in cart.
 window.decrementQuantity = decrementQuantity;
 window.incrementQuantity = incrementQuantity;
 
+// Timer on resize to ensure updates only trigger once resizing ends, fixing HTML update issues.
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);

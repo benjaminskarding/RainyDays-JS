@@ -96,7 +96,7 @@ export function setupSizeSelection() {
 
 export function setupAddToCartButton() {
     const addToCartButton = document.getElementById('sizeButton');
-    addToCartButton.onclick = null; // Clear existing event listeners
+    addToCartButton.onclick = null; 
     addToCartButton.addEventListener('click', function() {
         if (!selectedSize) {
             alert('Please select a size first!');

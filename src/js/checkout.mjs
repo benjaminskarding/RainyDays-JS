@@ -8,47 +8,50 @@ function setupNewDeliveryAddressFormToggle() {
     const sameAsBillingAddressRadio = document.getElementById('sameAsBillingAddressRadio');
     const addNewAddressRadio = document.getElementById('addNewAddressRadio');
     const newAddressFields = addNewAddressForm.querySelectorAll('input, select');
-
+    // Toggle required alerts if new address form is clicked
     function toggleRequiredOnNewAddressFields(isRequired) {
         newAddressFields.forEach(field => {
             field.required = isRequired;
             field.setAttribute('aria-required', isRequired);
         });
     }
-
     // Initially hide new address form
     toggleRequiredOnNewAddressFields(false);
-
-    sameAsBillingAddressRadio.addEventListener('change', function() {
-        addNewAddressForm.style.display = 'none';
-        toggleRequiredOnNewAddressFields(false);
-    });
-
+    // Show new address form on click
     addNewAddressRadio.addEventListener('change', function() {
         addNewAddressForm.style.display = 'block';
         toggleRequiredOnNewAddressFields(true);
     });
-    }
-}
+    // Re-hide new address form if user selects "Same as billing address" (the default option)
+    sameAsBillingAddressRadio.addEventListener('change', function() { 
+        addNewAddressForm.style.display = 'none';
+        toggleRequiredOnNewAddressFields(false);
+    });
+}}
 
-// Voucher & Gift Card Code functionality
-
+// Voucher & Gift Card Codes
 const validVoucherCodes = ['NOROFF', 'GIFT', 'VOUCHER'];
+let voucherApplied = false;
 
 function applyVoucher() {
     if(isCheckoutPage()) {
         const voucherCodeInput = document.getElementById('voucherCode');
         const applyVoucherButton = document.querySelector('.applyVoucherBtn');
-        const itemsTotalSpan = document.getElementById('itemsTotal');
         const orderTotalSpan = document.getElementById('orderTotal');
         const voucherForm = document.querySelector('.billingSummary form');
     
         voucherForm.addEventListener('submit', function(event) {
             event.preventDefault(); 
+            if (voucherApplied) {
+                alert('A voucher has already been applied to this order.');
+                return;
+            }
+
             const enteredCode = voucherCodeInput.value.toUpperCase();
             const isValidVoucher = validVoucherCodes.includes(enteredCode);
     
             if (isValidVoucher) {
+                voucherApplied = true;
                 const discountAmount = 10; 
                 applyVoucherButton.textContent = 'APPLIED';
                 const newTotal = parseFloat(orderTotalSpan.textContent) - discountAmount;

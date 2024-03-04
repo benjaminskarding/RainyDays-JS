@@ -16,88 +16,43 @@ const state = {
     sortFunction: null 
   };
 
-function updatePageTitle(gender) {
-    showLoadingIndicator();
-    const pageTitle1 = document.getElementById('pageTitle1');
-    const pageTitle2 = document.getElementById('pageTitle2');
-    if (pageTitle1 && pageTitle2) {
-        let genderText = 'SHOP ALL';
-        if (gender.toLowerCase() === 'male') {
-            genderText = 'SHOP MENS';
-        } else if (gender.toLowerCase() === 'female') {
-            genderText = 'SHOP WOMENS';
-        }
-        pageTitle1.textContent = genderText;
-        pageTitle2.textContent = genderText;
-    }
-    hideLoadingIndicator();
-}
 
-// Update the filter indicators
-function updateFilterIndicators(products) {
-    const colorCount = {};
-  
-    document.querySelectorAll('input[name="Color"]').forEach(input => {
-      colorCount[input.value] = 0;
-    });
-  
-    products.forEach(product => {
-      // Count all products using filter state
-      if (state.filters.gender.length === 0 || state.filters.gender.includes(product.gender.toLowerCase())) {
-        const baseColor = product.baseColor.toLowerCase();
-        colorCount[baseColor] = (colorCount[baseColor] || 0) + 1;
-      }
-    });
-  
-    // Updating color counts
-    for (let color in colorCount) {
-      const colorCounterId = `${color}ItemsCounter`;
-      const colorCounterElement = document.getElementById(colorCounterId);
-      if (colorCounterElement) {
-        colorCounterElement.textContent = `(${colorCount[color]})`;
-      }
-    }
-  }
-  
 
-export async function fetchAndDisplayListOfAllProducts() {
+  export async function fetchAndDisplayListOfAllProducts() {
     showLoadingIndicator();
 
     try {
         const products = await fetchAllProductDetails();
         updateFilterIndicators(products);
 
-        // Filter products based on URL Params
+        // Start with all products, then apply filters sequentially
         let filteredProducts = products.filter(product => {
             // Check for gender
-            if (state.filters.gender && state.filters.gender.length > 0) {
-                if (!state.filters.gender.includes(product.gender.toLowerCase())) {
-                    return false;
-                }
+            if (state.filters.gender.length > 0 && !state.filters.gender.includes(product.gender.toLowerCase())) {
+                return false;
             }
-            
             // Check for color
-            if (state.filters.color && state.filters.color.length > 0) {
-                if (!state.filters.color.includes(product.baseColor.toLowerCase())) {
-                    return false;
-                }
+            if (state.filters.color.length > 0 && !state.filters.color.includes(product.baseColor.toLowerCase())) {
+                return false;
             }
-
             // Apply price filter
             const productPrice = product.onSale ? product.discountedPrice : product.price;
-            if ((state.filters.priceFrom && productPrice < state.filters.priceFrom) || 
-                (state.filters.priceTo && productPrice > state.filters.priceTo)) {
+            if ((state.filters.priceFrom && productPrice < parseFloat(state.filters.priceFrom)) || 
+                (state.filters.priceTo && productPrice > parseFloat(state.filters.priceTo))) {
                 return false;
             }
 
-            return true;
+            return true; 
         });
-
+        
         // Apply sorting
         if (state.sortFunction) {
-            filteredProducts = state.sortFunction(filteredProducts);
+            if (Array.isArray(filteredProducts)) {
+                filteredProducts = state.sortFunction(filteredProducts);
+            } else {
+                console.error('Expected filteredProducts to be an array before sorting');
+            }
         }
-
         // Display the filtered and sorted products
         const mainGrid = document.querySelector('.main-grid');
         mainGrid.innerHTML = '';
@@ -106,9 +61,12 @@ export async function fetchAndDisplayListOfAllProducts() {
             mainGrid.appendChild(productElement);
         });
 
-        // Update page title after the products have been filtered and displayed
-        const currentGender = state.filters.gender.length === 1 ? state.filters.gender[0] : 'all';
+        // Update page title based on gender filter
+        const currentGender = state.filters.gender.length === 1 ? capitalizeFirstLetter(state.filters.gender[0]) : 'all';
         updatePageTitle(currentGender);
+
+        // Update the URL with selected filters
+        updateURLWithFilters();
     } catch (error) {
         console.error("Error displaying products", error);
     } finally {
@@ -161,49 +119,97 @@ export function createProductElement(product, gender) {
     
 }
 
-// Apply filters and update product display
-function applyFilters() {
-    // Get selected genders from checkboxes
-    const selectedGenders = Array.from(document.querySelectorAll('input[name="Gender"]:checked')).map(checkbox => checkbox.value);
-    
-    // Update state filters
-    state.filters.gender = selectedGenders;
-    state.filters.color = Array.from(document.querySelectorAll('input[name="Color"]:checked')).map(checkbox => checkbox.value);
-    state.filters.priceFrom = document.getElementById('filter-price-from').value || null;
-    state.filters.priceTo = document.getElementById('filter-price-to').value || null;
-
-    // Update URL with selected gender
-    updateURLWithFilters(selectedGenders);
-    fetchAndDisplayListOfAllProducts(); 
-}
-
+// Sort By 
 function applySort(sortFunction) {
     state.sortFunction = sortFunction;
     fetchAndDisplayListOfAllProducts();
 }
 
-// Update URL parameters based on filters
-function updateURLWithFilters(selectedGenders) {
-    const url = new URL(window.location);
-    // Update gender parameter in the URL
-    if (selectedGenders.length > 0) {
-      // Capitalize the first letter of each gender
-      const capitalizedGenders = selectedGenders.map(gender => capitalizeFirstLetter(gender));
-      url.searchParams.set('gender', capitalizedGenders.join(','));
-    } else {
-      url.searchParams.delete('gender');
-    }
+function applyFilters() {
+    // Update state filters based on checkbox selections
+    state.filters.gender = Array.from(document.querySelectorAll('input[name="Gender"]:checked')).map(checkbox => checkbox.value);
+    state.filters.color = Array.from(document.querySelectorAll('input[name="Color"]:checked')).map(checkbox => checkbox.value);
+    state.filters.priceFrom = document.getElementById('filter-price-from').value || null;
+    state.filters.priceTo = document.getElementById('filter-price-to').value || null;
+
+    fetchAndDisplayListOfAllProducts(); 
+}
+
+// Update filter counters
+function updateFilterIndicators(products) {
+    const colorCount = {};
   
-    // Update the URL without reloading the page
+    document.querySelectorAll('input[name="Color"]').forEach(input => {
+      colorCount[input.value] = 0;
+    });
+  
+    products.forEach(product => {
+      if (state.filters.gender.length === 0 || state.filters.gender.includes(product.gender.toLowerCase())) {
+        const baseColor = product.baseColor.toLowerCase();
+        colorCount[baseColor] = (colorCount[baseColor] || 0) + 1;
+      }
+    });
+  
+    for (let color in colorCount) {
+      const colorCounterId = `${color}ItemsCounter`;
+      const colorCounterElement = document.getElementById(colorCounterId);
+      if (colorCounterElement) {
+        colorCounterElement.textContent = `(${colorCount[color]})`;
+      }
+    }
+}
+
+function updateURLWithFilters() {
+    const url = new URL(window.location);
+
+    if (state.filters.gender.length > 0) {
+        const capitalizedGenders = state.filters.gender.map(gender => capitalizeFirstLetter(gender));
+        url.searchParams.set('gender', capitalizedGenders.join(','));
+    } else {
+        url.searchParams.delete('gender');
+    }
+
+    if (state.filters.color.length > 0) {
+        url.searchParams.set('color', state.filters.color.join(','));
+    } else {
+        url.searchParams.delete('color');
+    }
+
+    if (state.filters.priceFrom) {
+        url.searchParams.set('priceFrom', state.filters.priceFrom);
+    } else {
+        url.searchParams.delete('priceFrom');
+    }
+
+    if (state.filters.priceTo) {
+        url.searchParams.set('priceTo', state.filters.priceTo);
+    } else {
+        url.searchParams.delete('priceTo');
+    }
+
+    // Update URL without reloading
     window.history.pushState({}, '', url);
-  }
+}
 
-
-
+function updatePageTitle(gender) {
+    showLoadingIndicator();
+    const pageTitle1 = document.getElementById('pageTitle1');
+    const pageTitle2 = document.getElementById('pageTitle2');
+    if (pageTitle1 && pageTitle2) {
+        let genderText = 'SHOP ALL';
+        if (gender.toLowerCase() === 'male') {
+            genderText = 'SHOP MENS';
+        } else if (gender.toLowerCase() === 'female') {
+            genderText = 'SHOP WOMENS';
+        }
+        pageTitle1.textContent = genderText;
+        pageTitle2.textContent = genderText;
+    }
+    hideLoadingIndicator();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     if(isListOfProductsPage()) {
-        
         updateElementsWithParams();
         setupInitialFiltersFromURL();
         fetchAndDisplayListOfAllProducts();
@@ -212,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupSortDropdownListeners();
         loadCartFromLocalStorage();
         updateCartOverlay();
+        // Sort by listeners
         document.getElementById('sortLowToHigh').addEventListener('click', () => {
             applySort(sortByPriceLowToHigh);
         });
@@ -224,25 +231,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('sortZToA').addEventListener('click', () => {
             applySort(sortAlphabeticallyZToA);
         });
-        // Event listener for filter checkboxes
+        // Filter checkboxes listeners
         document.querySelectorAll('input[name="Gender"], input[name="Color"]').forEach(checkbox => {
             checkbox.addEventListener('change', applyFilters);
         });
-        // Event listener for price 
+        // Price listeners
         document.getElementById('filter-price-from').addEventListener('change', applyFilters);
         document.getElementById('filter-price-to').addEventListener('change', applyFilters);
         }
-        // Ensure that only one gender checkbox can be checked at a time
+        // Only one gender checkbox can be checked at a time
         document.querySelectorAll('input[name="Gender"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 
-                // Uncheck other gender checkbox
+                // Uncheck the opposite gender checkbox
                 document.querySelectorAll('input[name="Gender"]').forEach(otherCheckbox => {
                     if (otherCheckbox !== this) {
                         otherCheckbox.checked = false;
                     }
                 });
-        
                 applyFilters();
             });
         }); 

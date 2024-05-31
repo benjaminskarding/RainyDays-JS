@@ -1,34 +1,33 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12037675&assignment_repo_type=AssignmentRepo)
-# HTML & CSS Course Assignment
+# RainyDays Outdoor Clothing Store
+![landing page](https://github.com/benjaminskarding/RainyDays-JS/assets/127968874/abea33aa-6f84-4a27-81f6-d583b5671a71)
+A modern online store for purchasing outdoor clothing
 
-## Brief
+## Description
+RainyDays is a demo website for an outdoor clothing store, built from scratch using HTML, CSS, and JavaScript. The website pulls product items from an API to display them dynamically. 
+-	The project originally included automated background removal for the product images, but due to API call restrictions, this feature is currently not active, resulting in the white background for each of the products. This feature would of course be included if the site was to be deployed for professional use.
 
-You must deliver a properly functioning, responsive website for the assignment brief you chose in Design 1.
+## Features
+- Responsive design for various screen sizes
+- Fetches product data from an API
+- Aesthetically pleasing and modern user interface
+- Filter and sort mechanisms for products
+-  Persistent Gender Filtering: The website remembers the user's selected gender (e.g., men's or women's clothing) and maintains this preference across different pages. This ensures a seamless browsing experience, as users do not have to reselect their gender preferences when navigating through the site.
+- Search feature not included due to time restrictions
 
-The site needs to have every page listed in the site architecture on your chosen brief. Certain functionality requiring JavaScript can be mimicked; for example, a login page could link across from the ‘Sign in’ button.
+## Built With
+- HTML
+- CSS
+- JavaScript
+- Frameworks were intentionally not utilized in order to showcase ability to build entirely from scratch 
 
-- The HTML should be semantic and neat.
-- The CSS should follow the DRY principle and be easy to read.
-- The website should be responsive and look good at every screen size with no horizontal scrollbars. Use Flexbox and CSS Grids where appropriate. Please do not use a CSS framework like Bootstrap; we want to see that you can build responsive sites without the help of a framework.
-- The site should be WCAG compliant, and accessibility should be taken into account.
-- Each page should have a unique <meta name="description">, <title>, and <h1>.
-- You should not use copied code in your submission. All code submitted must be written by yourself. You may use external sources to show you how to achieve specific effects, which should be included in your report.
-
-## Process
-
-1. Look at your prototype and consider how the elements will move across the different devices. Which elements move where on different devices?
-2. Write your HTML and CSS, ensuring your HTML is semantic and bug-free and your CSS follows DRY principles.
-3. Use media queries, flex or grid to make your website responsive across screen sizes.
-4. Test your website using your developer tools and also test on major browsers and various devices.
-5. Validate your code using the Markup Validation Service
-6. Use the WAVE Web Accessibility Evaluation Tools to test that your site matches best practices for accessibility
-7. When your site is ready, post it on the Teams peer review channel.
-8. Look at the work of your peers and write a review for them.
-9. Make adjustments based on the feedback you gather from peers and teachers.
-10. Submit here on Teams.
-
-## Delivery
-
-- Please include a link to your live site, deployed on Netlify or GitHub Pages in your submission.
-- Please include a link to your public GitHub repo containing your code in your submission.
-- There is no reflection for this CA.
+## Getting Started
+Installing
+- Clone the repo:
+```sh
+git clone https://github.com/benjaminskarding/RainyDays-JS.git
+```
+## Contact
+Feel free to reach out to me:
+- [Email] benjamin.skarding@hotmail.com
+- [LinkedIn] www.linkedin.com/in/benjamin-skarding-752ba0296
+ 
